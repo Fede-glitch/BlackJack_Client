@@ -1,0 +1,13 @@
+D:\BlackJack\BlackJack_Client\BlackJack_Client\bin\Debug\BlackJack_Client.exe.config
+D:\BlackJack\BlackJack_Client\BlackJack_Client\bin\Debug\BlackJack_Client.exe
+D:\BlackJack\BlackJack_Client\BlackJack_Client\bin\Debug\BlackJack_Client.pdb
+D:\BlackJack\BlackJack_Client\BlackJack_Client\bin\Debug\Newtonsoft.Json.dll
+D:\BlackJack\BlackJack_Client\BlackJack_Client\bin\Debug\Newtonsoft.Json.xml
+D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.csprojAssemblyReference.cache
+D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.Form1.resources
+D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.Properties.Resources.resources
+D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.csproj.GenerateResource.cache
+D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.csproj.CoreCompileInputs.cache
+D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.csproj.CopyComplete
+D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.exe
+D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.pdb
