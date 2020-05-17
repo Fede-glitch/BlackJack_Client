@@ -8,15 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Net;
+using SOCKET_UDP;
 
 
 namespace BlackJack_Client
 {
     public partial class Form1 : Form
     {
+        clsClientUDP client;
         public Form1()
         {
             InitializeComponent();
+            client = new clsClientUDP(IPAddress.Parse("127.0.0.1"), 7777);
         }
 
         private void LblShowPwd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -30,7 +34,8 @@ namespace BlackJack_Client
             string errMsg;
             if ((errMsg = ValidateFields()) == "")
             {
-                
+                ClsMessaggio msg = new ClsMessaggio();
+                msg.Messaggio = 
             }
             else
                 MessageBox.Show(errMsg);
@@ -40,7 +45,7 @@ namespace BlackJack_Client
         {
             Regex regPassword = new Regex(@"(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.{8,})");
             Regex regEmail = new Regex(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$");
-            if (!regEmail.IsMatch(TxtEmail.Text))
+            if(!regEmail.IsMatch(TxtEmail.Text))
             {
                 TxtEmail.Focus();
                 return "Email non valida";

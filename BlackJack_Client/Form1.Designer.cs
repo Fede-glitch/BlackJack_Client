@@ -95,17 +95,17 @@
             // 
             // TxtPassword
             // 
-            this.TxtPassword.Location = new System.Drawing.Point(159, 113);
+            this.TxtPassword.Location = new System.Drawing.Point(118, 113);
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '*';
-            this.TxtPassword.Size = new System.Drawing.Size(191, 22);
+            this.TxtPassword.Size = new System.Drawing.Size(232, 22);
             this.TxtPassword.TabIndex = 16;
             // 
             // TxtEmail
             // 
-            this.TxtEmail.Location = new System.Drawing.Point(159, 75);
+            this.TxtEmail.Location = new System.Drawing.Point(118, 75);
             this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(191, 22);
+            this.TxtEmail.Size = new System.Drawing.Size(232, 22);
             this.TxtEmail.TabIndex = 15;
             // 
             // label4
@@ -122,9 +122,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(30, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 21);
+            this.label3.Size = new System.Drawing.Size(46, 17);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Email / Username:";
+            this.label3.Text = "Email:";
             // 
             // label2
             // 
@@ -149,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 232);
+            this.ClientSize = new System.Drawing.Size(360, 245);
             this.Controls.Add(this.BtnAccedi);
             this.Controls.Add(this.LblNewUser);
             this.Controls.Add(this.label5);
