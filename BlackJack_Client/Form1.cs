@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Net;
 using SOCKET_UDP;
 using Newtonsoft.Json;
+using System.Net.Sockets;
 
 namespace BlackJack_Client
 {
@@ -18,11 +19,85 @@ namespace BlackJack_Client
     {
         clsClientUDP client;
         clsServerUDP server;
+        Timer timerConn;
         public Form1()
         {
             InitializeComponent();
-            client = new clsClientUDP(IPAddress.Parse("127.0.0.1"), 7777);
-            server = new clsServerUDP(IPAddress.Parse("127.0.0.1"), 7777);
+            client = new clsClientUDP(IPAddress.Parse(GetLocalIPAddress()), 7777);
+            EstablishConn();
+        }
+
+        private void EstablishConn()
+        {
+            int port = GetPort();
+            ClsMessaggio msg = new ClsMessaggio(GetLocalIPAddress(), port.ToString());
+            ObjMex objMex = new ObjMex("new-conn", port);
+            msg.Messaggio = JsonConvert.SerializeObject(objMex);
+            client.Invia(msg);
+            server = new clsServerUDP(IPAddress.Parse(GetLocalIPAddress()), port);
+            server.avvia();
+            timerConn = new Timer();
+            timerConn.Interval = 5000;
+            timerConn.Tick += TimerConn_Tick;
+            timerConn.Start();
+            server.datiRicevutiEvent += Server_datiRicevutiEvent;
+        }
+
+        private void TimerConn_Tick(object sender, EventArgs e)
+        {
+            timerConn.Stop();
+            MessageBox.Show("Connessione fallita al server");
+            EstablishConn();
+        }
+
+        private void Server_datiRicevutiEvent(ClsMessaggio message)
+        {
+            string[] ricevuti = message.toArray();
+            ObjMex msg = JsonConvert.DeserializeObject<ObjMex>(ricevuti[2]);
+            switch (msg.Action)
+            {
+                case "conn-established":
+                    timerConn.Stop();
+                    MessageBox.Show("Connessione stabilita");
+                    break;
+            }
+        }
+
+        public static string GetLocalIPAddress()
+        {
+            IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("Nessuna interfaccia di rete disponibile su questo computer");
+        }
+
+        private int GetPort()
+        {
+            int port = 7778;
+            while(isPortOpen(port))
+                port++;
+            return port;
+        }
+
+        private bool isPortOpen(int port)
+        {
+            using (TcpClient tcpClient = new TcpClient())
+            {
+                try
+                {
+                    tcpClient.Connect("127.0.0.1", port);
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
         }
 
         private void LblShowPwd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -40,10 +115,9 @@ namespace BlackJack_Client
                 msg.Ip = "127.0.0.1";
                 msg.Port = "7777";
 
-                ObjMex objMex = new ObjMex("Prova", new Utente(TxtEmail.Text, TxtPassword.Text));
+                ObjMex objMex = new ObjMex("Prova", new Player(TxtEmail.Text, TxtPassword.Text));
                 msg.Messaggio = JsonConvert.SerializeObject(objMex);
                 client.Invia(msg);
-                
             }
             else
                 MessageBox.Show(errMsg);

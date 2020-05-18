@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlackJack_Client
 {
-    class Utente
+    internal class Player
     {
         string _username;
         string _password;
@@ -14,7 +14,7 @@ namespace BlackJack_Client
         public string Username { get => _username; set => _username = value; }
         public string Password { get => _password; set => _password = value; }
 
-        public Utente(string usern, string pass)
+        public Player(string usern, string pass)
         {
             this._username = usern;
             this._password = pass;
