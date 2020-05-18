@@ -89,6 +89,60 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="carte\back.png" />
+    <Content Include="carte\c1.png" />
+    <Content Include="carte\c10.png" />
+    <Content Include="carte\c11.png" />
+    <Content Include="carte\c12.png" />
+    <Content Include="carte\c13.png" />
+    <Content Include="carte\c2.png" />
+    <Content Include="carte\c3.png" />
+    <Content Include="carte\c4.png" />
+    <Content Include="carte\c5.png" />
+    <Content Include="carte\c6.png" />
+    <Content Include="carte\c7.png" />
+    <Content Include="carte\c8.png" />
+    <Content Include="carte\c9.png" />
+    <Content Include="carte\f1.png" />
+    <Content Include="carte\f10.png" />
+    <Content Include="carte\f11.png" />
+    <Content Include="carte\f12.png" />
+    <Content Include="carte\f13.png" />
+    <Content Include="carte\f2.png" />
+    <Content Include="carte\f3.png" />
+    <Content Include="carte\f4.png" />
+    <Content Include="carte\f5.png" />
+    <Content Include="carte\f6.png" />
+    <Content Include="carte\f7.png" />
+    <Content Include="carte\f8.png" />
+    <Content Include="carte\f9.png" />
+    <Content Include="carte\p1.png" />
+    <Content Include="carte\p10.png" />
+    <Content Include="carte\p11.png" />
+    <Content Include="carte\p12.png" />
+    <Content Include="carte\p13.png" />
+    <Content Include="carte\p2.png" />
+    <Content Include="carte\p3.png" />
+    <Content Include="carte\p4.png" />
+    <Content Include="carte\p5.png" />
+    <Content Include="carte\p6.png" />
+    <Content Include="carte\p7.png" />
+    <Content Include="carte\p8.png" />
+    <Content Include="carte\p9.png" />
+    <Content Include="carte\q1.png" />
+    <Content Include="carte\q10.png" />
+    <Content Include="carte\q11.png" />
+    <Content Include="carte\q12.png" />
+    <Content Include="carte\q13.png" />
+    <Content Include="carte\q2.png" />
+    <Content Include="carte\q3.png" />
+    <Content Include="carte\q4.png" />
+    <Content Include="carte\q5.png" />
+    <Content Include="carte\q6.png" />
+    <Content Include="carte\q7.png" />
+    <Content Include="carte\q8.png" />
+    <Content Include="carte\q9.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
