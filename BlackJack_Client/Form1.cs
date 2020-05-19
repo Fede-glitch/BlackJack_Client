@@ -20,6 +20,7 @@ namespace BlackJack_Client
         clsClientUDP client;
         clsServerUDP server;
         Timer timerConn;
+        int before_log_id;
         public Form1()
         {
             InitializeComponent();
@@ -46,8 +47,9 @@ namespace BlackJack_Client
         private void TimerConn_Tick(object sender, EventArgs e)
         {
             timerConn.Stop();
+            //server.chiudi();
             MessageBox.Show("Connessione fallita al server");
-            EstablishConn();
+            //EstablishConn();
         }
 
         private void Server_datiRicevutiEvent(ClsMessaggio message)
@@ -59,6 +61,10 @@ namespace BlackJack_Client
                 case "conn-established":
                     timerConn.Stop();
                     MessageBox.Show("Connessione stabilita");
+                    before_log_id = (int)msg.SingleData;
+                    break;
+                case "login-failed":
+                    MessageBox.Show("Credenziali errate");
                     break;
             }
         }
@@ -111,11 +117,12 @@ namespace BlackJack_Client
             string errMsg;
             if ((errMsg = ValidateFields()) == "")
             {
-                ClsMessaggio msg = new ClsMessaggio();
-                msg.Ip = "127.0.0.1";
-                msg.Port = "7777";
+                ClsMessaggio msg = new ClsMessaggio(GetLocalIPAddress(),7777.ToString());
 
-                ObjMex objMex = new ObjMex("Prova", new Player(TxtEmail.Text, TxtPassword.Text));
+                List<object> lst = new List<object>();
+                lst.Add(before_log_id);
+                lst.Add(new Player(TxtEmail.Text, TxtPassword.Text));
+                ObjMex objMex = new ObjMex("login-ask", lst);
                 msg.Messaggio = JsonConvert.SerializeObject(objMex);
                 client.Invia(msg);
             }

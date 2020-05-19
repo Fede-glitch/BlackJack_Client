@@ -89,6 +89,7 @@ namespace SOCKET_UDP
         public void chiudi()
         {
             canListen = false;
+            thAscolto.Abort();
             thAscolto.Join();
             socketServer.Close();
         }
