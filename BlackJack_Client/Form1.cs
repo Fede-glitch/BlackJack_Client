@@ -25,7 +25,7 @@ namespace BlackJack_Client
         public Form1()
         {
             InitializeComponent();
-            client = new clsClientUDP(IPAddress.Parse(GetLocalIPAddress()), 7777);
+            client = new clsClientUDP(IPAddress.Parse(NetUtilities.GetLocalIPAddress()), 7777);
             EstablishConn();
         }
 
@@ -33,12 +33,12 @@ namespace BlackJack_Client
         {
             if(istanziaServer)
             {
-                port = GetPort();
-                server = new clsServerUDP(IPAddress.Parse(GetLocalIPAddress()), port);
+                port = NetUtilities.GetPort();
+                server = new clsServerUDP(IPAddress.Parse(NetUtilities.GetLocalIPAddress()), port);
                 server.avvia();
                 server.datiRicevutiEvent += Server_datiRicevutiEvent;
             }
-            ClsMessaggio msg = new ClsMessaggio(GetLocalIPAddress(), port.ToString());
+            ClsMessaggio msg = new ClsMessaggio(NetUtilities.GetLocalIPAddress(), port.ToString());
             ObjMex objMex = new ObjMex("new-conn", null, port);
             msg.Messaggio = JsonConvert.SerializeObject(objMex);
             client.Invia(msg);
@@ -77,28 +77,6 @@ namespace BlackJack_Client
             }
         }
 
-        public static string GetLocalIPAddress()
-        {
-            IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (IPAddress ip in host.AddressList)
-            {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    return ip.ToString();
-                }
-            }
-            throw new Exception("Nessuna interfaccia di rete disponibile su questo computer");
-        }
-
-        private int GetPort()
-        {
-            int port = 7778;
-            while(isPortOpen(port))
-                port++;
-            return port;
-        }
-
-        private bool isPortOpen(int port) => System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().GetActiveUdpListeners().Any(p => p.Port == port);
 
         private void LblShowPwd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -113,7 +91,7 @@ namespace BlackJack_Client
             {
                 if (log_id != 0)
                 {
-                    ClsMessaggio msg = new ClsMessaggio(GetLocalIPAddress(), 7777.ToString());
+                    ClsMessaggio msg = new ClsMessaggio(NetUtilities.GetLocalIPAddress(), 7777.ToString());
                     List<object> lst = new List<object>();
                     lst.Add(log_id);
                     lst.Add(new Player(TxtEmail.Text, TxtPassword.Text));
