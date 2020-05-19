@@ -29,6 +29,64 @@ namespace BlackJack_Client
             EstablishConn();
         }
 
+        #region eventi form
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LblStatoConnessione.Text = "Non connesso";
+        }
+
+        private void LblShowPwd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LblShowPwd.Text = LblShowPwd.Text == "Mostra password" ? "Nascondi password" : "Mostra password";
+            TxtPassword.PasswordChar = TxtPassword.PasswordChar == '*' ? '\0' : '*';
+        }
+
+        private void BtnAccedi_Click(object sender, EventArgs e)
+        {
+            string errMsg;
+            if ((errMsg = ValidateFields()) == "")
+            {
+                if (log_id != 0)
+                {
+                    Regex regEmail = new Regex(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$");
+                    ClsMessaggio msg = new ClsMessaggio(NetUtilities.GetLocalIPAddress(), 7777.ToString());
+                    List<object> lst = new List<object>();
+                    lst.Add(log_id);
+                    if(regEmail.IsMatch(TxtEmail.Text))
+                        lst.Add(new Player(TxtEmail.Text, null, TxtPassword.Text));
+                    else
+                        lst.Add(new Player(null, TxtEmail.Text, TxtPassword.Text));
+                    ObjMex objMex = new ObjMex("login-ask", lst, null);
+                    msg.Messaggio = JsonConvert.SerializeObject(objMex);
+                    client.Invia(msg);
+                }
+                else
+                    MessageBox.Show("Connessione al server non ancora stabilita");
+            }
+            else
+                MessageBox.Show(errMsg);
+        }
+
+        private string ValidateFields()
+        {
+            Regex regPassword = new Regex(@"(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.{8,})");
+            if (!regPassword.IsMatch(TxtPassword.Text))
+            {
+                TxtPassword.Focus();
+                return "Password non valida";
+            }
+            return "";
+        }
+
+        private void LblNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        #endregion
+
+
         private void EstablishConn(bool istanziaServer = true)
         {
             if(istanziaServer)
@@ -67,7 +125,7 @@ namespace BlackJack_Client
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblStatoConnessione.Text = "Connesso";
-                    });                    
+                    });
                     break;
                 case "login-success":
                     //TODO
@@ -78,59 +136,5 @@ namespace BlackJack_Client
         }
 
 
-        private void LblShowPwd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            LblShowPwd.Text = LblShowPwd.Text == "Mostra password" ? "Nascondi password" : "Mostra password";
-            TxtPassword.PasswordChar = TxtPassword.PasswordChar == '*' ? '\0' : '*';
-        }
-
-        private void BtnAccedi_Click(object sender, EventArgs e)
-        {
-            string errMsg;
-            if ((errMsg = ValidateFields()) == "")
-            {
-                if (log_id != 0)
-                {
-                    ClsMessaggio msg = new ClsMessaggio(NetUtilities.GetLocalIPAddress(), 7777.ToString());
-                    List<object> lst = new List<object>();
-                    lst.Add(log_id);
-                    lst.Add(new Player(TxtEmail.Text, TxtPassword.Text));
-                    ObjMex objMex = new ObjMex("login-ask", lst, null);
-                    msg.Messaggio = JsonConvert.SerializeObject(objMex);
-                    client.Invia(msg);
-                }
-                else
-                    MessageBox.Show("Connessione al server non ancora stabilita");
-            }
-            else
-                MessageBox.Show(errMsg);
-        }
-
-        private string ValidateFields()
-        {
-            Regex regPassword = new Regex(@"(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.{8,})");
-            Regex regEmail = new Regex(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$");
-            if(!regEmail.IsMatch(TxtEmail.Text))
-            {
-                TxtEmail.Focus();
-                return "Email non valida";
-            }
-            if (!regPassword.IsMatch(TxtPassword.Text))
-            {
-                TxtPassword.Focus();
-                return "Password non valida";
-            }
-            return "";
-        }
-
-        private void LblNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            LblStatoConnessione.Text = "Non connesso";
-        }
     }
 }
