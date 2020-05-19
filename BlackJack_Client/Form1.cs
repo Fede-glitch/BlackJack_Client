@@ -63,6 +63,8 @@ namespace BlackJack_Client
                     MessageBox.Show("Connessione stabilita");
                     before_log_id = (int)msg.SingleData;
                     break;
+                case "login-success":
+                    //TODO
                 case "login-failed":
                     MessageBox.Show("Credenziali errate");
                     break;
