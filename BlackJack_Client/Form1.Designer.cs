@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.LblStatoConnessione = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnAccedi
@@ -145,11 +146,21 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "BENVENUTO";
             // 
+            // LblStatoConnessione
+            // 
+            this.LblStatoConnessione.AutoSize = true;
+            this.LblStatoConnessione.Location = new System.Drawing.Point(12, 219);
+            this.LblStatoConnessione.Name = "LblStatoConnessione";
+            this.LblStatoConnessione.Size = new System.Drawing.Size(156, 21);
+            this.LblStatoConnessione.TabIndex = 22;
+            this.LblStatoConnessione.Text = "Stato connessione";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 245);
+            this.Controls.Add(this.LblStatoConnessione);
             this.Controls.Add(this.BtnAccedi);
             this.Controls.Add(this.LblNewUser);
             this.Controls.Add(this.label5);
@@ -163,6 +174,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,6 +193,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblStatoConnessione;
     }
 }
 

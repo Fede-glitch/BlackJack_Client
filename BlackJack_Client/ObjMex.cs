@@ -20,17 +20,13 @@ namespace BlackJack_Client
         public List<dynamic> MultipleData { get => _multipleData; set => _multipleData = value; }
         public dynamic SingleData { get => _singleData; set => _singleData = value; }
 
-        //Quando si passano più valori
-        public ObjMex(string action, List<dynamic> data)
+        public ObjMex(string action, List<dynamic> multipleData, dynamic singleData)
         {
             this._action = action;
-            this._multipleData = data;
+            this._singleData = singleData;
+            this._multipleData = multipleData;
         }
-        //Quando si passa un singolo valore
-        public ObjMex(string action, dynamic data)
-        {
-            this._action = action;
-            this._singleData = data;
-        }
+
+        public ObjMex() { }
     }
 }

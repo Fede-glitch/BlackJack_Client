@@ -20,7 +20,8 @@ namespace BlackJack_Client
         clsClientUDP client;
         clsServerUDP server;
         Timer timerConn;
-        int before_log_id;
+        int log_id = 0;
+        int port = 0;
         public Form1()
         {
             InitializeComponent();
@@ -28,40 +29,45 @@ namespace BlackJack_Client
             EstablishConn();
         }
 
-        private void EstablishConn()
+        private void EstablishConn(bool istanziaServer = true)
         {
-            int port = GetPort();
+            if(istanziaServer)
+            {
+                port = GetPort();
+                server = new clsServerUDP(IPAddress.Parse(GetLocalIPAddress()), port);
+                server.avvia();
+                server.datiRicevutiEvent += Server_datiRicevutiEvent;
+            }
             ClsMessaggio msg = new ClsMessaggio(GetLocalIPAddress(), port.ToString());
-            ObjMex objMex = new ObjMex("new-conn", port);
+            ObjMex objMex = new ObjMex("new-conn", null, port);
             msg.Messaggio = JsonConvert.SerializeObject(objMex);
             client.Invia(msg);
-            server = new clsServerUDP(IPAddress.Parse(GetLocalIPAddress()), port);
-            server.avvia();
             timerConn = new Timer();
             timerConn.Interval = 5000;
             timerConn.Tick += TimerConn_Tick;
             timerConn.Start();
-            server.datiRicevutiEvent += Server_datiRicevutiEvent;
         }
 
         private void TimerConn_Tick(object sender, EventArgs e)
         {
             timerConn.Stop();
-            //server.chiudi();
-            MessageBox.Show("Connessione fallita al server");
-            //EstablishConn();
+            EstablishConn(istanziaServer: false);
         }
 
         private void Server_datiRicevutiEvent(ClsMessaggio message)
         {
             string[] ricevuti = message.toArray();
-            ObjMex msg = JsonConvert.DeserializeObject<ObjMex>(ricevuti[2]);
+            ObjMex msg = new ObjMex(null, null, null);
+            msg = JsonConvert.DeserializeObject<ObjMex>(ricevuti[2]);
             switch (msg.Action)
             {
                 case "conn-established":
                     timerConn.Stop();
-                    MessageBox.Show("Connessione stabilita");
-                    before_log_id = (int)msg.SingleData;
+                    log_id = (int)msg.SingleData;
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblStatoConnessione.Text = "Connesso";
+                    });                    
                     break;
                 case "login-success":
                     //TODO
@@ -119,14 +125,18 @@ namespace BlackJack_Client
             string errMsg;
             if ((errMsg = ValidateFields()) == "")
             {
-                ClsMessaggio msg = new ClsMessaggio(GetLocalIPAddress(),7777.ToString());
-
-                List<object> lst = new List<object>();
-                lst.Add(before_log_id);
-                lst.Add(new Player(TxtEmail.Text, TxtPassword.Text));
-                ObjMex objMex = new ObjMex("login-ask", lst);
-                msg.Messaggio = JsonConvert.SerializeObject(objMex);
-                client.Invia(msg);
+                if (log_id != 0)
+                {
+                    ClsMessaggio msg = new ClsMessaggio(GetLocalIPAddress(), 7777.ToString());
+                    List<object> lst = new List<object>();
+                    lst.Add(log_id);
+                    lst.Add(new Player(TxtEmail.Text, TxtPassword.Text));
+                    ObjMex objMex = new ObjMex("login-ask", lst);
+                    msg.Messaggio = JsonConvert.SerializeObject(objMex);
+                    client.Invia(msg);
+                }
+                else
+                    MessageBox.Show("Connessione al server non ancora stabilita");
             }
             else
                 MessageBox.Show(errMsg);
@@ -152,6 +162,11 @@ namespace BlackJack_Client
         private void LblNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LblStatoConnessione.Text = "Non connesso";
         }
     }
 }
