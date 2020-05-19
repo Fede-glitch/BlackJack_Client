@@ -98,21 +98,7 @@ namespace BlackJack_Client
             return port;
         }
 
-        private bool isPortOpen(int port)
-        {
-            using (TcpClient tcpClient = new TcpClient())
-            {
-                try
-                {
-                    tcpClient.Connect("127.0.0.1", port);
-                    return true;
-                }
-                catch (Exception)
-                {
-                    return false;
-                }
-            }
-        }
+        private bool isPortOpen(int port) => System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().GetActiveUdpListeners().Any(p => p.Port == port);
 
         private void LblShowPwd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -131,7 +117,7 @@ namespace BlackJack_Client
                     List<object> lst = new List<object>();
                     lst.Add(log_id);
                     lst.Add(new Player(TxtEmail.Text, TxtPassword.Text));
-                    ObjMex objMex = new ObjMex("login-ask", lst);
+                    ObjMex objMex = new ObjMex("login-ask", lst, null);
                     msg.Messaggio = JsonConvert.SerializeObject(objMex);
                     client.Invia(msg);
                 }
