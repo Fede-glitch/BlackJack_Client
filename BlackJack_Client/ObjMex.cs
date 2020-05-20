@@ -13,18 +13,15 @@ namespace BlackJack_Client
     internal class ObjMex
     {
         private string _action;
-        private List<dynamic> _multipleData;
-        private dynamic _singleData;
+        private List<object> _data;
 
         public string Action { get => _action; set => _action = value; }
-        public List<dynamic> MultipleData { get => _multipleData; set => _multipleData = value; }
-        public dynamic SingleData { get => _singleData; set => _singleData = value; }
+        public List<object> Data { get => _data; set => _data = value; }
 
-        public ObjMex(string action, List<dynamic> multipleData, dynamic singleData)
+        public ObjMex(string action, List<object> multipleData)
         {
             this._action = action;
-            this._singleData = singleData;
-            this._multipleData = multipleData;
+            this._data = multipleData;
         }
 
         public ObjMex() { }

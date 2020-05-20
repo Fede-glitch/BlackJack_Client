@@ -11,3 +11,4 @@ D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.csproj
 D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.csproj.CopyComplete
 D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.exe
 D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.pdb
+D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.FrmLobby.resources

@@ -57,7 +57,7 @@ namespace BlackJack_Client
                         lst.Add(new Player(TxtEmail.Text, null, TxtPassword.Text));
                     else
                         lst.Add(new Player(null, TxtEmail.Text, TxtPassword.Text));
-                    ObjMex objMex = new ObjMex("login-ask", lst, null);
+                    ObjMex objMex = new ObjMex("login-ask", lst);
                     msg.Messaggio = JsonConvert.SerializeObject(objMex);
                     client.Invia(msg);
                 }
@@ -97,7 +97,9 @@ namespace BlackJack_Client
                 server.datiRicevutiEvent += Server_datiRicevutiEvent;
             }
             ClsMessaggio msg = new ClsMessaggio(NetUtilities.GetLocalIPAddress(), port.ToString());
-            ObjMex objMex = new ObjMex("new-conn", null, port);
+            List<object> lst = new List<object>();
+            lst.Add(port);
+            ObjMex objMex = new ObjMex("new-conn", lst);
             msg.Messaggio = JsonConvert.SerializeObject(objMex);
             client.Invia(msg);
             timerConn = new Timer();
@@ -115,22 +117,32 @@ namespace BlackJack_Client
         private void Server_datiRicevutiEvent(ClsMessaggio message)
         {
             string[] ricevuti = message.toArray();
-            ObjMex msg = new ObjMex(null, null, null);
+            ObjMex msg = new ObjMex(null, null);
             msg = JsonConvert.DeserializeObject<ObjMex>(ricevuti[2]);
             switch (msg.Action)
             {
                 case "conn-established":
                     timerConn.Stop();
-                    log_id = (int)msg.SingleData;
+                    log_id = Convert.ToInt32(msg.Data[0]);
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblStatoConnessione.Text = "Connesso";
                     });
                     break;
                 case "login-success":
-                    //TODO
+                    //server.datiRicevutiEvent -= Server_datiRicevutiEvent;
+                    FrmLobby lobby = new FrmLobby(client, server, JsonConvert.DeserializeObject<Player>(msg.Data[0].ToString()), log_id);
+                    lobby.ShowDialog();
+                    break;
                 case "login-failed":
                     MessageBox.Show("Credenziali errate");
+                    break;
+                case "server-shutdown":
+                    MessageBox.Show("Connessione al server persa");
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblStatoConnessione.Text = "Non connesso";
+                    });
                     break;
             }
         }

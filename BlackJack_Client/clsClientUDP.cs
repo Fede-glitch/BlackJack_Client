@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Sockets;
 namespace SOCKET_UDP
 {
-    class clsClientUDP
+    public class clsClientUDP
     {
         const int MAX_BYTE = 1024;
 
