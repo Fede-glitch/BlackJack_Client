@@ -50,16 +50,13 @@ namespace BlackJack_Client
                 if (log_id != 0)
                 {
                     Regex regEmail = new Regex(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$");
-                    ClsMessaggio msg = new ClsMessaggio(NetUtilities.GetLocalIPAddress(), 7777.ToString());
                     List<object> lst = new List<object>();
                     lst.Add(log_id);
                     if(regEmail.IsMatch(TxtEmail.Text))
                         lst.Add(new Player(TxtEmail.Text, null, TxtPassword.Text));
                     else
                         lst.Add(new Player(null, TxtEmail.Text, TxtPassword.Text));
-                    ObjMex objMex = new ObjMex("login-ask", lst);
-                    msg.Messaggio = JsonConvert.SerializeObject(objMex);
-                    client.Invia(msg);
+                    client.Invia(GeneraMessaggio("login-ask",lst));
                 }
                 else
                     MessageBox.Show("Connessione al server non ancora stabilita");
@@ -81,7 +78,7 @@ namespace BlackJack_Client
 
         private void LblNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            //TODO Creazione utenti
         }
 
         #endregion
@@ -96,12 +93,9 @@ namespace BlackJack_Client
                 server.avvia();
                 server.datiRicevutiEvent += Server_datiRicevutiEvent;
             }
-            ClsMessaggio msg = new ClsMessaggio(NetUtilities.GetLocalIPAddress(), port.ToString());
             List<object> lst = new List<object>();
             lst.Add(port);
-            ObjMex objMex = new ObjMex("new-conn", lst);
-            msg.Messaggio = JsonConvert.SerializeObject(objMex);
-            client.Invia(msg);
+            client.Invia(GeneraMessaggio("new-conn",lst));
             timerConn = new Timer();
             timerConn.Interval = 5000;
             timerConn.Tick += TimerConn_Tick;
@@ -147,6 +141,12 @@ namespace BlackJack_Client
             }
         }
 
-
+        public ClsMessaggio GeneraMessaggio(string action, List<object> data)
+        {
+            ClsMessaggio toSend = new ClsMessaggio();
+            ObjMex objMex = new ObjMex(action, data);
+            toSend.Messaggio = JsonConvert.SerializeObject(objMex);
+            return toSend;
+        }
     }
 }
