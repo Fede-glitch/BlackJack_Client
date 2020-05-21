@@ -20,7 +20,8 @@ namespace BlackJack_Client
         clsClientUDP client;
         clsServerUDP server;
         int log_id;
-        public FrmLobby(clsClientUDP client, clsServerUDP server, Player player, int log_id)
+
+        public FrmLobby(clsClientUDP client, clsServerUDP server, Player player, int posizione_tavolo, int log_id)
         {
             InitializeComponent();
             this.player = player;
@@ -37,19 +38,11 @@ namespace BlackJack_Client
             msg = JsonConvert.DeserializeObject<ObjMex>(ricevuti[2]);
             switch (msg.Action)
             {
-                default:
+                case "new-cards":
+                    Place p = msg.Data[0] as Place;
+                    //TODO implementare parte grafica prima
                     break;
             }
-        }
-
-        private void BtnPlay_Click(object sender, EventArgs e)
-        {
-            ClsMessaggio msg = new ClsMessaggio(NetUtilities.GetLocalIPAddress(), 7777.ToString());
-            List<object> lst = new List<object>();
-            lst.Add(log_id);
-            ObjMex objMex = new ObjMex("join-lobby",lst);
-            msg.Messaggio = JsonConvert.SerializeObject(objMex);
-            client.Invia(msg);
         }
     }
 }

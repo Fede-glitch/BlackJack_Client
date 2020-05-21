@@ -125,11 +125,18 @@ namespace BlackJack_Client
                     break;
                 case "login-success":
                     //server.datiRicevutiEvent -= Server_datiRicevutiEvent;
-                    FrmLobby lobby = new FrmLobby(client, server, JsonConvert.DeserializeObject<Player>(msg.Data[0].ToString()), log_id);
+                    FrmLobby lobby = new FrmLobby(client,
+                                                  server,
+                                                  JsonConvert.DeserializeObject<Player>(msg.Data[0].ToString()),
+                                                  Convert.ToInt32(msg.Data[1]),
+                                                  log_id);
                     lobby.ShowDialog();
                     break;
                 case "login-failed":
                     MessageBox.Show("Credenziali errate");
+                    break;
+                case "lobby-full":
+                    MessageBox.Show("Lobby al momento piena, riprova più tardi");
                     break;
                 case "server-shutdown":
                     MessageBox.Show("Connessione al server persa");
