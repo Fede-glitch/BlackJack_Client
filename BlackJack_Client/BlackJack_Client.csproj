@@ -66,7 +66,7 @@
     <Compile Include="FrmLobby.Designer.cs">
       <DependentUpon>FrmLobby.cs</DependentUpon>
     </Compile>
-    <Compile Include="NetUtilities.cs" />
+    <Compile Include="Net.cs" />
     <Compile Include="ObjMex.cs" />
     <Compile Include="Place.cs" />
     <Compile Include="Program.cs" />

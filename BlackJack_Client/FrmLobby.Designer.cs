@@ -29,80 +29,170 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.LblPlayer1 = new System.Windows.Forms.Label();
+            this.LblPlayer2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnEsci = new System.Windows.Forms.Button();
+            this.BtnCarta = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.LblPlayer3 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.LblPlayer4 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(407, 20);
+            this.label1.Location = new System.Drawing.Point(170, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Banco";
             // 
-            // label2
+            // LblPlayer1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 401);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Giocatore 1";
+            this.LblPlayer1.AutoSize = true;
+            this.LblPlayer1.Location = new System.Drawing.Point(13, 15);
+            this.LblPlayer1.Name = "LblPlayer1";
+            this.LblPlayer1.Size = new System.Drawing.Size(82, 17);
+            this.LblPlayer1.TabIndex = 1;
+            this.LblPlayer1.Text = "Giocatore 1";
             // 
-            // label3
+            // LblPlayer2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(283, 401);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Giocatore 2";
+            this.LblPlayer2.AutoSize = true;
+            this.LblPlayer2.Location = new System.Drawing.Point(23, 15);
+            this.LblPlayer2.Name = "LblPlayer2";
+            this.LblPlayer2.Size = new System.Drawing.Size(82, 17);
+            this.LblPlayer2.TabIndex = 2;
+            this.LblPlayer2.Text = "Giocatore 2";
             // 
-            // label4
+            // panel1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(522, 401);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 21);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Giocatore 3";
+            this.panel1.Controls.Add(this.LblPlayer1);
+            this.panel1.Location = new System.Drawing.Point(12, 189);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 239);
+            this.panel1.TabIndex = 6;
             // 
-            // label5
+            // BtnEsci
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(790, 401);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Giocatore 4";
+            this.BtnEsci.Enabled = false;
+            this.BtnEsci.Location = new System.Drawing.Point(218, 459);
+            this.BtnEsci.Name = "BtnEsci";
+            this.BtnEsci.Size = new System.Drawing.Size(169, 42);
+            this.BtnEsci.TabIndex = 12;
+            this.BtnEsci.Text = "Esci";
+            this.BtnEsci.UseVisualStyleBackColor = true;
+            // 
+            // BtnCarta
+            // 
+            this.BtnCarta.Enabled = false;
+            this.BtnCarta.Location = new System.Drawing.Point(28, 459);
+            this.BtnCarta.Name = "BtnCarta";
+            this.BtnCarta.Size = new System.Drawing.Size(184, 42);
+            this.BtnCarta.TabIndex = 11;
+            this.BtnCarta.Text = "Carta";
+            this.BtnCarta.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.LblPlayer2);
+            this.panel2.Location = new System.Drawing.Point(235, 189);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 239);
+            this.panel2.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.LblPlayer3);
+            this.panel3.Location = new System.Drawing.Point(463, 189);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 239);
+            this.panel3.TabIndex = 8;
+            // 
+            // LblPlayer3
+            // 
+            this.LblPlayer3.AutoSize = true;
+            this.LblPlayer3.Location = new System.Drawing.Point(23, 15);
+            this.LblPlayer3.Name = "LblPlayer3";
+            this.LblPlayer3.Size = new System.Drawing.Size(82, 17);
+            this.LblPlayer3.TabIndex = 2;
+            this.LblPlayer3.Text = "Giocatore 3";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.LblPlayer4);
+            this.panel4.Location = new System.Drawing.Point(698, 189);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 239);
+            this.panel4.TabIndex = 9;
+            // 
+            // LblPlayer4
+            // 
+            this.LblPlayer4.AutoSize = true;
+            this.LblPlayer4.Location = new System.Drawing.Point(23, 15);
+            this.LblPlayer4.Name = "LblPlayer4";
+            this.LblPlayer4.Size = new System.Drawing.Size(82, 17);
+            this.LblPlayer4.TabIndex = 2;
+            this.LblPlayer4.Text = "Giocatore 4";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Location = new System.Drawing.Point(235, 12);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(392, 155);
+            this.panel5.TabIndex = 10;
             // 
             // FrmLobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 450);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(929, 513);
+            this.Controls.Add(this.BtnEsci);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.BtnCarta);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "FrmLobby";
             this.Text = "FrmLobby";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label LblPlayer1;
+        private System.Windows.Forms.Label LblPlayer2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button BtnEsci;
+        private System.Windows.Forms.Button BtnCarta;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label LblPlayer3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label LblPlayer4;
+        private System.Windows.Forms.Panel panel5;
     }
 }

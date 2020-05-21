@@ -22,6 +22,11 @@ namespace BlackJack_Client
             this._posizione = pos;
         }
 
+        internal Place(int pos)
+        {
+            this._posizione = pos;
+        }
+
         //ritorna il valore e se è blackjack
         public (int, bool) GetMano()
         {
