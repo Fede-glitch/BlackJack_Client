@@ -17,7 +17,7 @@ namespace BlackJack_Client
         private clsServerUDP _server;
         private int port;
         public int log_id;
-        private Timer timerConn;
+        public Timer timerConn;
 
         public clsClientUDP Client { get => _client; set => _client = value; }
         public clsServerUDP Server { get => _server; set => _server = value; }
@@ -29,37 +29,11 @@ namespace BlackJack_Client
             msg = JsonConvert.DeserializeObject<ObjMex>(ricevuti[2]);
             switch (msg.Action)
             {
-                case "conn-established":
-                    timerConn.Stop();
-                    log_id = Convert.ToInt32(msg.Data[0]);
-                    /*BeginInvoke((MethodInvoker)delegate
-                    {
-                        LblStatoConnessione.Text = "Connesso";
-                    });*/
-                    break;
-                case "login-success":
-                    //server.datiRicevutiEvent -= Server_datiRicevutiEvent;
-                    FrmLobby lobby = new FrmLobby(this,
-                                                  JsonConvert.DeserializeObject<Player>(msg.Data[0].ToString()),
-                                                  Convert.ToInt32(msg.Data[1]),
-                                                  log_id);
-                    lobby.ShowDialog();
-                    break;
                 case "login-failed":
                     MessageBox.Show("Credenziali errate");
                     break;
                 case "lobby-full":
                     MessageBox.Show("Lobby al momento piena, riprova più tardi");
-                    break;
-                case "server-shutdown":
-                    MessageBox.Show("Connessione al server persa");
-                    /*BeginInvoke((MethodInvoker)delegate
-                    {
-                        LblStatoConnessione.Text = "Non connesso";
-                    });*/
-                    break;
-                default:
-                    Console.ReadKey();
                     break;
             }
 

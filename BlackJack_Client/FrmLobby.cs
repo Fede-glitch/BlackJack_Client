@@ -11,6 +11,7 @@ using System.Net;
 using System.Net.Sockets;
 using SOCKET_UDP;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BlackJack_Client
 {
@@ -18,17 +19,27 @@ namespace BlackJack_Client
     {
         Player player;
         int log_id;
+        int pos_tavolo;
         List<Place> posti;
         Net interfacciaRete;
+        public FrmLobby() { InitializeComponent(); }
 
-        public FrmLobby(Net net, Player player, int posizione_tavolo, int log_id)
+        public FrmLobby(ref Net net, Player player, int posizione_tavolo, int log_id)
         {
             InitializeComponent();
             this.player = player;
             this.interfacciaRete = net;
             this.log_id = log_id;
+            this.pos_tavolo = posizione_tavolo;
+        }
+
+        public void Assegnavariabili(ref Net net, Player player, int posizione_tavolo, int log_id)
+        {
+            this.player = player;
+            this.interfacciaRete = net;
+            this.log_id = log_id;
+            this.pos_tavolo = posizione_tavolo;
             IstanziaPosti();
-            interfacciaRete.Client.Invia(GeneraMessaggio("prova", null));
             interfacciaRete.Server.datiRicevutiEvent += Server_datiRicevutiEventLobby;
         }
 
@@ -47,14 +58,29 @@ namespace BlackJack_Client
             switch (msg.Action)
             {
                 case "new-cards":
-                    Place p = msg.Data[0] as Place;
-                    Place postoLst = posti.Find(pl => pl.Posizione == p.Posizione);
-                    postoLst = p;
+                    dynamic appoggio = JsonConvert.DeserializeObject(msg.Data[0].ToString());
+                    List<Card> carte = JsonConvert.DeserializeObject<List<Card>>(appoggio.Carte.ToString());
+                    int pos = Convert.ToInt32(appoggio.Posizione);
+                    Place p = new Place(carte, pos);
+
+                    for (int i = 0; i < posti.Count; i++)
+                    {
+                        if(posti[0].Posizione == p.Posizione)
+                        {
+                            posti[0] = p;
+                            break;
+                        }
+                    }
                     break;
                 case "your-turn":
                     //TODO abilita bottoni
-                    BtnCarta.Enabled = true;
-                    BtnEsci.Enabled = true;
+
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        BtnCarta.Enabled = true;
+                        BtnEsci.Enabled = true;
+                    });
+                    
                     break;
             }
         }
@@ -65,6 +91,11 @@ namespace BlackJack_Client
             ObjMex objMex = new ObjMex(action, data);
             toSend.Messaggio = JsonConvert.SerializeObject(objMex);
             return toSend;
+        }
+
+        private void FrmLobby_Load(object sender, EventArgs e)
+        {
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
         }
     }
 }

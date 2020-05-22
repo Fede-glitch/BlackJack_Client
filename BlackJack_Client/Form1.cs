@@ -24,6 +24,42 @@ namespace BlackJack_Client
             interfacciaRete = new Net();
             interfacciaRete.Client = new clsClientUDP(IPAddress.Parse(Net.GetLocalIPAddress()), 7777);
             interfacciaRete.EstablishConn();
+            interfacciaRete.Server.datiRicevutiEvent += Server_DatiRicevutiFormLogin;  
+        }
+
+        private void Server_DatiRicevutiFormLogin(ClsMessaggio message)
+        {
+            string[] ricevuti = message.toArray();
+            ObjMex msg = new ObjMex(null, null);
+            msg = JsonConvert.DeserializeObject<ObjMex>(ricevuti[2]);
+            switch (msg.Action)
+            {
+                case "login-success":
+                    FrmLobby lobby = new FrmLobby(ref interfacciaRete,
+                                                JsonConvert.DeserializeObject<Player>(msg.Data[0].ToString()),
+                                                Convert.ToInt32(msg.Data[1]),
+                                                interfacciaRete.log_id);
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        lobby.Show();
+                    });
+                    break;
+                case "server-shutdown":
+                    MessageBox.Show("Connessione al server persa");
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblStatoConnessione.Text = "Non connesso";
+                    });
+                    break;
+                case "conn-established":
+                    interfacciaRete.timerConn.Stop();
+                    interfacciaRete.log_id = Convert.ToInt32(msg.Data[0]);
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblStatoConnessione.Text = "Connesso";
+                    });
+                    break;
+            }
         }
 
         #region eventi form
@@ -81,6 +117,8 @@ namespace BlackJack_Client
         }
 
         #endregion
+
+
 
        
     }

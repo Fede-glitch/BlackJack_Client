@@ -22,6 +22,12 @@ namespace BlackJack_Client
             this._posizione = pos;
         }
 
+        internal Place(List<Card> Carte, int Posizione)
+        {
+            this._carte = Carte;
+            this._posizione = Posizione;
+        }
+
         internal Place(int pos)
         {
             this._posizione = pos;
