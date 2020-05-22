@@ -21,6 +21,7 @@ namespace BlackJack_Client
         int log_id;
         int pos_tavolo;
         List<Place> posti;
+        Place dealer;
         Net interfacciaRete;
         public FrmLobby() { InitializeComponent(); }
 
@@ -31,6 +32,9 @@ namespace BlackJack_Client
             this.interfacciaRete = net;
             this.log_id = log_id;
             this.pos_tavolo = posizione_tavolo;
+            this.dealer = new Place();
+            IstanziaPosti();
+            interfacciaRete.Server.datiRicevutiEvent += Server_datiRicevutiEventLobby;
         }
 
         public void Assegnavariabili(ref Net net, Player player, int posizione_tavolo, int log_id)
@@ -65,15 +69,45 @@ namespace BlackJack_Client
 
                     for (int i = 0; i < posti.Count; i++)
                     {
-                        if(posti[0].Posizione == p.Posizione)
+                        if(posti[i].Posizione == p.Posizione)
                         {
-                            posti[0] = p;
+                            posti[i] = p;
+                            BeginInvoke((MethodInvoker)delegate
+                            {
+                                Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
+                            });
+                            foreach (Card carta in posti[i].Carte)
+                            {
+                                BeginInvoke((MethodInvoker)delegate
+                                {
+                                    Controls["panel" + pos].Controls["LblCarte" + pos].Text += carta.Seme.ToString() + carta.Numero + "\n";
+                                    Application.DoEvents();
+                                });
+                            }
                             break;
                         }
                     }
+                    
+                    break;
+                case "new-cards-dealer":
+                    appoggio = JsonConvert.DeserializeObject(msg.Data[0].ToString());
+                    carte = JsonConvert.DeserializeObject<List<Card>>(appoggio.Carte.ToString());
+                    dealer.Carte = carte;
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        Controls["panel5"].Controls["LblDealer"].Text = "";
+                        Application.DoEvents();
+                    });
+                    foreach (Card carta in dealer.Carte)
+                    {
+                        BeginInvoke((MethodInvoker)delegate
+                        {
+                            Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
+                            Application.DoEvents();
+                        });
+                    }
                     break;
                 case "your-turn":
-                    //TODO abilita bottoni
 
                     BeginInvoke((MethodInvoker)delegate
                     {
@@ -96,6 +130,14 @@ namespace BlackJack_Client
         private void FrmLobby_Load(object sender, EventArgs e)
         {
             interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
+        }
+
+        private void BtnCarta_Click(object sender, EventArgs e)
+        {
+            List<object> lst = new List<object>();
+            lst.Add(pos_tavolo);
+            lst.Add(log_id);
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-hit", lst));
         }
     }
 }

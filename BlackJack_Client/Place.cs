@@ -33,6 +33,11 @@ namespace BlackJack_Client
             this._posizione = pos;
         }
 
+        internal Place() 
+        {
+            this._carte = new List<Card>();
+        }
+
         //ritorna il valore e se è blackjack
         public (int, bool) GetMano()
         {

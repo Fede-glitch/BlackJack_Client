@@ -40,6 +40,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.LblPlayer4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.LblCarte1 = new System.Windows.Forms.Label();
+            this.LblCarte2 = new System.Windows.Forms.Label();
+            this.LblCarte3 = new System.Windows.Forms.Label();
+            this.LblCarte4 = new System.Windows.Forms.Label();
+            this.LblDealer = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -76,6 +81,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.LblCarte1);
             this.panel1.Controls.Add(this.LblPlayer1);
             this.panel1.Location = new System.Drawing.Point(12, 189);
             this.panel1.Name = "panel1";
@@ -101,9 +107,11 @@
             this.BtnCarta.TabIndex = 11;
             this.BtnCarta.Text = "Carta";
             this.BtnCarta.UseVisualStyleBackColor = true;
+            this.BtnCarta.Click += new System.EventHandler(this.BtnCarta_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.LblCarte2);
             this.panel2.Controls.Add(this.LblPlayer2);
             this.panel2.Location = new System.Drawing.Point(235, 189);
             this.panel2.Name = "panel2";
@@ -112,6 +120,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.LblCarte3);
             this.panel3.Controls.Add(this.LblPlayer3);
             this.panel3.Location = new System.Drawing.Point(463, 189);
             this.panel3.Name = "panel3";
@@ -129,6 +138,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.LblCarte4);
             this.panel4.Controls.Add(this.LblPlayer4);
             this.panel4.Location = new System.Drawing.Point(698, 189);
             this.panel4.Name = "panel4";
@@ -146,11 +156,52 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.LblDealer);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Location = new System.Drawing.Point(235, 12);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(392, 155);
             this.panel5.TabIndex = 10;
+            // 
+            // LblCarte1
+            // 
+            this.LblCarte1.AutoSize = true;
+            this.LblCarte1.Location = new System.Drawing.Point(13, 60);
+            this.LblCarte1.Name = "LblCarte1";
+            this.LblCarte1.Size = new System.Drawing.Size(0, 17);
+            this.LblCarte1.TabIndex = 2;
+            // 
+            // LblCarte2
+            // 
+            this.LblCarte2.AutoSize = true;
+            this.LblCarte2.Location = new System.Drawing.Point(23, 60);
+            this.LblCarte2.Name = "LblCarte2";
+            this.LblCarte2.Size = new System.Drawing.Size(0, 17);
+            this.LblCarte2.TabIndex = 3;
+            // 
+            // LblCarte3
+            // 
+            this.LblCarte3.AutoSize = true;
+            this.LblCarte3.Location = new System.Drawing.Point(23, 60);
+            this.LblCarte3.Name = "LblCarte3";
+            this.LblCarte3.Size = new System.Drawing.Size(0, 17);
+            this.LblCarte3.TabIndex = 4;
+            // 
+            // LblCarte4
+            // 
+            this.LblCarte4.AutoSize = true;
+            this.LblCarte4.Location = new System.Drawing.Point(23, 60);
+            this.LblCarte4.Name = "LblCarte4";
+            this.LblCarte4.Size = new System.Drawing.Size(0, 17);
+            this.LblCarte4.TabIndex = 5;
+            // 
+            // LblDealer
+            // 
+            this.LblDealer.AutoSize = true;
+            this.LblDealer.Location = new System.Drawing.Point(41, 51);
+            this.LblDealer.Name = "LblDealer";
+            this.LblDealer.Size = new System.Drawing.Size(0, 17);
+            this.LblDealer.TabIndex = 1;
             // 
             // FrmLobby
             // 
@@ -195,5 +246,10 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label LblPlayer4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label LblCarte1;
+        private System.Windows.Forms.Label LblCarte2;
+        private System.Windows.Forms.Label LblCarte3;
+        private System.Windows.Forms.Label LblCarte4;
+        private System.Windows.Forms.Label LblDealer;
     }
 }
