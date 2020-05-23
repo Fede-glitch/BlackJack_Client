@@ -71,11 +71,6 @@ namespace BlackJack_Client
             TxtPassword.Text = "Password1";
         }
 
-        private void LblShowPwd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            LblShowPwd.Text = LblShowPwd.Text == "Mostra password" ? "Nascondi password" : "Mostra password";
-            TxtPassword.PasswordChar = TxtPassword.PasswordChar == '*' ? '\0' : '*';
-        }
 
         private void BtnAccedi_Click(object sender, EventArgs e)
         {
@@ -111,15 +106,34 @@ namespace BlackJack_Client
             return "";
         }
 
+        
         private void LblNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //TODO Creazione utenti
+            //on Btnregistrati
         }
+        
 
         #endregion
+        #region UI CONTROLS CODE
+        private void pcbShowHide_Click(object sender, EventArgs e)
+        {
+            TxtPassword.PasswordChar = TxtPassword.PasswordChar == '•' ? '\0' : '•';
+            pcbShowHide.Image = (TxtPassword.PasswordChar != '•') ? Properties.Resources.HiddenPassword : Properties.Resources.VisiblePassword;
+            pcbShowHide.Refresh();
+        }
+        #endregion
 
+        private void TxtEmail_Leave(object sender, EventArgs e)
+        {
+            if (TxtEmail.Text == "")
+                TxtEmail.Text = "Username";
+        }
 
-
-       
+        private void TxtEmail_Enter(object sender, EventArgs e)
+        {
+            if (TxtEmail.Text == "Username")
+                TxtEmail.Text = "";
+        }
     }
 }

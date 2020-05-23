@@ -29,152 +29,190 @@
         private void InitializeComponent()
         {
             this.BtnAccedi = new System.Windows.Forms.Button();
-            this.LblNewUser = new System.Windows.Forms.LinkLabel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.LblForgotPwd = new System.Windows.Forms.LinkLabel();
-            this.LblShowPwd = new System.Windows.Forms.LinkLabel();
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.TxtEmail = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBenvenuto = new System.Windows.Forms.Label();
             this.LblStatoConnessione = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lineaUsername = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pcbLogoPassword = new System.Windows.Forms.PictureBox();
+            this.pcbLogoUsername = new System.Windows.Forms.PictureBox();
+            this.pcbShowHide = new System.Windows.Forms.PictureBox();
+            this.pnlImg = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogoPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogoUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbShowHide)).BeginInit();
+            this.pnlImg.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnAccedi
             // 
-            this.BtnAccedi.Location = new System.Drawing.Point(206, 165);
+            this.BtnAccedi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAccedi.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 25.81132F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAccedi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BtnAccedi.Location = new System.Drawing.Point(174, 566);
+            this.BtnAccedi.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAccedi.Name = "BtnAccedi";
-            this.BtnAccedi.Size = new System.Drawing.Size(144, 51);
+            this.BtnAccedi.Size = new System.Drawing.Size(539, 57);
             this.BtnAccedi.TabIndex = 21;
-            this.BtnAccedi.Text = "Accedi";
+            this.BtnAccedi.Text = "Login";
             this.BtnAccedi.UseVisualStyleBackColor = true;
             this.BtnAccedi.Click += new System.EventHandler(this.BtnAccedi_Click);
             // 
-            // LblNewUser
-            // 
-            this.LblNewUser.AutoSize = true;
-            this.LblNewUser.Location = new System.Drawing.Point(128, 182);
-            this.LblNewUser.Name = "LblNewUser";
-            this.LblNewUser.Size = new System.Drawing.Size(68, 17);
-            this.LblNewUser.TabIndex = 20;
-            this.LblNewUser.TabStop = true;
-            this.LblNewUser.Text = "Clicca qui";
-            this.LblNewUser.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LblNewUser_LinkClicked);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 17);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Nuovo utente?";
-            // 
-            // LblForgotPwd
-            // 
-            this.LblForgotPwd.AutoSize = true;
-            this.LblForgotPwd.LinkColor = System.Drawing.Color.Red;
-            this.LblForgotPwd.Location = new System.Drawing.Point(30, 138);
-            this.LblForgotPwd.Name = "LblForgotPwd";
-            this.LblForgotPwd.Size = new System.Drawing.Size(153, 17);
-            this.LblForgotPwd.TabIndex = 18;
-            this.LblForgotPwd.TabStop = true;
-            this.LblForgotPwd.Text = "Password dimenticata?";
-            // 
-            // LblShowPwd
-            // 
-            this.LblShowPwd.AutoSize = true;
-            this.LblShowPwd.Location = new System.Drawing.Point(235, 138);
-            this.LblShowPwd.Name = "LblShowPwd";
-            this.LblShowPwd.Size = new System.Drawing.Size(115, 17);
-            this.LblShowPwd.TabIndex = 17;
-            this.LblShowPwd.TabStop = true;
-            this.LblShowPwd.Text = "Mostra password";
-            this.LblShowPwd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LblShowPwd_LinkClicked);
-            // 
             // TxtPassword
             // 
-            this.TxtPassword.Location = new System.Drawing.Point(159, 113);
+            this.TxtPassword.BackColor = System.Drawing.Color.Black;
+            this.TxtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtPassword.Font = new System.Drawing.Font("Avenir LT Std 45 Book", 27.84906F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TxtPassword.Location = new System.Drawing.Point(238, 499);
+            this.TxtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.PasswordChar = '*';
-            this.TxtPassword.Size = new System.Drawing.Size(191, 22);
+            this.TxtPassword.PasswordChar = '•';
+            this.TxtPassword.Size = new System.Drawing.Size(475, 50);
             this.TxtPassword.TabIndex = 16;
+            this.TxtPassword.Text = "Password";
             // 
             // TxtEmail
             // 
-            this.TxtEmail.Location = new System.Drawing.Point(159, 75);
+            this.TxtEmail.BackColor = System.Drawing.Color.Black;
+            this.TxtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtEmail.Font = new System.Drawing.Font("Avenir LT Std 45 Book", 27.84906F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TxtEmail.Location = new System.Drawing.Point(238, 429);
+            this.TxtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(191, 22);
+            this.TxtEmail.Size = new System.Drawing.Size(475, 50);
             this.TxtEmail.TabIndex = 15;
+            this.TxtEmail.Text = "Username";
+            this.TxtEmail.Enter += new System.EventHandler(this.TxtEmail_Enter);
+            this.TxtEmail.Leave += new System.EventHandler(this.TxtEmail_Leave);
             // 
-            // label4
+            // lblBenvenuto
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 116);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Password";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 21);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Email/Username:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(141, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 17);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Accedi";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(98, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 25);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "BENVENUTO";
+            this.lblBenvenuto.AutoSize = true;
+            this.lblBenvenuto.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 19.69811F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBenvenuto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblBenvenuto.Location = new System.Drawing.Point(102, 167);
+            this.lblBenvenuto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBenvenuto.Name = "lblBenvenuto";
+            this.lblBenvenuto.Size = new System.Drawing.Size(178, 34);
+            this.lblBenvenuto.TabIndex = 11;
+            this.lblBenvenuto.Text = "BLACKJACK";
             // 
             // LblStatoConnessione
             // 
             this.LblStatoConnessione.AutoSize = true;
-            this.LblStatoConnessione.Location = new System.Drawing.Point(12, 219);
+            this.LblStatoConnessione.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.30189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblStatoConnessione.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.LblStatoConnessione.Location = new System.Drawing.Point(695, 29);
+            this.LblStatoConnessione.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblStatoConnessione.Name = "LblStatoConnessione";
-            this.LblStatoConnessione.Size = new System.Drawing.Size(125, 17);
+            this.LblStatoConnessione.Size = new System.Drawing.Size(222, 29);
             this.LblStatoConnessione.TabIndex = 22;
             this.LblStatoConnessione.Text = "Stato connessione";
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 25.81132F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.Location = new System.Drawing.Point(174, 627);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(539, 57);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Registrati";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lineaUsername
+            // 
+            this.lineaUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lineaUsername.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lineaUsername.Location = new System.Drawing.Point(174, 478);
+            this.lineaUsername.Name = "lineaUsername";
+            this.lineaUsername.Size = new System.Drawing.Size(539, 3);
+            this.lineaUsername.TabIndex = 28;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Location = new System.Drawing.Point(174, 546);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(539, 3);
+            this.panel1.TabIndex = 29;
+            // 
+            // pcbLogoPassword
+            // 
+            this.pcbLogoPassword.Image = global::BlackJack_Client.Properties.Resources.Lock;
+            this.pcbLogoPassword.Location = new System.Drawing.Point(174, 496);
+            this.pcbLogoPassword.Name = "pcbLogoPassword";
+            this.pcbLogoPassword.Size = new System.Drawing.Size(50, 50);
+            this.pcbLogoPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbLogoPassword.TabIndex = 27;
+            this.pcbLogoPassword.TabStop = false;
+            // 
+            // pcbLogoUsername
+            // 
+            this.pcbLogoUsername.Image = global::BlackJack_Client.Properties.Resources.Picche;
+            this.pcbLogoUsername.Location = new System.Drawing.Point(174, 429);
+            this.pcbLogoUsername.Name = "pcbLogoUsername";
+            this.pcbLogoUsername.Size = new System.Drawing.Size(50, 50);
+            this.pcbLogoUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbLogoUsername.TabIndex = 26;
+            this.pcbLogoUsername.TabStop = false;
+            // 
+            // pcbShowHide
+            // 
+            this.pcbShowHide.Image = global::BlackJack_Client.Properties.Resources.VisiblePassword;
+            this.pcbShowHide.Location = new System.Drawing.Point(663, 499);
+            this.pcbShowHide.Name = "pcbShowHide";
+            this.pcbShowHide.Size = new System.Drawing.Size(50, 50);
+            this.pcbShowHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbShowHide.TabIndex = 24;
+            this.pcbShowHide.TabStop = false;
+            this.pcbShowHide.Click += new System.EventHandler(this.pcbShowHide_Click);
+            // 
+            // pnlImg
+            // 
+            this.pnlImg.BackColor = System.Drawing.Color.Black;
+            this.pnlImg.BackgroundImage = global::BlackJack_Client.Properties.Resources.Picche_Sfondo;
+            this.pnlImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlImg.Controls.Add(this.lblBenvenuto);
+            this.pnlImg.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.pnlImg.Location = new System.Drawing.Point(256, 2);
+            this.pnlImg.Name = "pnlImg";
+            this.pnlImg.Size = new System.Drawing.Size(400, 400);
+            this.pnlImg.TabIndex = 23;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 244);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(924, 696);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lineaUsername);
+            this.Controls.Add(this.pcbLogoPassword);
+            this.Controls.Add(this.pcbLogoUsername);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pcbShowHide);
             this.Controls.Add(this.LblStatoConnessione);
+            this.Controls.Add(this.pnlImg);
             this.Controls.Add(this.BtnAccedi);
-            this.Controls.Add(this.LblNewUser);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.LblForgotPwd);
-            this.Controls.Add(this.LblShowPwd);
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.TxtEmail);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogoPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogoUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbShowHide)).EndInit();
+            this.pnlImg.ResumeLayout(false);
+            this.pnlImg.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,17 +221,17 @@
         #endregion
 
         private System.Windows.Forms.Button BtnAccedi;
-        private System.Windows.Forms.LinkLabel LblNewUser;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.LinkLabel LblForgotPwd;
-        private System.Windows.Forms.LinkLabel LblShowPwd;
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.TextBox TxtEmail;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBenvenuto;
         private System.Windows.Forms.Label LblStatoConnessione;
+        private System.Windows.Forms.Panel pnlImg;
+        private System.Windows.Forms.PictureBox pcbShowHide;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pcbLogoUsername;
+        private System.Windows.Forms.PictureBox pcbLogoPassword;
+        private System.Windows.Forms.Panel lineaUsername;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
