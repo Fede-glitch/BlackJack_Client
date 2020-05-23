@@ -156,6 +156,18 @@ namespace BlackJack_Client
                 case "unveil-card":
                     //TODO: mostrare carta coperta dealer
                     break;
+                case "player-wins":
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblRis.Text = "Hai vinto";
+                    });
+                    break;
+                case "dealer-wins":
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblRis.Text = "Hai perso";
+                    });
+                    break;
             }
         }
 

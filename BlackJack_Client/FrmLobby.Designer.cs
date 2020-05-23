@@ -47,6 +47,7 @@
             this.LblDealer = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LblMano = new System.Windows.Forms.Label();
+            this.LblRis = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -225,11 +226,21 @@
             this.LblMano.TabIndex = 14;
             this.LblMano.Text = "mano";
             // 
+            // LblRis
+            // 
+            this.LblRis.AutoSize = true;
+            this.LblRis.Location = new System.Drawing.Point(460, 472);
+            this.LblRis.Name = "LblRis";
+            this.LblRis.Size = new System.Drawing.Size(73, 21);
+            this.LblRis.TabIndex = 15;
+            this.LblRis.Text = "risultato";
+            // 
             // FrmLobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 513);
+            this.Controls.Add(this.LblRis);
             this.Controls.Add(this.LblMano);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnEsci);
@@ -278,5 +289,6 @@
         private System.Windows.Forms.Label LblDealer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LblMano;
+        private System.Windows.Forms.Label LblRis;
     }
 }
