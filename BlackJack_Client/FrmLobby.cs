@@ -168,6 +168,18 @@ namespace BlackJack_Client
                         LblRis.Text = "Hai perso";
                     });
                     break;
+                case "new-turn":
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblMano.Text = "";
+                        LblRis.Text = "";
+                        LblDealer.Text = "";
+                        LblCarte1.Text = "";
+                        LblCarte2.Text = "";
+                        LblCarte3.Text = "";
+                        LblCarte4.Text = "";
+                    });
+                    break;
             }
         }
 
