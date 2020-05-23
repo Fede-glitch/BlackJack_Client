@@ -86,6 +86,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -102,6 +103,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AppData\img\HiddenPassword.png" />
+    <None Include="AppData\img\VisiblePassword.png" />
+    <None Include="AppData\img\WP_Quadrato.png" />
+    <None Include="AppData\img\Lock.png" />
+    <None Include="AppData\img\Picche.png" />
+    <None Include="AppData\img\Picche_Sfondo.png" />
     <Content Include="carte\back.png" />
     <Content Include="carte\c1.png" />
     <Content Include="carte\c10.png" />
