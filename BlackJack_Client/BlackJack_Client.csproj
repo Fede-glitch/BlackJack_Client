@@ -109,6 +109,9 @@
     <None Include="AppData\img\Lock.png" />
     <None Include="AppData\img\Picche.png" />
     <None Include="AppData\img\Picche_Sfondo.png" />
+    <None Include="AppData\img\Background.jpg" />
+    <None Include="AppData\img\blu.png" />
+    <None Include="AppData\img\black.png" />
     <Content Include="carte\back.png" />
     <Content Include="carte\c1.png" />
     <Content Include="carte\c10.png" />
