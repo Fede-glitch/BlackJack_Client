@@ -66,7 +66,15 @@ namespace BlackJack_Client
                     List<Card> carte = JsonConvert.DeserializeObject<List<Card>>(appoggio.Carte.ToString());
                     int pos = Convert.ToInt32(appoggio.Posizione);
                     Place p = new Place(carte, pos);
-
+                    if(pos == pos_tavolo)
+                    {
+                        (int, bool) mano = p.GetMano();
+                        BeginInvoke((MethodInvoker)delegate
+                        {
+                            LblMano.Text = mano.Item2 ? "Blackjack":mano.Item1>21? "Hai Sballato":mano.Item1.ToString();
+                        });
+                    }
+                        
                     for (int i = 0; i < posti.Count; i++)
                     {
                         if(posti[i].Posizione == p.Posizione)
@@ -98,23 +106,55 @@ namespace BlackJack_Client
                         Controls["panel5"].Controls["LblDealer"].Text = "";
                         Application.DoEvents();
                     });
-                    foreach (Card carta in dealer.Carte)
+                    if((bool)msg.Data[1])   //TODO: nascondi prima carta
                     {
-                        BeginInvoke((MethodInvoker)delegate
+                        foreach (Card carta in dealer.Carte)
                         {
-                            Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
-                            Application.DoEvents();
-                        });
+                            BeginInvoke((MethodInvoker)delegate
+                            {
+                                Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
+                                Application.DoEvents();
+                            });
+                        }
                     }
+                    else
+                    {
+                        foreach (Card carta in dealer.Carte)
+                        {
+                            BeginInvoke((MethodInvoker)delegate
+                            {
+                                Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
+                                Application.DoEvents();
+                            });
+                        }
+                    }
+
                     break;
                 case "your-turn":
-
                     BeginInvoke((MethodInvoker)delegate
                     {
                         BtnCarta.Enabled = true;
                         BtnEsci.Enabled = true;
                     });
+                    break;
+                case "hand-twentyone-first":
+
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblMano.Text = Convert.ToBoolean(msg.Data[0]) ? "BlackJack" : "21";
+                    });
                     
+                    break;
+                case "hand-twentyone":
+                case "hand-bust":
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        BtnCarta.Enabled = false;
+                        BtnEsci.Enabled = false;
+                    });
+                    break;
+                case "unveil-card":
+                    //TODO: mostrare carta coperta dealer
                     break;
             }
         }
@@ -138,6 +178,16 @@ namespace BlackJack_Client
             lst.Add(pos_tavolo);
             lst.Add(log_id);
             interfacciaRete.Client.Invia(GeneraMessaggio("player-hit", lst));
+        }
+
+        private void BtnEsci_Click(object sender, EventArgs e)
+        {
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-stand", null));
+            BeginInvoke((MethodInvoker)delegate
+            {
+                BtnCarta.Enabled = false;
+                BtnEsci.Enabled = false;
+            });
         }
     }
 }

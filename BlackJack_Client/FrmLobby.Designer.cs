@@ -32,19 +32,21 @@
             this.LblPlayer1 = new System.Windows.Forms.Label();
             this.LblPlayer2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LblCarte1 = new System.Windows.Forms.Label();
             this.BtnEsci = new System.Windows.Forms.Button();
             this.BtnCarta = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.LblCarte2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.LblCarte3 = new System.Windows.Forms.Label();
             this.LblPlayer3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.LblCarte4 = new System.Windows.Forms.Label();
             this.LblPlayer4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.LblCarte1 = new System.Windows.Forms.Label();
-            this.LblCarte2 = new System.Windows.Forms.Label();
-            this.LblCarte3 = new System.Windows.Forms.Label();
-            this.LblCarte4 = new System.Windows.Forms.Label();
             this.LblDealer = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LblMano = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -88,6 +90,14 @@
             this.panel1.Size = new System.Drawing.Size(200, 239);
             this.panel1.TabIndex = 6;
             // 
+            // LblCarte1
+            // 
+            this.LblCarte1.AutoSize = true;
+            this.LblCarte1.Location = new System.Drawing.Point(13, 60);
+            this.LblCarte1.Name = "LblCarte1";
+            this.LblCarte1.Size = new System.Drawing.Size(0, 17);
+            this.LblCarte1.TabIndex = 2;
+            // 
             // BtnEsci
             // 
             this.BtnEsci.Enabled = false;
@@ -97,6 +107,7 @@
             this.BtnEsci.TabIndex = 12;
             this.BtnEsci.Text = "Esci";
             this.BtnEsci.UseVisualStyleBackColor = true;
+            this.BtnEsci.Click += new System.EventHandler(this.BtnEsci_Click);
             // 
             // BtnCarta
             // 
@@ -118,6 +129,14 @@
             this.panel2.Size = new System.Drawing.Size(200, 239);
             this.panel2.TabIndex = 7;
             // 
+            // LblCarte2
+            // 
+            this.LblCarte2.AutoSize = true;
+            this.LblCarte2.Location = new System.Drawing.Point(23, 60);
+            this.LblCarte2.Name = "LblCarte2";
+            this.LblCarte2.Size = new System.Drawing.Size(0, 17);
+            this.LblCarte2.TabIndex = 3;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.LblCarte3);
@@ -126,6 +145,14 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 239);
             this.panel3.TabIndex = 8;
+            // 
+            // LblCarte3
+            // 
+            this.LblCarte3.AutoSize = true;
+            this.LblCarte3.Location = new System.Drawing.Point(23, 60);
+            this.LblCarte3.Name = "LblCarte3";
+            this.LblCarte3.Size = new System.Drawing.Size(0, 17);
+            this.LblCarte3.TabIndex = 4;
             // 
             // LblPlayer3
             // 
@@ -145,6 +172,14 @@
             this.panel4.Size = new System.Drawing.Size(200, 239);
             this.panel4.TabIndex = 9;
             // 
+            // LblCarte4
+            // 
+            this.LblCarte4.AutoSize = true;
+            this.LblCarte4.Location = new System.Drawing.Point(23, 60);
+            this.LblCarte4.Name = "LblCarte4";
+            this.LblCarte4.Size = new System.Drawing.Size(0, 17);
+            this.LblCarte4.TabIndex = 5;
+            // 
             // LblPlayer4
             // 
             this.LblPlayer4.AutoSize = true;
@@ -163,38 +198,6 @@
             this.panel5.Size = new System.Drawing.Size(392, 155);
             this.panel5.TabIndex = 10;
             // 
-            // LblCarte1
-            // 
-            this.LblCarte1.AutoSize = true;
-            this.LblCarte1.Location = new System.Drawing.Point(13, 60);
-            this.LblCarte1.Name = "LblCarte1";
-            this.LblCarte1.Size = new System.Drawing.Size(0, 17);
-            this.LblCarte1.TabIndex = 2;
-            // 
-            // LblCarte2
-            // 
-            this.LblCarte2.AutoSize = true;
-            this.LblCarte2.Location = new System.Drawing.Point(23, 60);
-            this.LblCarte2.Name = "LblCarte2";
-            this.LblCarte2.Size = new System.Drawing.Size(0, 17);
-            this.LblCarte2.TabIndex = 3;
-            // 
-            // LblCarte3
-            // 
-            this.LblCarte3.AutoSize = true;
-            this.LblCarte3.Location = new System.Drawing.Point(23, 60);
-            this.LblCarte3.Name = "LblCarte3";
-            this.LblCarte3.Size = new System.Drawing.Size(0, 17);
-            this.LblCarte3.TabIndex = 4;
-            // 
-            // LblCarte4
-            // 
-            this.LblCarte4.AutoSize = true;
-            this.LblCarte4.Location = new System.Drawing.Point(23, 60);
-            this.LblCarte4.Name = "LblCarte4";
-            this.LblCarte4.Size = new System.Drawing.Size(0, 17);
-            this.LblCarte4.TabIndex = 5;
-            // 
             // LblDealer
             // 
             this.LblDealer.AutoSize = true;
@@ -203,11 +206,32 @@
             this.LblDealer.Size = new System.Drawing.Size(0, 17);
             this.LblDealer.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(721, 472);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 17);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Hai in mano: ";
+            // 
+            // LblMano
+            // 
+            this.LblMano.AutoSize = true;
+            this.LblMano.Location = new System.Drawing.Point(831, 472);
+            this.LblMano.Name = "LblMano";
+            this.LblMano.Size = new System.Drawing.Size(43, 17);
+            this.LblMano.TabIndex = 14;
+            this.LblMano.Text = "mano";
+            // 
             // FrmLobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 513);
+            this.Controls.Add(this.LblMano);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnEsci);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.BtnCarta);
@@ -229,6 +253,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -251,5 +276,7 @@
         private System.Windows.Forms.Label LblCarte3;
         private System.Windows.Forms.Label LblCarte4;
         private System.Windows.Forms.Label LblDealer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblMano;
     }
 }
