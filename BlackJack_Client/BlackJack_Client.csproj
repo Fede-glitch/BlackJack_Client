@@ -112,6 +112,15 @@
     <None Include="AppData\img\Background.jpg" />
     <None Include="AppData\img\blu.png" />
     <None Include="AppData\img\black.png" />
+    <None Include="AppData\img\Blank.png" />
+    <None Include="AppData\img\BlankCard.png" />
+    <None Include="AppData\img\BackBanco.png" />
+    <None Include="AppData\img\BackBanco3.png" />
+    <None Include="AppData\img\BackMain.png" />
+    <None Include="AppData\img\BackMain2.png" />
+    <None Include="AppData\img\BackMain3.png" />
+    <None Include="AppData\img\BackBank.png" />
+    <None Include="AppData\img\Player-Back.png" />
     <Content Include="carte\back.png" />
     <Content Include="carte\c1.png" />
     <Content Include="carte\c10.png" />
