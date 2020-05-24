@@ -35,7 +35,7 @@ namespace BlackJack_Client
             switch (msg.Action)
             {
                 case "login-success":
-                    FrmLobby lobby = new FrmLobby(ref interfacciaRete,
+                    FrmLobby lobby = new FrmLobby(interfacciaRete,
                                                 JsonConvert.DeserializeObject<Player>(msg.Data[0].ToString()),
                                                 Convert.ToInt32(msg.Data[1]),
                                                 interfacciaRete.log_id);
@@ -67,8 +67,8 @@ namespace BlackJack_Client
         private void Form1_Load(object sender, EventArgs e)
         {
             LblStatoConnessione.Text = "Non connesso";
-            TxtEmail.Text = "f.carollo.0729@vallauri.edu";
-            TxtPassword.Text = "Password1";
+            TxtEmail.Text = "GattoCoiBaffi";
+            TxtPassword.Text = "Baffo2002";
         }
 
 

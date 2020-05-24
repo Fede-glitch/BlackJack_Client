@@ -25,7 +25,7 @@ namespace BlackJack_Client
         Net interfacciaRete;
         public FrmLobby() { InitializeComponent(); }
 
-        public FrmLobby(ref Net net, Player player, int posizione_tavolo, int log_id)
+        public FrmLobby(Net net, Player player, int posizione_tavolo, int log_id)
         {
             InitializeComponent();
             this.player = player;
@@ -33,16 +33,7 @@ namespace BlackJack_Client
             this.log_id = log_id;
             this.pos_tavolo = posizione_tavolo;
             this.dealer = new Place();
-            IstanziaPosti();
-            interfacciaRete.Server.datiRicevutiEvent += Server_datiRicevutiEventLobby;
-        }
-
-        public void Assegnavariabili(ref Net net, Player player, int posizione_tavolo, int log_id)
-        {
-            this.player = player;
-            this.interfacciaRete = net;
-            this.log_id = log_id;
-            this.pos_tavolo = posizione_tavolo;
+            this.Text = $"Lobby - {player.Username}";
             IstanziaPosti();
             interfacciaRete.Server.datiRicevutiEvent += Server_datiRicevutiEventLobby;
         }
@@ -89,13 +80,11 @@ namespace BlackJack_Client
                                 BeginInvoke((MethodInvoker)delegate
                                 {
                                     Controls["panel" + pos].Controls["LblCarte" + pos].Text += carta.Seme.ToString() + carta.Numero + "\n";
-                                    Application.DoEvents();
                                 });
                             }
                             break;
                         }
                     }
-                    
                     break;
                 case "new-cards-dealer":
                     appoggio = JsonConvert.DeserializeObject(msg.Data[0].ToString());
@@ -104,7 +93,6 @@ namespace BlackJack_Client
                     BeginInvoke((MethodInvoker)delegate
                     {
                         Controls["panel5"].Controls["LblDealer"].Text = "";
-                        Application.DoEvents();
                     });
                     if((bool)msg.Data[1])   //TODO: nascondi prima carta
                     {
@@ -113,7 +101,6 @@ namespace BlackJack_Client
                             BeginInvoke((MethodInvoker)delegate
                             {
                                 Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
-                                Application.DoEvents();
                             });
                         }
                     }
@@ -124,7 +111,6 @@ namespace BlackJack_Client
                             BeginInvoke((MethodInvoker)delegate
                             {
                                 Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
-                                Application.DoEvents();
                             });
                         }
                     }
@@ -168,6 +154,12 @@ namespace BlackJack_Client
                         LblRis.Text = "Hai perso";
                     });
                     break;
+                case "draw":
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblRis.Text = "Pareggio";
+                    });
+                    break;
                 case "new-turn":
                     BeginInvoke((MethodInvoker)delegate
                     {
@@ -180,6 +172,64 @@ namespace BlackJack_Client
                         LblCarte4.Text = "";
                     });
                     break;
+                case "update-graphics":
+                    appoggio = JsonConvert.DeserializeObject(msg.Data[0].ToString());
+                    carte = JsonConvert.DeserializeObject<List<Card>>(appoggio.Carte.ToString());
+                    dealer.Carte = carte;
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblDealer.Text = "";
+                        foreach (Card carta in dealer.Carte)
+                        {
+                            LblDealer.Text += $"{carta.Seme}{carta.Numero}\n";
+                        }
+                    });
+                    for (int i = 1; i < msg.Data.Count; i++)
+                    {
+                        appoggio = JsonConvert.DeserializeObject(msg.Data[i].ToString());
+                        carte = JsonConvert.DeserializeObject<List<Card>>(appoggio.Carte.ToString());
+                        pos = Convert.ToInt32(appoggio.Posizione);
+                        p = new Place(carte, pos);
+                        for (int j = 0; j < posti.Count; j++)
+                        {
+                            if (posti[j].Posizione == p.Posizione)
+                            {
+                                posti[j] = p;
+
+                                BeginInvoke((MethodInvoker)delegate
+                                {
+                                    Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
+                                }); 
+                                foreach (Card carta in posti[j].Carte)
+                                {
+                                    BeginInvoke((MethodInvoker)delegate
+                                    {
+                                        Controls["panel" + pos].Controls["LblCarte" + pos].Text += $"{carta.Seme}{carta.Numero}\n";
+                                    });
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblMano.Text = "";
+                        LblRis.Text = "";
+                    });
+                    break;
+                case "update-names":
+                    for (int i = 0; i < msg.Data.Count; i+=2)
+                    {
+                        string username = msg.Data[i].ToString();
+                        int posizione = Convert.ToInt32(msg.Data[i + 1]);
+                        BeginInvoke((MethodInvoker)delegate
+                        {
+                            Controls["panel" + posizione].Controls["LblPlayer" + posizione].Text = username;
+                        });
+                    }
+                    
+                    break;
+                    
             }
         }
 

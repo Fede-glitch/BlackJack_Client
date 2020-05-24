@@ -30,7 +30,10 @@ namespace BlackJack_Client
             switch (msg.Action)
             {
                 case "login-failed":
-                    MessageBox.Show("Credenziali errate");
+                    if (Convert.ToBoolean(msg.Data[0]))
+                        MessageBox.Show("Credenziali errate");
+                    else
+                        MessageBox.Show("Questo utente si trova già in partita");
                     break;
                 case "lobby-full":
                     MessageBox.Show("Lobby al momento piena, riprova più tardi");
