@@ -179,7 +179,7 @@
             this.label1.Location = new System.Drawing.Point(943, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 50);
+            this.label1.Size = new System.Drawing.Size(175, 51);
             this.label1.TabIndex = 0;
             this.label1.Text = "BANCO";
             // 
