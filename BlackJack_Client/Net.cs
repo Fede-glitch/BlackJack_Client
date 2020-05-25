@@ -38,6 +38,11 @@ namespace BlackJack_Client
                 case "lobby-full":
                     MessageBox.Show("Lobby al momento piena, riprova più tardi");
                     break;
+                case "ping":
+                    List<object> lst = new List<object>();
+                    lst.Add(log_id);
+                    _client.Invia(GeneraMessaggio("ping-response",lst));
+                    break;
             }
 
             
@@ -67,7 +72,7 @@ namespace BlackJack_Client
             EstablishConn(istanziaServer: false);
         }
 
-        public static ClsMessaggio GeneraMessaggio(string action, List<object> data)
+        public static ClsMessaggio GeneraMessaggio(string action, List<object> data = null)
         {
             ClsMessaggio toSend = new ClsMessaggio();
             ObjMex objMex = new ObjMex(action, data);
