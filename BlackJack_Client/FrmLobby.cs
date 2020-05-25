@@ -243,7 +243,8 @@ namespace BlackJack_Client
 
         private void FrmLobby_Load(object sender, EventArgs e)
         {
-            interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
+            //interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
+            BtnCarta.Enabled = true;
         }
 
         private void BtnCarta_Click(object sender, EventArgs e)
@@ -262,6 +263,16 @@ namespace BlackJack_Client
                 BtnCarta.Enabled = false;
                 BtnEsci.Enabled = false;
             });
+        }
+
+        private void ingrassa(object sender, EventArgs e)
+        {
+            (sender as Button).FlatAppearance.BorderSize = 3;
+        }
+
+        private void dimagrisci(object sender, EventArgs e)
+        {
+            (sender as Button).FlatAppearance.BorderSize = 1;
         }
     }
 }

@@ -106,6 +106,8 @@
             this.LblDealer = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LblMano = new System.Windows.Forms.Label();
+            this.LblRis = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbG1C11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbG1C10)).BeginInit();
@@ -172,12 +174,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Avenir LT Std 45 Book", 21.73585F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Avenir LT Std 45 Book", 27.84906F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(943, 1);
+            this.label1.Location = new System.Drawing.Point(943, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 39);
+            this.label1.Size = new System.Drawing.Size(171, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "BANCO";
             // 
@@ -189,7 +191,7 @@
             this.LblPlayer1.Location = new System.Drawing.Point(10, 12);
             this.LblPlayer1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPlayer1.Name = "LblPlayer1";
-            this.LblPlayer1.Size = new System.Drawing.Size(186, 39);
+            this.LblPlayer1.Size = new System.Drawing.Size(190, 40);
             this.LblPlayer1.TabIndex = 1;
             this.LblPlayer1.Text = "Giocatore 1";
             // 
@@ -201,7 +203,7 @@
             this.LblPlayer2.Location = new System.Drawing.Point(17, 12);
             this.LblPlayer2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPlayer2.Name = "LblPlayer2";
-            this.LblPlayer2.Size = new System.Drawing.Size(186, 39);
+            this.LblPlayer2.Size = new System.Drawing.Size(190, 40);
             this.LblPlayer2.TabIndex = 2;
             this.LblPlayer2.Text = "Giocatore 2";
             // 
@@ -223,7 +225,7 @@
             this.panel1.Controls.Add(this.LblCarte1);
             this.panel1.Controls.Add(this.LblPlayer1);
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(1430, 415);
+            this.panel1.Location = new System.Drawing.Point(1430, 559);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(430, 275);
@@ -351,27 +353,44 @@
             // 
             // BtnEsci
             // 
+            this.BtnEsci.BackColor = System.Drawing.Color.Transparent;
             this.BtnEsci.Enabled = false;
-            this.BtnEsci.Location = new System.Drawing.Point(1144, 803);
+            this.BtnEsci.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEsci.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.77358F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEsci.ForeColor = System.Drawing.Color.White;
+            this.BtnEsci.Location = new System.Drawing.Point(899, 888);
             this.BtnEsci.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEsci.Name = "BtnEsci";
-            this.BtnEsci.Size = new System.Drawing.Size(217, 66);
+            this.BtnEsci.Size = new System.Drawing.Size(184, 66);
             this.BtnEsci.TabIndex = 12;
-            this.BtnEsci.Text = "Esci";
-            this.BtnEsci.UseVisualStyleBackColor = true;
+            this.BtnEsci.Text = "Lascia";
+            this.BtnEsci.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnEsci.UseVisualStyleBackColor = false;
             this.BtnEsci.Click += new System.EventHandler(this.BtnEsci_Click);
+            this.BtnEsci.MouseLeave += new System.EventHandler(this.dimagrisci);
+            this.BtnEsci.MouseHover += new System.EventHandler(this.ingrassa);
             // 
             // BtnCarta
             // 
+            this.BtnCarta.BackColor = System.Drawing.Color.Transparent;
             this.BtnCarta.Enabled = false;
-            this.BtnCarta.Location = new System.Drawing.Point(540, 803);
+            this.BtnCarta.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnCarta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnCarta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BtnCarta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCarta.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.77358F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCarta.ForeColor = System.Drawing.Color.White;
+            this.BtnCarta.Location = new System.Drawing.Point(1153, 888);
             this.BtnCarta.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCarta.Name = "BtnCarta";
-            this.BtnCarta.Size = new System.Drawing.Size(217, 66);
+            this.BtnCarta.Size = new System.Drawing.Size(166, 66);
             this.BtnCarta.TabIndex = 11;
             this.BtnCarta.Text = "Carta";
-            this.BtnCarta.UseVisualStyleBackColor = true;
+            this.BtnCarta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnCarta.UseVisualStyleBackColor = false;
             this.BtnCarta.Click += new System.EventHandler(this.BtnCarta_Click);
+            this.BtnCarta.MouseLeave += new System.EventHandler(this.dimagrisci);
+            this.BtnCarta.MouseHover += new System.EventHandler(this.ingrassa);
             // 
             // panel2
             // 
@@ -390,7 +409,7 @@
             this.panel2.Controls.Add(this.pcbG2C1);
             this.panel2.Controls.Add(this.LblCarte2);
             this.panel2.Controls.Add(this.LblPlayer2);
-            this.panel2.Location = new System.Drawing.Point(979, 415);
+            this.panel2.Location = new System.Drawing.Point(979, 559);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(430, 275);
@@ -534,7 +553,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.LblCarte3);
             this.panel3.Controls.Add(this.LblPlayer3);
-            this.panel3.Location = new System.Drawing.Point(525, 415);
+            this.panel3.Location = new System.Drawing.Point(525, 559);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(430, 275);
@@ -677,7 +696,7 @@
             this.LblPlayer3.Location = new System.Drawing.Point(17, 12);
             this.LblPlayer3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPlayer3.Name = "LblPlayer3";
-            this.LblPlayer3.Size = new System.Drawing.Size(186, 39);
+            this.LblPlayer3.Size = new System.Drawing.Size(190, 40);
             this.LblPlayer3.TabIndex = 2;
             this.LblPlayer3.Text = "Giocatore 3";
             // 
@@ -700,7 +719,7 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.LblCarte4);
             this.panel4.Controls.Add(this.LblPlayer4);
-            this.panel4.Location = new System.Drawing.Point(73, 415);
+            this.panel4.Location = new System.Drawing.Point(73, 559);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(430, 275);
@@ -852,14 +871,14 @@
             this.LblPlayer4.Location = new System.Drawing.Point(17, 12);
             this.LblPlayer4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPlayer4.Name = "LblPlayer4";
-            this.LblPlayer4.Size = new System.Drawing.Size(186, 39);
+            this.LblPlayer4.Size = new System.Drawing.Size(190, 40);
             this.LblPlayer4.TabIndex = 2;
             this.LblPlayer4.Text = "Giocatore 4";
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.BackgroundImage = global::BlackJack_Client.Properties.Resources.BackBank;
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.Controls.Add(this.pcbBkC10);
             this.panel5.Controls.Add(this.pcbBkC9);
             this.panel5.Controls.Add(this.pcbBkC8);
@@ -873,7 +892,7 @@
             this.panel5.Controls.Add(this.pcbBkC1);
             this.panel5.Controls.Add(this.LblDealer);
             this.panel5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel5.Location = new System.Drawing.Point(578, 42);
+            this.panel5.Location = new System.Drawing.Point(576, 72);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(865, 240);
@@ -1005,7 +1024,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 19.69811F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1486, 725);
+            this.label2.Location = new System.Drawing.Point(1486, 855);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 34);
@@ -1018,30 +1037,60 @@
             this.LblMano.BackColor = System.Drawing.Color.Transparent;
             this.LblMano.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 19.69811F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblMano.ForeColor = System.Drawing.Color.White;
-            this.LblMano.Location = new System.Drawing.Point(1689, 725);
+            this.LblMano.Location = new System.Drawing.Point(1664, 855);
             this.LblMano.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblMano.Name = "LblMano";
             this.LblMano.Size = new System.Drawing.Size(88, 34);
             this.LblMano.TabIndex = 14;
             this.LblMano.Text = "mano";
             // 
+            // LblRis
+            // 
+            this.LblRis.AutoSize = true;
+            this.LblRis.Location = new System.Drawing.Point(955, 424);
+            this.LblRis.Name = "LblRis";
+            this.LblRis.Size = new System.Drawing.Size(41, 15);
+            this.LblRis.TabIndex = 15;
+            this.LblRis.Text = "label6";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Enabled = false;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.77358F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(672, 888);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 66);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Esci";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // FrmLobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::BlackJack_Client.Properties.Resources.Background;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.LblRis);
             this.Controls.Add(this.LblMano);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnEsci);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.BtnCarta);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.BtnCarta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLobby";
@@ -1197,5 +1246,7 @@
         private System.Windows.Forms.PictureBox pcbBkC3;
         private System.Windows.Forms.PictureBox pcbBkC2;
         private System.Windows.Forms.PictureBox pcbBkC1;
+        private System.Windows.Forms.Label LblRis;
+        private System.Windows.Forms.Button button1;
     }
 }
