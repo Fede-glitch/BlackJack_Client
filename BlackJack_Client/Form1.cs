@@ -67,8 +67,8 @@ namespace BlackJack_Client
         private void Form1_Load(object sender, EventArgs e)
         {
             LblStatoConnessione.Text = "Non connesso";
-            TxtEmail.Text = "GattoCoiBaffi";
-            TxtPassword.Text = "Baffo2002";
+            TxtEmail.Text = "f.carollo.0729@vallauri.edu";
+            TxtPassword.Text = "Password1";
         }
 
 

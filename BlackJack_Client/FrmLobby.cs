@@ -12,6 +12,7 @@ using System.Net.Sockets;
 using SOCKET_UDP;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Threading;
 
 namespace BlackJack_Client
 {
@@ -45,6 +46,31 @@ namespace BlackJack_Client
                 posti.Add(new Place(i));
         }
 
+        #region Eventi form
+        private void FrmLobby_Load(object sender, EventArgs e)
+        {
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
+        }
+
+        private void BtnCarta_Click(object sender, EventArgs e)
+        {
+            List<object> lst = new List<object>();
+            lst.Add(pos_tavolo);
+            lst.Add(log_id);
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-hit", lst));
+        }
+
+        private void BtnEsci_Click(object sender, EventArgs e)
+        {
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-stand", null));
+            BeginInvoke((MethodInvoker)delegate
+            {
+                BtnCarta.Enabled = false;
+                BtnEsci.Enabled = false;
+            });
+        }
+        #endregion
+
         private void Server_datiRicevutiEventLobby(ClsMessaggio message)
         {
             string[] ricevuti = message.toArray();
@@ -71,17 +97,7 @@ namespace BlackJack_Client
                         if(posti[i].Posizione == p.Posizione)
                         {
                             posti[i] = p;
-                            BeginInvoke((MethodInvoker)delegate
-                            {
-                                Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
-                            });
-                            foreach (Card carta in posti[i].Carte)
-                            {
-                                BeginInvoke((MethodInvoker)delegate
-                                {
-                                    Controls["panel" + pos].Controls["LblCarte" + pos].Text += carta.Seme.ToString() + carta.Numero + "\n";
-                                });
-                            }
+                            UpdatePlayerGraphics(pos, posti[i]);
                             break;
                         }
                     }
@@ -114,7 +130,6 @@ namespace BlackJack_Client
                             });
                         }
                     }
-
                     break;
                 case "your-turn":
                     BeginInvoke((MethodInvoker)delegate
@@ -196,18 +211,7 @@ namespace BlackJack_Client
                             {
                                 posti[j] = p;
 
-                                BeginInvoke((MethodInvoker)delegate
-                                {
-                                    Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
-                                }); 
-                                foreach (Card carta in posti[j].Carte)
-                                {
-                                    BeginInvoke((MethodInvoker)delegate
-                                    {
-                                        Controls["panel" + pos].Controls["LblCarte" + pos].Text += $"{carta.Seme}{carta.Numero}\n";
-                                    });
-                                }
-                                break;
+                                UpdatePlayerGraphics(pos, posti[j]);
                             }
                         }
                     }
@@ -233,6 +237,22 @@ namespace BlackJack_Client
             }
         }
 
+        private void UpdatePlayerGraphics(int pos, Place place)
+        {
+            BeginInvoke((MethodInvoker)delegate
+            {
+                Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
+            });
+            foreach (Card carta in place.Carte)
+            {
+                BeginInvoke((MethodInvoker)delegate
+                {
+                    Controls["panel" + pos].Controls["LblCarte" + pos].Text += $"{carta.Seme}{carta.Numero}\n";
+                });
+            }
+        }
+
+
         public ClsMessaggio GeneraMessaggio(string action, List<object> data)
         {
             ClsMessaggio toSend = new ClsMessaggio();
@@ -241,27 +261,6 @@ namespace BlackJack_Client
             return toSend;
         }
 
-        private void FrmLobby_Load(object sender, EventArgs e)
-        {
-            interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
-        }
-
-        private void BtnCarta_Click(object sender, EventArgs e)
-        {
-            List<object> lst = new List<object>();
-            lst.Add(pos_tavolo);
-            lst.Add(log_id);
-            interfacciaRete.Client.Invia(GeneraMessaggio("player-hit", lst));
-        }
-
-        private void BtnEsci_Click(object sender, EventArgs e)
-        {
-            interfacciaRete.Client.Invia(GeneraMessaggio("player-stand", null));
-            BeginInvoke((MethodInvoker)delegate
-            {
-                BtnCarta.Enabled = false;
-                BtnEsci.Enabled = false;
-            });
-        }
+        
     }
 }
