@@ -62,7 +62,9 @@ namespace BlackJack_Client
 
         private void BtnEsci_Click(object sender, EventArgs e)
         {
-            interfacciaRete.Client.Invia(GeneraMessaggio("player-stand", null));
+            List<object> lst = new List<object>();
+            lst.Add(log_id);
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-stand", lst));
             BeginInvoke((MethodInvoker)delegate
             {
                 BtnCarta.Enabled = false;
@@ -232,6 +234,15 @@ namespace BlackJack_Client
                         });
                     }
                     
+                    break;
+                case "player-leave":
+                    pos = Convert.ToInt32(msg.Data[0]);
+
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        Controls["panel" + pos].Controls["LblPlayer" + pos].Text = "Giocatore " + pos;
+                        Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
+                    });
                     break;
                     
             }
