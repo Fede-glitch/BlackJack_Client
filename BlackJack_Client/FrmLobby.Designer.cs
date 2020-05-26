@@ -33,6 +33,7 @@
             this.LblPlayer1 = new System.Windows.Forms.Label();
             this.LblPlayer2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LblCarte1 = new System.Windows.Forms.Label();
             this.pcbG1C11 = new System.Windows.Forms.PictureBox();
             this.pcbG1C10 = new System.Windows.Forms.PictureBox();
             this.pcbG1C9 = new System.Windows.Forms.PictureBox();
@@ -44,7 +45,6 @@
             this.pcbG1C3 = new System.Windows.Forms.PictureBox();
             this.pcbG1C2 = new System.Windows.Forms.PictureBox();
             this.pcbG1C1 = new System.Windows.Forms.PictureBox();
-            this.LblCarte1 = new System.Windows.Forms.Label();
             this.BtnEsci = new System.Windows.Forms.Button();
             this.BtnCarta = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -92,6 +92,7 @@
             this.LblCarte4 = new System.Windows.Forms.Label();
             this.LblPlayer4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.LblDealer = new System.Windows.Forms.Label();
             this.pcbBkC10 = new System.Windows.Forms.PictureBox();
             this.pcbBkC9 = new System.Windows.Forms.PictureBox();
             this.pcbBkC8 = new System.Windows.Forms.PictureBox();
@@ -103,7 +104,6 @@
             this.pcbBkC3 = new System.Windows.Forms.PictureBox();
             this.pcbBkC2 = new System.Windows.Forms.PictureBox();
             this.pcbBkC1 = new System.Windows.Forms.PictureBox();
-            this.LblDealer = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LblMano = new System.Windows.Forms.Label();
             this.LblRis = new System.Windows.Forms.Label();
@@ -211,6 +211,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.LblCarte1);
+            this.panel1.Controls.Add(this.LblPlayer1);
             this.panel1.Controls.Add(this.pcbG1C11);
             this.panel1.Controls.Add(this.pcbG1C10);
             this.panel1.Controls.Add(this.pcbG1C9);
@@ -222,14 +224,21 @@
             this.panel1.Controls.Add(this.pcbG1C3);
             this.panel1.Controls.Add(this.pcbG1C2);
             this.panel1.Controls.Add(this.pcbG1C1);
-            this.panel1.Controls.Add(this.LblCarte1);
-            this.panel1.Controls.Add(this.LblPlayer1);
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(1430, 559);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(430, 275);
             this.panel1.TabIndex = 6;
+            // 
+            // LblCarte1
+            // 
+            this.LblCarte1.AutoSize = true;
+            this.LblCarte1.Location = new System.Drawing.Point(21, 40);
+            this.LblCarte1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblCarte1.Name = "LblCarte1";
+            this.LblCarte1.Size = new System.Drawing.Size(0, 15);
+            this.LblCarte1.TabIndex = 2;
             // 
             // pcbG1C11
             // 
@@ -240,6 +249,7 @@
             this.pcbG1C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C11.TabIndex = 22;
             this.pcbG1C11.TabStop = false;
+            this.pcbG1C11.Visible = false;
             // 
             // pcbG1C10
             // 
@@ -250,6 +260,7 @@
             this.pcbG1C10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C10.TabIndex = 21;
             this.pcbG1C10.TabStop = false;
+            this.pcbG1C10.Visible = false;
             // 
             // pcbG1C9
             // 
@@ -260,6 +271,7 @@
             this.pcbG1C9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C9.TabIndex = 20;
             this.pcbG1C9.TabStop = false;
+            this.pcbG1C9.Visible = false;
             // 
             // pcbG1C8
             // 
@@ -270,6 +282,7 @@
             this.pcbG1C8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C8.TabIndex = 19;
             this.pcbG1C8.TabStop = false;
+            this.pcbG1C8.Visible = false;
             // 
             // pcbG1C7
             // 
@@ -280,6 +293,7 @@
             this.pcbG1C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C7.TabIndex = 18;
             this.pcbG1C7.TabStop = false;
+            this.pcbG1C7.Visible = false;
             // 
             // pcbG1C6
             // 
@@ -290,6 +304,7 @@
             this.pcbG1C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C6.TabIndex = 17;
             this.pcbG1C6.TabStop = false;
+            this.pcbG1C6.Visible = false;
             // 
             // pcbG1C5
             // 
@@ -300,6 +315,7 @@
             this.pcbG1C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C5.TabIndex = 16;
             this.pcbG1C5.TabStop = false;
+            this.pcbG1C5.Visible = false;
             // 
             // pcbG1C4
             // 
@@ -310,6 +326,7 @@
             this.pcbG1C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C4.TabIndex = 15;
             this.pcbG1C4.TabStop = false;
+            this.pcbG1C4.Visible = false;
             // 
             // pcbG1C3
             // 
@@ -320,16 +337,19 @@
             this.pcbG1C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C3.TabIndex = 14;
             this.pcbG1C3.TabStop = false;
+            this.pcbG1C3.Visible = false;
             // 
             // pcbG1C2
             // 
             this.pcbG1C2.BackColor = System.Drawing.Color.Transparent;
+            this.pcbG1C2.InitialImage = null;
             this.pcbG1C2.Location = new System.Drawing.Point(40, 58);
             this.pcbG1C2.Name = "pcbG1C2";
             this.pcbG1C2.Size = new System.Drawing.Size(150, 204);
             this.pcbG1C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C2.TabIndex = 13;
             this.pcbG1C2.TabStop = false;
+            this.pcbG1C2.Visible = false;
             // 
             // pcbG1C1
             // 
@@ -341,15 +361,6 @@
             this.pcbG1C1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C1.TabIndex = 12;
             this.pcbG1C1.TabStop = false;
-            // 
-            // LblCarte1
-            // 
-            this.LblCarte1.AutoSize = true;
-            this.LblCarte1.Location = new System.Drawing.Point(21, 40);
-            this.LblCarte1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblCarte1.Name = "LblCarte1";
-            this.LblCarte1.Size = new System.Drawing.Size(0, 15);
-            this.LblCarte1.TabIndex = 2;
             // 
             // BtnEsci
             // 
@@ -879,6 +890,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.Controls.Add(this.LblDealer);
             this.panel5.Controls.Add(this.pcbBkC10);
             this.panel5.Controls.Add(this.pcbBkC9);
             this.panel5.Controls.Add(this.pcbBkC8);
@@ -890,13 +902,22 @@
             this.panel5.Controls.Add(this.pcbBkC3);
             this.panel5.Controls.Add(this.pcbBkC2);
             this.panel5.Controls.Add(this.pcbBkC1);
-            this.panel5.Controls.Add(this.LblDealer);
             this.panel5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel5.Location = new System.Drawing.Point(576, 72);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(865, 240);
             this.panel5.TabIndex = 10;
+            // 
+            // LblDealer
+            // 
+            this.LblDealer.AutoSize = true;
+            this.LblDealer.ForeColor = System.Drawing.Color.White;
+            this.LblDealer.Location = new System.Drawing.Point(57, 37);
+            this.LblDealer.Name = "LblDealer";
+            this.LblDealer.Size = new System.Drawing.Size(322, 15);
+            this.LblDealer.TabIndex = 57;
+            this.LblDealer.Text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
             // 
             // pcbBkC10
             // 
@@ -1009,15 +1030,6 @@
             this.pcbBkC1.TabIndex = 46;
             this.pcbBkC1.TabStop = false;
             // 
-            // LblDealer
-            // 
-            this.LblDealer.AutoSize = true;
-            this.LblDealer.Location = new System.Drawing.Point(31, 24);
-            this.LblDealer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblDealer.Name = "LblDealer";
-            this.LblDealer.Size = new System.Drawing.Size(0, 15);
-            this.LblDealer.TabIndex = 1;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1056,7 +1068,6 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -1071,6 +1082,7 @@
             this.button1.Text = "Esci";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmLobby
             // 
@@ -1185,7 +1197,6 @@
         private System.Windows.Forms.Label LblCarte2;
         private System.Windows.Forms.Label LblCarte3;
         private System.Windows.Forms.Label LblCarte4;
-        private System.Windows.Forms.Label LblDealer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LblMano;
         private System.Windows.Forms.PictureBox pcbG1C10;
@@ -1248,5 +1259,6 @@
         private System.Windows.Forms.PictureBox pcbBkC1;
         private System.Windows.Forms.Label LblRis;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label LblDealer;
     }
 }

@@ -66,6 +66,11 @@ namespace BlackJack_Client
                         });
                     }
                         
+                    foreach(PictureBox pcb in Controls["panel"+pos].Controls.OfType<PictureBox>())
+                    {
+                        pcb.Image = (pcb.Name == "pcbG" + pos + "C1") ? Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + @"\AppData\img\BlankCard.png") : null;
+                            
+                    }
                     for (int i = 0; i < posti.Count; i++)
                     {
                         if(posti[i].Posizione == p.Posizione)
@@ -75,11 +80,18 @@ namespace BlackJack_Client
                             {
                                 Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
                             });
+                            int k = 0;
                             foreach (Card carta in posti[i].Carte)
                             {
+                                k++;
+                                PictureBox pcbCorrente = (Controls["panel" + pos].Controls["pcbG" + pos + "C" + k] as PictureBox);
                                 BeginInvoke((MethodInvoker)delegate
                                 {
-                                    Controls["panel" + pos].Controls["LblCarte" + pos].Text += carta.Seme.ToString() + carta.Numero + "\n";
+                                    // Controls["panel" + pos].Controls["LblCarte" + pos].Text += carta.Seme.ToString() + carta.Numero + "\n";
+                                    pcbCorrente.Image = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + $@"\carte\{carta.Seme}{carta.Numero}.png");
+                                    pcbCorrente.Visible = true;
+                                    pcbCorrente.BringToFront();
+                                    Application.DoEvents();
                                 });
                             }
                             break;
@@ -93,6 +105,7 @@ namespace BlackJack_Client
                     BeginInvoke((MethodInvoker)delegate
                     {
                         Controls["panel5"].Controls["LblDealer"].Text = "";
+                        //Controls["panel5"].Controls["LblDealer"].BackgroundImage = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + @"\AppData\img\blu.png");
                     });
                     if((bool)msg.Data[1])   //TODO: nascondi prima carta
                     {
@@ -243,8 +256,8 @@ namespace BlackJack_Client
 
         private void FrmLobby_Load(object sender, EventArgs e)
         {
-            //interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
-            BtnCarta.Enabled = true;
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
+            //BtnCarta.Enabled = true;
         }
 
         private void BtnCarta_Click(object sender, EventArgs e)
@@ -273,6 +286,11 @@ namespace BlackJack_Client
         private void dimagrisci(object sender, EventArgs e)
         {
             (sender as Button).FlatAppearance.BorderSize = 1;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
