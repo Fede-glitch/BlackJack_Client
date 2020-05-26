@@ -435,6 +435,7 @@
             this.pcbG2C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C11.TabIndex = 33;
             this.pcbG2C11.TabStop = false;
+            this.pcbG2C11.Visible = false;
             // 
             // pcbG2C10
             // 
@@ -445,6 +446,7 @@
             this.pcbG2C10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C10.TabIndex = 32;
             this.pcbG2C10.TabStop = false;
+            this.pcbG2C10.Visible = false;
             // 
             // pcbG2C9
             // 
@@ -455,6 +457,7 @@
             this.pcbG2C9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C9.TabIndex = 31;
             this.pcbG2C9.TabStop = false;
+            this.pcbG2C9.Visible = false;
             // 
             // pcbG2C8
             // 
@@ -465,6 +468,7 @@
             this.pcbG2C8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C8.TabIndex = 30;
             this.pcbG2C8.TabStop = false;
+            this.pcbG2C8.Visible = false;
             // 
             // pcbG2C7
             // 
@@ -475,6 +479,7 @@
             this.pcbG2C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C7.TabIndex = 29;
             this.pcbG2C7.TabStop = false;
+            this.pcbG2C7.Visible = false;
             // 
             // pcbG2C6
             // 
@@ -485,6 +490,7 @@
             this.pcbG2C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C6.TabIndex = 28;
             this.pcbG2C6.TabStop = false;
+            this.pcbG2C6.Visible = false;
             // 
             // pcbG2C5
             // 
@@ -495,6 +501,7 @@
             this.pcbG2C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C5.TabIndex = 27;
             this.pcbG2C5.TabStop = false;
+            this.pcbG2C5.Visible = false;
             // 
             // pcbG2C4
             // 
@@ -505,6 +512,7 @@
             this.pcbG2C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C4.TabIndex = 26;
             this.pcbG2C4.TabStop = false;
+            this.pcbG2C4.Visible = false;
             // 
             // pcbG2C3
             // 
@@ -515,6 +523,7 @@
             this.pcbG2C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C3.TabIndex = 25;
             this.pcbG2C3.TabStop = false;
+            this.pcbG2C3.Visible = false;
             // 
             // pcbG2C2
             // 
@@ -525,6 +534,7 @@
             this.pcbG2C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C2.TabIndex = 24;
             this.pcbG2C2.TabStop = false;
+            this.pcbG2C2.Visible = false;
             // 
             // pcbG2C1
             // 
@@ -579,6 +589,7 @@
             this.pcbG3C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C11.TabIndex = 45;
             this.pcbG3C11.TabStop = false;
+            this.pcbG3C11.Visible = false;
             // 
             // pcbG3C10
             // 
@@ -589,6 +600,7 @@
             this.pcbG3C10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C10.TabIndex = 44;
             this.pcbG3C10.TabStop = false;
+            this.pcbG3C10.Visible = false;
             // 
             // pcbG3C9
             // 
@@ -599,6 +611,7 @@
             this.pcbG3C9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C9.TabIndex = 43;
             this.pcbG3C9.TabStop = false;
+            this.pcbG3C9.Visible = false;
             // 
             // pcbG3C8
             // 
@@ -609,6 +622,7 @@
             this.pcbG3C8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C8.TabIndex = 42;
             this.pcbG3C8.TabStop = false;
+            this.pcbG3C8.Visible = false;
             // 
             // pcbG3C7
             // 
@@ -619,6 +633,7 @@
             this.pcbG3C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C7.TabIndex = 41;
             this.pcbG3C7.TabStop = false;
+            this.pcbG3C7.Visible = false;
             // 
             // pcbG3C6
             // 
@@ -629,6 +644,7 @@
             this.pcbG3C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C6.TabIndex = 40;
             this.pcbG3C6.TabStop = false;
+            this.pcbG3C6.Visible = false;
             // 
             // pcbG3C5
             // 
@@ -639,6 +655,7 @@
             this.pcbG3C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C5.TabIndex = 39;
             this.pcbG3C5.TabStop = false;
+            this.pcbG3C5.Visible = false;
             // 
             // pcbG3C4
             // 
@@ -649,6 +666,7 @@
             this.pcbG3C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C4.TabIndex = 38;
             this.pcbG3C4.TabStop = false;
+            this.pcbG3C4.Visible = false;
             // 
             // pcbG3C3
             // 
@@ -659,6 +677,7 @@
             this.pcbG3C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C3.TabIndex = 37;
             this.pcbG3C3.TabStop = false;
+            this.pcbG3C3.Visible = false;
             // 
             // pcbG3C2
             // 
@@ -669,6 +688,7 @@
             this.pcbG3C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C2.TabIndex = 36;
             this.pcbG3C2.TabStop = false;
+            this.pcbG3C2.Visible = false;
             // 
             // pcbG3C1
             // 
@@ -745,6 +765,7 @@
             this.pcbG4C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C11.TabIndex = 58;
             this.pcbG4C11.TabStop = false;
+            this.pcbG4C11.Visible = false;
             // 
             // pcbG4C10
             // 
@@ -755,6 +776,7 @@
             this.pcbG4C10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C10.TabIndex = 57;
             this.pcbG4C10.TabStop = false;
+            this.pcbG4C10.Visible = false;
             // 
             // pcbG4C9
             // 
@@ -765,6 +787,7 @@
             this.pcbG4C9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C9.TabIndex = 56;
             this.pcbG4C9.TabStop = false;
+            this.pcbG4C9.Visible = false;
             // 
             // pcbG4C8
             // 
@@ -775,6 +798,7 @@
             this.pcbG4C8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C8.TabIndex = 55;
             this.pcbG4C8.TabStop = false;
+            this.pcbG4C8.Visible = false;
             // 
             // pcbG4C7
             // 
@@ -785,6 +809,7 @@
             this.pcbG4C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C7.TabIndex = 54;
             this.pcbG4C7.TabStop = false;
+            this.pcbG4C7.Visible = false;
             // 
             // pcbG4C6
             // 
@@ -795,6 +820,7 @@
             this.pcbG4C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C6.TabIndex = 53;
             this.pcbG4C6.TabStop = false;
+            this.pcbG4C6.Visible = false;
             // 
             // pcbG4C5
             // 
@@ -805,6 +831,7 @@
             this.pcbG4C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C5.TabIndex = 52;
             this.pcbG4C5.TabStop = false;
+            this.pcbG4C5.Visible = false;
             // 
             // pcbG4C4
             // 
@@ -815,6 +842,7 @@
             this.pcbG4C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C4.TabIndex = 51;
             this.pcbG4C4.TabStop = false;
+            this.pcbG4C4.Visible = false;
             // 
             // pcbG4C3
             // 
@@ -825,6 +853,7 @@
             this.pcbG4C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C3.TabIndex = 50;
             this.pcbG4C3.TabStop = false;
+            this.pcbG4C3.Visible = false;
             // 
             // pcbG4C2
             // 
@@ -835,6 +864,7 @@
             this.pcbG4C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C2.TabIndex = 49;
             this.pcbG4C2.TabStop = false;
+            this.pcbG4C2.Visible = false;
             // 
             // pcbG4C1
             // 
@@ -928,6 +958,7 @@
             this.pcbBkC10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC10.TabIndex = 56;
             this.pcbBkC10.TabStop = false;
+            this.pcbBkC10.Visible = false;
             // 
             // pcbBkC9
             // 
@@ -938,6 +969,7 @@
             this.pcbBkC9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC9.TabIndex = 55;
             this.pcbBkC9.TabStop = false;
+            this.pcbBkC9.Visible = false;
             // 
             // pcbBkC8
             // 
@@ -948,6 +980,7 @@
             this.pcbBkC8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC8.TabIndex = 54;
             this.pcbBkC8.TabStop = false;
+            this.pcbBkC8.Visible = false;
             // 
             // pictureBox4
             // 
@@ -968,6 +1001,7 @@
             this.pcbBkC7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC7.TabIndex = 52;
             this.pcbBkC7.TabStop = false;
+            this.pcbBkC7.Visible = false;
             // 
             // pcbBkC6
             // 
@@ -978,6 +1012,7 @@
             this.pcbBkC6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC6.TabIndex = 51;
             this.pcbBkC6.TabStop = false;
+            this.pcbBkC6.Visible = false;
             // 
             // pcbBkC5
             // 
@@ -988,6 +1023,7 @@
             this.pcbBkC5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC5.TabIndex = 50;
             this.pcbBkC5.TabStop = false;
+            this.pcbBkC5.Visible = false;
             // 
             // pcbBkC4
             // 
@@ -998,6 +1034,7 @@
             this.pcbBkC4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC4.TabIndex = 49;
             this.pcbBkC4.TabStop = false;
+            this.pcbBkC4.Visible = false;
             // 
             // pcbBkC3
             // 
@@ -1008,6 +1045,7 @@
             this.pcbBkC3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC3.TabIndex = 48;
             this.pcbBkC3.TabStop = false;
+            this.pcbBkC3.Visible = false;
             // 
             // pcbBkC2
             // 
@@ -1018,6 +1056,7 @@
             this.pcbBkC2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC2.TabIndex = 47;
             this.pcbBkC2.TabStop = false;
+            this.pcbBkC2.Visible = false;
             // 
             // pcbBkC1
             // 

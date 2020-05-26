@@ -39,6 +39,9 @@ namespace BlackJack_Client
                     MessageBox.Show("Lobby al momento piena, riprova più tardi");
                     break;
                 case "ping":
+#if DEBUG
+                    Console.WriteLine("ping arrivato");
+#endif
                     List<object> lst = new List<object>();
                     lst.Add(log_id);
                     _client.Invia(GeneraMessaggio("ping-response",lst));

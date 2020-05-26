@@ -87,8 +87,8 @@ namespace BlackJack_Client
                                 PictureBox pcbCorrente = (Controls["panel" + pos].Controls["pcbG" + pos + "C" + k] as PictureBox);
                                 BeginInvoke((MethodInvoker)delegate
                                 {
-                                    // Controls["panel" + pos].Controls["LblCarte" + pos].Text += carta.Seme.ToString() + carta.Numero + "\n";
-                                    pcbCorrente.Image = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + $@"\carte\{carta.Seme}{carta.Numero}.png");
+                                    //Controls["panel" + pos].Controls["LblCarte" + pos].Text += carta.Seme.ToString() + carta.Numero + "\n";
+                                    pcbCorrente.Image = GetImage(carta.Seme.ToString() + "" + carta.Numero.ToString() + ".png", true);
                                     pcbCorrente.Visible = true;
                                     pcbCorrente.BringToFront();
                                     Application.DoEvents();
@@ -107,23 +107,40 @@ namespace BlackJack_Client
                         Controls["panel5"].Controls["LblDealer"].Text = "";
                         //Controls["panel5"].Controls["LblDealer"].BackgroundImage = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + @"\AppData\img\blu.png");
                     });
-                    if((bool)msg.Data[1])   //TODO: nascondi prima carta
+                    foreach (PictureBox pcb in Controls["panel5"].Controls.OfType<PictureBox>())
                     {
-                        foreach (Card carta in dealer.Carte)
-                        {
-                            BeginInvoke((MethodInvoker)delegate
+                        pcb.Image = (pcb.Name == "pcbBkC1") ? GetImage("BlankCard.png", false) : null;
+
+                    }
+                    if ((bool)msg.Data[1])   //TODO: nascondi prima carta 
+                    {
+                        PictureBox pcbCartaCoperta = (Controls["panel5"].Controls["pcbBKC1"] as PictureBox);
+                        PictureBox pcbCartaScoperta = (Controls["panel5"].Controls["pcbBKC2"] as PictureBox);
+                        BeginInvoke((MethodInvoker)delegate
                             {
-                                Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
+                                pcbCartaCoperta.Image = GetImage("back.png", true);
+                                pcbCartaScoperta.Image = GetImage(dealer.Carte[1].Seme.ToString() + "" + dealer.Carte[1].Numero.ToString() + ".png", true);
+                                pcbCartaCoperta.Visible = true;
+                                pcbCartaScoperta.Visible = true;
+                                pcbCartaCoperta.BringToFront();
+                                pcbCartaScoperta.BringToFront();
+                                Application.DoEvents();
                             });
-                        }
                     }
                     else
                     {
+                        int k = 0;
                         foreach (Card carta in dealer.Carte)
                         {
+                            k++;
+                            PictureBox pcbCorrente = (Controls["panel5"].Controls["pcbBKC" + k] as PictureBox);
                             BeginInvoke((MethodInvoker)delegate
                             {
                                 Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
+                                pcbCorrente.Image = GetImage(carta.Seme.ToString() + "" + carta.Numero.ToString() + ".png", true);
+                                pcbCorrente.Visible = true;
+                                pcbCorrente.BringToFront();
+                                Application.DoEvents();
                             });
                         }
                     }
@@ -153,7 +170,15 @@ namespace BlackJack_Client
                     });
                     break;
                 case "unveil-card":
-                    //TODO: mostrare carta coperta dealer
+                    
+                        PictureBox pcbCorrenteElettrica = (Controls["panel5"].Controls["pcbBKC1"] as PictureBox);
+                        BeginInvoke((MethodInvoker)delegate
+                        {
+                            pcbCorrenteElettrica.Image = GetImage(dealer.Carte[0].Seme.ToString() + "" + dealer.Carte[0].Numero.ToString() + ".png", true);
+                            pcbCorrenteElettrica.Visible = true;
+                            //pcbCorrenteElettrica.BringToFront();
+                            Application.DoEvents();
+                        });
                     break;
                 case "player-wins":
                     BeginInvoke((MethodInvoker)delegate
@@ -240,10 +265,22 @@ namespace BlackJack_Client
                             Controls["panel" + posizione].Controls["LblPlayer" + posizione].Text = username;
                         });
                     }
-                    
                     break;
-                    
+                case "player-leave":
+                    pos = Convert.ToInt32(msg.Data[0]);
+
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        Controls["panel" + pos].Controls["LblPlayer" + pos].Text = "Giocatore " + pos;
+                        Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
+                    });
+                    break;
             }
+        }
+
+        private Image GetImage(string nomeFile, bool carta)
+        {
+            return (carta)? Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + @"carte\" + nomeFile) : Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + @"AppData\img\"+nomeFile);
         }
 
         public ClsMessaggio GeneraMessaggio(string action, List<object> data)
@@ -270,7 +307,9 @@ namespace BlackJack_Client
 
         private void BtnEsci_Click(object sender, EventArgs e)
         {
-            interfacciaRete.Client.Invia(GeneraMessaggio("player-stand", null));
+            List<Object> lst = new List<object>();
+            lst.Add(log_id);
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-stand", lst));
             BeginInvoke((MethodInvoker)delegate
             {
                 BtnCarta.Enabled = false;
