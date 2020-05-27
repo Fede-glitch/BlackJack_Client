@@ -140,11 +140,11 @@ namespace BlackJack_Client
                         BtnEsci.Enabled = true;
                     });
                     break;
-                case "hand-twentyone-first":
+                case "blackjack":
 
                     BeginInvoke((MethodInvoker)delegate
                     {
-                        LblMano.Text = Convert.ToBoolean(msg.Data[0]) ? "BlackJack" : "21";
+                        LblMano.Text = /*Convert.ToBoolean(msg.Data[0]) ? */"BlackJack";// : "21";
                     });
                     
                     break;
