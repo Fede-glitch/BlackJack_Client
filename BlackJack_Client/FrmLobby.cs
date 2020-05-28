@@ -250,6 +250,31 @@ namespace BlackJack_Client
                         Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
                     });
                     break;
+                case "no-fiches":
+                    if (!Convert.ToBoolean(msg.Data[0]))
+                        BeginInvoke((MethodInvoker)delegate
+                        {
+                            MessageBox.Show("La partita è terminata", "Hai terminato le fiches");
+                            interfacciaRete.EstablishConn(false);
+                            interfacciaRete.Server.datiRicevutiEvent -= Server_datiRicevutiEventLobby;
+                            this.Close();
+                        });
+                    else
+                    {
+                        if (DialogResult.Cancel == MessageBox.Show("Premi OK per continuare a guardare la partita\nPremi annulla per uscire",
+                                               "Hai terminato le fiches",
+                                               MessageBoxButtons.OKCancel,
+                                               MessageBoxIcon.Information))
+                        {
+                            BeginInvoke((MethodInvoker)delegate
+                            {
+                                this.Close();
+                            });
+                        }
+                        interfacciaRete.EstablishConn(false);
+                        interfacciaRete.Server.datiRicevutiEvent -= Server_datiRicevutiEventLobby;
+                    } 
+                    break;
                     
             }
         }
