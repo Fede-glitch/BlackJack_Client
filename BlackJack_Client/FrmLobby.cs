@@ -50,6 +50,7 @@ namespace BlackJack_Client
         private void FrmLobby_Load(object sender, EventArgs e)
         {
             interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
+            posti[pos_tavolo].Fiches = 1000;
         }
 
         private void BtnCarta_Click(object sender, EventArgs e)
@@ -187,6 +188,11 @@ namespace BlackJack_Client
                         LblCarte2.Text = "";
                         LblCarte3.Text = "";
                         LblCarte4.Text = "";
+                        TBPuntata.Enabled = true;
+                        NumPuntata.Enabled = true;
+                        BtnPuntata.Enabled = true;
+                        TBPuntata.Maximum = posti[pos_tavolo].Fiches;
+                        NumPuntata.Maximum = posti[pos_tavolo].Fiches;
                     });
                     break;
                 case "update-graphics":
@@ -272,6 +278,27 @@ namespace BlackJack_Client
             return toSend;
         }
 
-        
+        private void TBPuntata_Scroll(object sender, EventArgs e)
+        {
+            NumPuntata.Value = TBPuntata.Value;
+        }
+
+        private void NumPuntata_ValueChanged(object sender, EventArgs e)
+        {
+            TBPuntata.Value = Convert.ToInt32(NumPuntata.Value);
+        }
+
+        private void BtnPuntata_Click(object sender, EventArgs e)
+        {
+            List<object> lst = new List<object>();
+            lst.Add(pos_tavolo);
+            lst.Add(TBPuntata.Value);
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-bet",lst));
+            posti[pos_tavolo].Fiches -= TBPuntata.Value;
+            posti[pos_tavolo].Puntata = TBPuntata.Value;
+            TBPuntata.Enabled = false;
+            NumPuntata.Enabled = false;
+            BtnPuntata.Enabled = false;
+        }
     }
 }

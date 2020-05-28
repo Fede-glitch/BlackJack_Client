@@ -11,15 +11,21 @@ namespace BlackJack_Client
         private Player _player;
         private List<Card> _carte;
         private int _posizione;
+        private int _fiches;
+        private int _puntata;
 
         public List<Card> Carte { get => _carte; set => _carte = value; }
         internal Player Player { get => _player; set => _player = value; }
         public int Posizione { get => _posizione; set => _posizione = value; }
+        public int Fiches { get => _fiches; set => _fiches = value; }
+        public int Puntata { get => _puntata; set => _puntata = value; }
 
         internal Place(Player player, int pos)
         {
             this._player = player;
             this._posizione = pos;
+            this._carte = new List<Card>();
+            this._fiches = 1000;
         }
 
         internal Place(List<Card> Carte, int Posizione)
@@ -28,12 +34,13 @@ namespace BlackJack_Client
             this._posizione = Posizione;
         }
 
-        internal Place(int pos)
+        internal Place(int Posizione)
         {
-            this._posizione = pos;
+            this._posizione = Posizione;
         }
 
-        internal Place() 
+
+        internal Place() //Costruttore del banco
         {
             this._carte = new List<Card>();
         }
@@ -45,22 +52,22 @@ namespace BlackJack_Client
             bool isBlackJack = false;
             if (this.Carte.Count == 2)
             {
-                if (Carte[0].Numero == 1 /*&& (Carte[0].Seme == 'f' || Carte[0].Seme == 'p')*/)
+                if (Carte[0].Numero == 1)
                 {
-                    if (Carte[1].Valore == 10 /*&& (Carte[1].Seme == 'f' || Carte[1].Seme == 'p')*/)
+                    if (Carte[1].Valore == 10)
                     {
                         return (21, true);
                     }
                 }
-                else if (Carte[1].Numero == 1 /*&& (Carte[1].Seme == 'f' || Carte[1].Seme == 'p')*/)
+                else if (Carte[1].Numero == 1)
                 {
-                    if (Carte[1].Valore == 10 /*&& (Carte[1].Seme == 'f' || Carte[1].Seme == 'p')*/)
+                    if (Carte[1].Valore == 10)
                     {
                         return (21, true);
                     }
                 }
             }
-            List<Card> assi = new List<Card>(); //asso vale 11 se non sballa
+            List<Card> assi = new List<Card>(); //asso vale 11 se non sballa, quindi va valutato al fondo
             foreach (Card carta in _carte)
             {
                 if (carta.Numero == 1)

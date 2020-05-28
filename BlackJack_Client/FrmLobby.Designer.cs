@@ -48,11 +48,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.LblMano = new System.Windows.Forms.Label();
             this.LblRis = new System.Windows.Forms.Label();
+            this.BtnDouble = new System.Windows.Forms.Button();
+            this.TBPuntata = new System.Windows.Forms.TrackBar();
+            this.label4 = new System.Windows.Forms.Label();
+            this.BtnPuntata = new System.Windows.Forms.Button();
+            this.NumPuntata = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TBPuntata)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumPuntata)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -102,9 +109,9 @@
             // BtnEsci
             // 
             this.BtnEsci.Enabled = false;
-            this.BtnEsci.Location = new System.Drawing.Point(218, 459);
+            this.BtnEsci.Location = new System.Drawing.Point(203, 459);
             this.BtnEsci.Name = "BtnEsci";
-            this.BtnEsci.Size = new System.Drawing.Size(169, 42);
+            this.BtnEsci.Size = new System.Drawing.Size(137, 42);
             this.BtnEsci.TabIndex = 12;
             this.BtnEsci.Text = "Esci";
             this.BtnEsci.UseVisualStyleBackColor = true;
@@ -113,9 +120,9 @@
             // BtnCarta
             // 
             this.BtnCarta.Enabled = false;
-            this.BtnCarta.Location = new System.Drawing.Point(28, 459);
+            this.BtnCarta.Location = new System.Drawing.Point(48, 459);
             this.BtnCarta.Name = "BtnCarta";
-            this.BtnCarta.Size = new System.Drawing.Size(184, 42);
+            this.BtnCarta.Size = new System.Drawing.Size(125, 42);
             this.BtnCarta.TabIndex = 11;
             this.BtnCarta.Text = "Carta";
             this.BtnCarta.UseVisualStyleBackColor = true;
@@ -211,7 +218,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(721, 472);
+            this.label2.Location = new System.Drawing.Point(777, 472);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 17);
             this.label2.TabIndex = 13;
@@ -220,7 +227,7 @@
             // LblMano
             // 
             this.LblMano.AutoSize = true;
-            this.LblMano.Location = new System.Drawing.Point(831, 472);
+            this.LblMano.Location = new System.Drawing.Point(887, 472);
             this.LblMano.Name = "LblMano";
             this.LblMano.Size = new System.Drawing.Size(43, 17);
             this.LblMano.TabIndex = 14;
@@ -229,17 +236,83 @@
             // LblRis
             // 
             this.LblRis.AutoSize = true;
-            this.LblRis.Location = new System.Drawing.Point(460, 472);
+            this.LblRis.Location = new System.Drawing.Point(685, 472);
             this.LblRis.Name = "LblRis";
-            this.LblRis.Size = new System.Drawing.Size(73, 21);
+            this.LblRis.Size = new System.Drawing.Size(58, 17);
             this.LblRis.TabIndex = 15;
             this.LblRis.Text = "risultato";
+            // 
+            // BtnDouble
+            // 
+            this.BtnDouble.Enabled = false;
+            this.BtnDouble.Location = new System.Drawing.Point(361, 459);
+            this.BtnDouble.Name = "BtnDouble";
+            this.BtnDouble.Size = new System.Drawing.Size(125, 42);
+            this.BtnDouble.TabIndex = 16;
+            this.BtnDouble.Text = "Raddoppia";
+            this.BtnDouble.UseVisualStyleBackColor = true;
+            // 
+            // TBPuntata
+            // 
+            this.TBPuntata.Enabled = false;
+            this.TBPuntata.Location = new System.Drawing.Point(31, 541);
+            this.TBPuntata.Maximum = 100;
+            this.TBPuntata.Minimum = 1;
+            this.TBPuntata.Name = "TBPuntata";
+            this.TBPuntata.Size = new System.Drawing.Size(181, 56);
+            this.TBPuntata.TabIndex = 17;
+            this.TBPuntata.Value = 1;
+            this.TBPuntata.Scroll += new System.EventHandler(this.TBPuntata_Scroll);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(28, 521);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 17);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Puntata";
+            // 
+            // BtnPuntata
+            // 
+            this.BtnPuntata.Enabled = false;
+            this.BtnPuntata.Location = new System.Drawing.Point(361, 528);
+            this.BtnPuntata.Name = "BtnPuntata";
+            this.BtnPuntata.Size = new System.Drawing.Size(125, 42);
+            this.BtnPuntata.TabIndex = 21;
+            this.BtnPuntata.Text = "Punta";
+            this.BtnPuntata.UseVisualStyleBackColor = true;
+            this.BtnPuntata.Click += new System.EventHandler(this.BtnPuntata_Click);
+            // 
+            // NumPuntata
+            // 
+            this.NumPuntata.Enabled = false;
+            this.NumPuntata.Location = new System.Drawing.Point(218, 539);
+            this.NumPuntata.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NumPuntata.Name = "NumPuntata";
+            this.NumPuntata.Size = new System.Drawing.Size(120, 22);
+            this.NumPuntata.TabIndex = 22;
+            this.NumPuntata.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NumPuntata.ValueChanged += new System.EventHandler(this.NumPuntata_ValueChanged);
             // 
             // FrmLobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 513);
+            this.ClientSize = new System.Drawing.Size(974, 596);
+            this.Controls.Add(this.NumPuntata);
+            this.Controls.Add(this.BtnPuntata);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.TBPuntata);
+            this.Controls.Add(this.BtnDouble);
             this.Controls.Add(this.LblRis);
             this.Controls.Add(this.LblMano);
             this.Controls.Add(this.label2);
@@ -263,6 +336,8 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TBPuntata)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumPuntata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +365,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LblMano;
         private System.Windows.Forms.Label LblRis;
+        private System.Windows.Forms.Button BtnDouble;
+        private System.Windows.Forms.TrackBar TBPuntata;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button BtnPuntata;
+        private System.Windows.Forms.NumericUpDown NumPuntata;
     }
 }
