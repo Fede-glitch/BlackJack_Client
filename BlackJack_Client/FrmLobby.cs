@@ -255,9 +255,8 @@ namespace BlackJack_Client
                         BeginInvoke((MethodInvoker)delegate
                         {
                             MessageBox.Show("La partita è terminata", "Hai terminato le fiches");
-                            interfacciaRete.EstablishConn(false);
                             interfacciaRete.Server.datiRicevutiEvent -= Server_datiRicevutiEventLobby;
-                            this.Close();
+                            Application.Exit();
                         });
                     else
                     {
@@ -268,10 +267,9 @@ namespace BlackJack_Client
                         {
                             BeginInvoke((MethodInvoker)delegate
                             {
-                                this.Close();
+                                Application.Exit();
                             });
                         }
-                        interfacciaRete.EstablishConn(false);
                         interfacciaRete.Server.datiRicevutiEvent -= Server_datiRicevutiEventLobby;
                     } 
                     break;

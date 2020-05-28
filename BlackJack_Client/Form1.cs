@@ -18,6 +18,7 @@ namespace BlackJack_Client
     public partial class Form1 : Form
     {
         Net interfacciaRete;
+
         public Form1()
         {
             InitializeComponent();
@@ -135,5 +136,6 @@ namespace BlackJack_Client
             if (TxtEmail.Text == "Username")
                 TxtEmail.Text = "";
         }
+
     }
 }
