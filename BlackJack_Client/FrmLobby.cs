@@ -277,12 +277,12 @@ namespace BlackJack_Client
                     });
                     break;
                 case "no-fiches":
+                    interfacciaRete.Server.datiRicevutiEvent -= Server_datiRicevutiEventLobby;
                     BeginInvoke((MethodInvoker)delegate
                     {
                         MessageBox.Show("La partita è terminata", "Hai terminato le fiches");
                         Application.Exit();
                     });
-                    interfacciaRete.Server.datiRicevutiEvent -= Server_datiRicevutiEventLobby;
                     break;
                     
             }
