@@ -251,6 +251,7 @@
             this.BtnDouble.TabIndex = 16;
             this.BtnDouble.Text = "Raddoppia";
             this.BtnDouble.UseVisualStyleBackColor = true;
+            this.BtnDouble.Click += new System.EventHandler(this.BtnDouble_Click);
             // 
             // TBPuntata
             // 

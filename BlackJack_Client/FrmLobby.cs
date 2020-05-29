@@ -141,6 +141,8 @@ namespace BlackJack_Client
                     {
                         BtnCarta.Enabled = true;
                         BtnEsci.Enabled = true;
+                        if(posti[pos_tavolo].Fiches - posti[pos_tavolo].Puntata >0)
+                            BtnDouble.Enabled = true;
                     });
                     break;
                 case "blackjack":
@@ -304,7 +306,7 @@ namespace BlackJack_Client
         }
 
 
-        public ClsMessaggio GeneraMessaggio(string action, List<object> data)
+        public ClsMessaggio GeneraMessaggio(string action, List<object> data = null)
         {
             ClsMessaggio toSend = new ClsMessaggio();
             ObjMex objMex = new ObjMex(action, data);
@@ -333,6 +335,17 @@ namespace BlackJack_Client
             TBPuntata.Enabled = false;
             NumPuntata.Enabled = false;
             BtnPuntata.Enabled = false;
+        }
+
+        private void BtnDouble_Click(object sender, EventArgs e)
+        {
+            BtnDouble.Enabled = false;
+            List<object> lst = new List<object>();
+            lst.Add(pos_tavolo);
+            lst.Add(log_id);
+            interfacciaRete.Client.Invia(GeneraMessaggio("double-bet", lst));
+            TBPuntata.Value = (posti[pos_tavolo].Puntata *= 2);
+            NumPuntata.Value = TBPuntata.Value;
         }
     }
 }
