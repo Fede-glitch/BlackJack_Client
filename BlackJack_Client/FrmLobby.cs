@@ -277,27 +277,12 @@ namespace BlackJack_Client
                     });
                     break;
                 case "no-fiches":
-                    if (!Convert.ToBoolean(msg.Data[0]))
-                        BeginInvoke((MethodInvoker)delegate
-                        {
-                            MessageBox.Show("La partita è terminata", "Hai terminato le fiches");
-                            interfacciaRete.Server.datiRicevutiEvent -= Server_datiRicevutiEventLobby;
-                            Application.Exit();
-                        });
-                    else
+                    BeginInvoke((MethodInvoker)delegate
                     {
-                        if (DialogResult.Cancel == MessageBox.Show("Premi OK per continuare a guardare la partita\nPremi annulla per uscire",
-                                               "Hai terminato le fiches",
-                                               MessageBoxButtons.OKCancel,
-                                               MessageBoxIcon.Information))
-                        {
-                            BeginInvoke((MethodInvoker)delegate
-                            {
-                                Application.Exit();
-                            });
-                        }
-                        interfacciaRete.Server.datiRicevutiEvent -= Server_datiRicevutiEventLobby;
-                    } 
+                        MessageBox.Show("La partita è terminata", "Hai terminato le fiches");
+                        Application.Exit();
+                    });
+                    interfacciaRete.Server.datiRicevutiEvent -= Server_datiRicevutiEventLobby;
                     break;
                     
             }
