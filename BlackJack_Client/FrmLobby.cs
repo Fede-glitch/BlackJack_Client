@@ -51,6 +51,8 @@ namespace BlackJack_Client
         {
             interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
             posti[pos_tavolo].Fiches = 1000;
+            LblRis.Text = "";
+            LblMano.Text = "";
         }
 
         private void BtnCarta_Click(object sender, EventArgs e)
@@ -113,7 +115,7 @@ namespace BlackJack_Client
                     {
                         Controls["panel5"].Controls["LblDealer"].Text = "";
                     });
-                    if((bool)msg.Data[1])   //TODO: nascondi prima carta
+                    if((bool)msg.Data[1])
                     {
                         foreach (Card carta in dealer.Carte)
                         {
@@ -229,6 +231,24 @@ namespace BlackJack_Client
                             }
                         }
                     }
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblMano.Text = "";
+                        LblRis.Text = "";
+                    });
+                    break;
+                case "update-graphics-dealer":
+                    appoggio = JsonConvert.DeserializeObject(msg.Data[0].ToString());
+                    carte = JsonConvert.DeserializeObject<List<Card>>(appoggio.Carte.ToString());
+                    dealer.Carte = carte;
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblDealer.Text = "";
+                        foreach (Card carta in dealer.Carte)
+                        {
+                            LblDealer.Text += $"{carta.Seme}{carta.Numero}\n";
+                        }
+                    });
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblMano.Text = "";
