@@ -165,18 +165,24 @@ namespace BlackJack_Client
                     {
                         LblRis.Text = "Hai vinto";
                     });
+                    posti[pos_tavolo].Fiches = Convert.ToInt32(msg.Data[0]);
+                    posti[pos_tavolo].Puntata = 0;
                     break;
                 case "dealer-wins":
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblRis.Text = "Hai perso";
                     });
+                    posti[pos_tavolo].Fiches = Convert.ToInt32(msg.Data[0]);
+                    posti[pos_tavolo].Puntata = 0;
                     break;
                 case "draw":
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblRis.Text = "Pareggio";
                     });
+                    posti[pos_tavolo].Fiches = Convert.ToInt32(msg.Data[0]);
+                    posti[pos_tavolo].Puntata = 0;
                     break;
                 case "new-turn":
                     BeginInvoke((MethodInvoker)delegate
