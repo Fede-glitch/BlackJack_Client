@@ -1,4 +1,6 @@
-﻿namespace BlackJack_Client
+﻿using System;
+
+namespace BlackJack_Client
 {
     partial class FrmLobby
     {
@@ -92,6 +94,7 @@
             this.LblCarte4 = new System.Windows.Forms.Label();
             this.LblPlayer4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pcbBkC11 = new System.Windows.Forms.PictureBox();
             this.LblDealer = new System.Windows.Forms.Label();
             this.pcbBkC10 = new System.Windows.Forms.PictureBox();
             this.pcbBkC9 = new System.Windows.Forms.PictureBox();
@@ -108,7 +111,6 @@
             this.LblMano = new System.Windows.Forms.Label();
             this.LblRis = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.pcbBkC11 = new System.Windows.Forms.PictureBox();
             this.TBPuntata = new System.Windows.Forms.TrackBar();
             this.NumPuntata = new System.Windows.Forms.NumericUpDown();
             this.BtnPuntata = new System.Windows.Forms.Button();
@@ -162,6 +164,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbG4C2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbG4C1)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbBkC11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC8)).BeginInit();
@@ -173,7 +176,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbBkC11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBPuntata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumPuntata)).BeginInit();
             this.SuspendLayout();
@@ -952,6 +954,17 @@
             this.panel5.Size = new System.Drawing.Size(865, 242);
             this.panel5.TabIndex = 10;
             // 
+            // pcbBkC11
+            // 
+            this.pcbBkC11.BackColor = System.Drawing.Color.Transparent;
+            this.pcbBkC11.Location = new System.Drawing.Point(771, 17);
+            this.pcbBkC11.Name = "pcbBkC11";
+            this.pcbBkC11.Size = new System.Drawing.Size(74, 102);
+            this.pcbBkC11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbBkC11.TabIndex = 58;
+            this.pcbBkC11.TabStop = false;
+            this.pcbBkC11.Visible = false;
+            // 
             // LblDealer
             // 
             this.LblDealer.AutoSize = true;
@@ -1136,17 +1149,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pcbBkC11
-            // 
-            this.pcbBkC11.BackColor = System.Drawing.Color.Transparent;
-            this.pcbBkC11.Location = new System.Drawing.Point(771, 17);
-            this.pcbBkC11.Name = "pcbBkC11";
-            this.pcbBkC11.Size = new System.Drawing.Size(74, 102);
-            this.pcbBkC11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbBkC11.TabIndex = 58;
-            this.pcbBkC11.TabStop = false;
-            this.pcbBkC11.Visible = false;
-            // 
             // TBPuntata
             // 
             this.TBPuntata.BackColor = System.Drawing.Color.Lime;
@@ -1154,13 +1156,17 @@
             this.TBPuntata.Name = "TBPuntata";
             this.TBPuntata.Size = new System.Drawing.Size(230, 50);
             this.TBPuntata.TabIndex = 17;
+            this.TBPuntata.Scroll += new System.EventHandler(this.TBPuntata_Scroll);
             // 
             // NumPuntata
             // 
+            this.NumPuntata.BackColor = System.Drawing.Color.Fuchsia;
+            this.NumPuntata.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NumPuntata.Location = new System.Drawing.Point(849, 829);
             this.NumPuntata.Name = "NumPuntata";
-            this.NumPuntata.Size = new System.Drawing.Size(120, 20);
+            this.NumPuntata.Size = new System.Drawing.Size(220, 16);
             this.NumPuntata.TabIndex = 18;
+            this.NumPuntata.ValueChanged += new System.EventHandler(this.NumPuntata_ValueChanged);
             // 
             // BtnPuntata
             // 
@@ -1177,9 +1183,10 @@
             this.BtnPuntata.Name = "BtnPuntata";
             this.BtnPuntata.Size = new System.Drawing.Size(166, 66);
             this.BtnPuntata.TabIndex = 19;
-            this.BtnPuntata.Text = "Carta";
+            this.BtnPuntata.Text = "Puntata";
             this.BtnPuntata.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnPuntata.UseVisualStyleBackColor = false;
+            this.BtnPuntata.Click += new System.EventHandler(this.BtnPuntata_Click);
             // 
             // BtnDouble
             // 
@@ -1191,14 +1198,15 @@
             this.BtnDouble.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.77358F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnDouble.ForeColor = System.Drawing.Color.White;
-            this.BtnDouble.Location = new System.Drawing.Point(917, 980);
+            this.BtnDouble.Location = new System.Drawing.Point(886, 980);
             this.BtnDouble.Margin = new System.Windows.Forms.Padding(2);
             this.BtnDouble.Name = "BtnDouble";
-            this.BtnDouble.Size = new System.Drawing.Size(166, 66);
+            this.BtnDouble.Size = new System.Drawing.Size(197, 66);
             this.BtnDouble.TabIndex = 20;
-            this.BtnDouble.Text = "Carta";
+            this.BtnDouble.Text = "Raddoppia";
             this.BtnDouble.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnDouble.UseVisualStyleBackColor = false;
+            this.BtnDouble.Click += new System.EventHandler(this.BtnDouble_Click);
             // 
             // FrmLobby
             // 
@@ -1283,6 +1291,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbG4C1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbBkC11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC8)).EndInit();
@@ -1294,7 +1303,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbBkC11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBPuntata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumPuntata)).EndInit();
             this.ResumeLayout(false);

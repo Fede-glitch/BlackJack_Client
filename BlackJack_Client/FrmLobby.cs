@@ -42,6 +42,19 @@ namespace BlackJack_Client
             prova = new Thread(aggiornaFiches);
         }
 
+        private void dimagrisci(object sender, EventArgs e)
+        {
+            //
+        }
+        private void ingrassa(object sender, EventArgs e)
+        {
+            //
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            //TODO: Implementare roba che torna al login cuando esko
+        }
         private void aggiornaFiches()
         {
             while (true)
