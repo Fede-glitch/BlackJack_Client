@@ -108,6 +108,11 @@
             this.LblMano = new System.Windows.Forms.Label();
             this.LblRis = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.pcbBkC11 = new System.Windows.Forms.PictureBox();
+            this.TBPuntata = new System.Windows.Forms.TrackBar();
+            this.NumPuntata = new System.Windows.Forms.NumericUpDown();
+            this.BtnPuntata = new System.Windows.Forms.Button();
+            this.BtnDouble = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbG1C11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbG1C10)).BeginInit();
@@ -168,6 +173,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbBkC11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TBPuntata)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumPuntata)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -211,6 +219,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.LblCarte1);
             this.panel1.Controls.Add(this.LblPlayer1);
             this.panel1.Controls.Add(this.pcbG1C11);
@@ -225,10 +234,10 @@
             this.panel1.Controls.Add(this.pcbG1C2);
             this.panel1.Controls.Add(this.pcbG1C1);
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(1430, 559);
+            this.panel1.Location = new System.Drawing.Point(1431, 400);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(430, 275);
+            this.panel1.Size = new System.Drawing.Size(430, 380);
             this.panel1.TabIndex = 6;
             // 
             // LblCarte1
@@ -243,9 +252,9 @@
             // pcbG1C11
             // 
             this.pcbG1C11.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG1C11.Location = new System.Drawing.Point(265, 58);
+            this.pcbG1C11.Location = new System.Drawing.Point(15, 265);
             this.pcbG1C11.Name = "pcbG1C11";
-            this.pcbG1C11.Size = new System.Drawing.Size(150, 204);
+            this.pcbG1C11.Size = new System.Drawing.Size(74, 102);
             this.pcbG1C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C11.TabIndex = 22;
             this.pcbG1C11.TabStop = false;
@@ -254,9 +263,9 @@
             // pcbG1C10
             // 
             this.pcbG1C10.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG1C10.Location = new System.Drawing.Point(240, 58);
+            this.pcbG1C10.Location = new System.Drawing.Point(335, 160);
             this.pcbG1C10.Name = "pcbG1C10";
-            this.pcbG1C10.Size = new System.Drawing.Size(150, 204);
+            this.pcbG1C10.Size = new System.Drawing.Size(74, 102);
             this.pcbG1C10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C10.TabIndex = 21;
             this.pcbG1C10.TabStop = false;
@@ -265,9 +274,9 @@
             // pcbG1C9
             // 
             this.pcbG1C9.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG1C9.Location = new System.Drawing.Point(215, 58);
+            this.pcbG1C9.Location = new System.Drawing.Point(255, 160);
             this.pcbG1C9.Name = "pcbG1C9";
-            this.pcbG1C9.Size = new System.Drawing.Size(150, 204);
+            this.pcbG1C9.Size = new System.Drawing.Size(74, 102);
             this.pcbG1C9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C9.TabIndex = 20;
             this.pcbG1C9.TabStop = false;
@@ -276,9 +285,9 @@
             // pcbG1C8
             // 
             this.pcbG1C8.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG1C8.Location = new System.Drawing.Point(190, 58);
+            this.pcbG1C8.Location = new System.Drawing.Point(175, 160);
             this.pcbG1C8.Name = "pcbG1C8";
-            this.pcbG1C8.Size = new System.Drawing.Size(150, 204);
+            this.pcbG1C8.Size = new System.Drawing.Size(74, 102);
             this.pcbG1C8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C8.TabIndex = 19;
             this.pcbG1C8.TabStop = false;
@@ -287,9 +296,9 @@
             // pcbG1C7
             // 
             this.pcbG1C7.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG1C7.Location = new System.Drawing.Point(165, 58);
+            this.pcbG1C7.Location = new System.Drawing.Point(95, 160);
             this.pcbG1C7.Name = "pcbG1C7";
-            this.pcbG1C7.Size = new System.Drawing.Size(150, 204);
+            this.pcbG1C7.Size = new System.Drawing.Size(74, 102);
             this.pcbG1C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C7.TabIndex = 18;
             this.pcbG1C7.TabStop = false;
@@ -298,9 +307,9 @@
             // pcbG1C6
             // 
             this.pcbG1C6.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG1C6.Location = new System.Drawing.Point(140, 58);
+            this.pcbG1C6.Location = new System.Drawing.Point(15, 160);
             this.pcbG1C6.Name = "pcbG1C6";
-            this.pcbG1C6.Size = new System.Drawing.Size(150, 204);
+            this.pcbG1C6.Size = new System.Drawing.Size(74, 102);
             this.pcbG1C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C6.TabIndex = 17;
             this.pcbG1C6.TabStop = false;
@@ -309,9 +318,9 @@
             // pcbG1C5
             // 
             this.pcbG1C5.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG1C5.Location = new System.Drawing.Point(115, 58);
+            this.pcbG1C5.Location = new System.Drawing.Point(335, 58);
             this.pcbG1C5.Name = "pcbG1C5";
-            this.pcbG1C5.Size = new System.Drawing.Size(150, 204);
+            this.pcbG1C5.Size = new System.Drawing.Size(74, 102);
             this.pcbG1C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C5.TabIndex = 16;
             this.pcbG1C5.TabStop = false;
@@ -320,9 +329,9 @@
             // pcbG1C4
             // 
             this.pcbG1C4.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG1C4.Location = new System.Drawing.Point(90, 58);
+            this.pcbG1C4.Location = new System.Drawing.Point(255, 58);
             this.pcbG1C4.Name = "pcbG1C4";
-            this.pcbG1C4.Size = new System.Drawing.Size(150, 204);
+            this.pcbG1C4.Size = new System.Drawing.Size(74, 102);
             this.pcbG1C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C4.TabIndex = 15;
             this.pcbG1C4.TabStop = false;
@@ -331,9 +340,9 @@
             // pcbG1C3
             // 
             this.pcbG1C3.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG1C3.Location = new System.Drawing.Point(65, 58);
+            this.pcbG1C3.Location = new System.Drawing.Point(175, 58);
             this.pcbG1C3.Name = "pcbG1C3";
-            this.pcbG1C3.Size = new System.Drawing.Size(150, 204);
+            this.pcbG1C3.Size = new System.Drawing.Size(74, 102);
             this.pcbG1C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C3.TabIndex = 14;
             this.pcbG1C3.TabStop = false;
@@ -343,9 +352,9 @@
             // 
             this.pcbG1C2.BackColor = System.Drawing.Color.Transparent;
             this.pcbG1C2.InitialImage = null;
-            this.pcbG1C2.Location = new System.Drawing.Point(40, 58);
+            this.pcbG1C2.Location = new System.Drawing.Point(95, 58);
             this.pcbG1C2.Name = "pcbG1C2";
-            this.pcbG1C2.Size = new System.Drawing.Size(150, 204);
+            this.pcbG1C2.Size = new System.Drawing.Size(74, 102);
             this.pcbG1C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C2.TabIndex = 13;
             this.pcbG1C2.TabStop = false;
@@ -357,7 +366,7 @@
             this.pcbG1C1.Image = ((System.Drawing.Image)(resources.GetObject("pcbG1C1.Image")));
             this.pcbG1C1.Location = new System.Drawing.Point(15, 58);
             this.pcbG1C1.Name = "pcbG1C1";
-            this.pcbG1C1.Size = new System.Drawing.Size(149, 204);
+            this.pcbG1C1.Size = new System.Drawing.Size(74, 102);
             this.pcbG1C1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C1.TabIndex = 12;
             this.pcbG1C1.TabStop = false;
@@ -407,6 +416,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.pcbG2C11);
             this.panel2.Controls.Add(this.pcbG2C10);
             this.panel2.Controls.Add(this.pcbG2C9);
@@ -420,18 +430,18 @@
             this.panel2.Controls.Add(this.pcbG2C1);
             this.panel2.Controls.Add(this.LblCarte2);
             this.panel2.Controls.Add(this.LblPlayer2);
-            this.panel2.Location = new System.Drawing.Point(979, 559);
+            this.panel2.Location = new System.Drawing.Point(980, 400);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(430, 275);
+            this.panel2.Size = new System.Drawing.Size(430, 380);
             this.panel2.TabIndex = 7;
             // 
             // pcbG2C11
             // 
             this.pcbG2C11.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG2C11.Location = new System.Drawing.Point(265, 58);
+            this.pcbG2C11.Location = new System.Drawing.Point(15, 265);
             this.pcbG2C11.Name = "pcbG2C11";
-            this.pcbG2C11.Size = new System.Drawing.Size(150, 204);
+            this.pcbG2C11.Size = new System.Drawing.Size(74, 102);
             this.pcbG2C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C11.TabIndex = 33;
             this.pcbG2C11.TabStop = false;
@@ -440,9 +450,9 @@
             // pcbG2C10
             // 
             this.pcbG2C10.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG2C10.Location = new System.Drawing.Point(240, 58);
+            this.pcbG2C10.Location = new System.Drawing.Point(334, 160);
             this.pcbG2C10.Name = "pcbG2C10";
-            this.pcbG2C10.Size = new System.Drawing.Size(150, 204);
+            this.pcbG2C10.Size = new System.Drawing.Size(74, 102);
             this.pcbG2C10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C10.TabIndex = 32;
             this.pcbG2C10.TabStop = false;
@@ -451,9 +461,9 @@
             // pcbG2C9
             // 
             this.pcbG2C9.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG2C9.Location = new System.Drawing.Point(215, 58);
+            this.pcbG2C9.Location = new System.Drawing.Point(254, 160);
             this.pcbG2C9.Name = "pcbG2C9";
-            this.pcbG2C9.Size = new System.Drawing.Size(150, 204);
+            this.pcbG2C9.Size = new System.Drawing.Size(74, 102);
             this.pcbG2C9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C9.TabIndex = 31;
             this.pcbG2C9.TabStop = false;
@@ -462,9 +472,9 @@
             // pcbG2C8
             // 
             this.pcbG2C8.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG2C8.Location = new System.Drawing.Point(190, 58);
+            this.pcbG2C8.Location = new System.Drawing.Point(174, 160);
             this.pcbG2C8.Name = "pcbG2C8";
-            this.pcbG2C8.Size = new System.Drawing.Size(150, 204);
+            this.pcbG2C8.Size = new System.Drawing.Size(74, 102);
             this.pcbG2C8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C8.TabIndex = 30;
             this.pcbG2C8.TabStop = false;
@@ -473,9 +483,9 @@
             // pcbG2C7
             // 
             this.pcbG2C7.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG2C7.Location = new System.Drawing.Point(165, 58);
+            this.pcbG2C7.Location = new System.Drawing.Point(95, 160);
             this.pcbG2C7.Name = "pcbG2C7";
-            this.pcbG2C7.Size = new System.Drawing.Size(150, 204);
+            this.pcbG2C7.Size = new System.Drawing.Size(74, 102);
             this.pcbG2C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C7.TabIndex = 29;
             this.pcbG2C7.TabStop = false;
@@ -484,9 +494,9 @@
             // pcbG2C6
             // 
             this.pcbG2C6.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG2C6.Location = new System.Drawing.Point(140, 58);
+            this.pcbG2C6.Location = new System.Drawing.Point(15, 160);
             this.pcbG2C6.Name = "pcbG2C6";
-            this.pcbG2C6.Size = new System.Drawing.Size(150, 204);
+            this.pcbG2C6.Size = new System.Drawing.Size(74, 102);
             this.pcbG2C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C6.TabIndex = 28;
             this.pcbG2C6.TabStop = false;
@@ -495,9 +505,9 @@
             // pcbG2C5
             // 
             this.pcbG2C5.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG2C5.Location = new System.Drawing.Point(115, 58);
+            this.pcbG2C5.Location = new System.Drawing.Point(334, 58);
             this.pcbG2C5.Name = "pcbG2C5";
-            this.pcbG2C5.Size = new System.Drawing.Size(150, 204);
+            this.pcbG2C5.Size = new System.Drawing.Size(74, 102);
             this.pcbG2C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C5.TabIndex = 27;
             this.pcbG2C5.TabStop = false;
@@ -506,9 +516,9 @@
             // pcbG2C4
             // 
             this.pcbG2C4.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG2C4.Location = new System.Drawing.Point(90, 58);
+            this.pcbG2C4.Location = new System.Drawing.Point(254, 58);
             this.pcbG2C4.Name = "pcbG2C4";
-            this.pcbG2C4.Size = new System.Drawing.Size(150, 204);
+            this.pcbG2C4.Size = new System.Drawing.Size(74, 102);
             this.pcbG2C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C4.TabIndex = 26;
             this.pcbG2C4.TabStop = false;
@@ -517,9 +527,9 @@
             // pcbG2C3
             // 
             this.pcbG2C3.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG2C3.Location = new System.Drawing.Point(65, 58);
+            this.pcbG2C3.Location = new System.Drawing.Point(174, 58);
             this.pcbG2C3.Name = "pcbG2C3";
-            this.pcbG2C3.Size = new System.Drawing.Size(150, 204);
+            this.pcbG2C3.Size = new System.Drawing.Size(74, 102);
             this.pcbG2C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C3.TabIndex = 25;
             this.pcbG2C3.TabStop = false;
@@ -528,9 +538,9 @@
             // pcbG2C2
             // 
             this.pcbG2C2.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG2C2.Location = new System.Drawing.Point(40, 58);
+            this.pcbG2C2.Location = new System.Drawing.Point(95, 58);
             this.pcbG2C2.Name = "pcbG2C2";
-            this.pcbG2C2.Size = new System.Drawing.Size(150, 204);
+            this.pcbG2C2.Size = new System.Drawing.Size(74, 102);
             this.pcbG2C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C2.TabIndex = 24;
             this.pcbG2C2.TabStop = false;
@@ -542,7 +552,7 @@
             this.pcbG2C1.Image = ((System.Drawing.Image)(resources.GetObject("pcbG2C1.Image")));
             this.pcbG2C1.Location = new System.Drawing.Point(15, 58);
             this.pcbG2C1.Name = "pcbG2C1";
-            this.pcbG2C1.Size = new System.Drawing.Size(149, 204);
+            this.pcbG2C1.Size = new System.Drawing.Size(74, 102);
             this.pcbG2C1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG2C1.TabIndex = 23;
             this.pcbG2C1.TabStop = false;
@@ -560,6 +570,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Controls.Add(this.pcbG3C11);
             this.panel3.Controls.Add(this.pcbG3C10);
             this.panel3.Controls.Add(this.pcbG3C9);
@@ -574,18 +585,18 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.LblCarte3);
             this.panel3.Controls.Add(this.LblPlayer3);
-            this.panel3.Location = new System.Drawing.Point(525, 559);
+            this.panel3.Location = new System.Drawing.Point(526, 400);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(430, 275);
+            this.panel3.Size = new System.Drawing.Size(430, 380);
             this.panel3.TabIndex = 8;
             // 
             // pcbG3C11
             // 
             this.pcbG3C11.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG3C11.Location = new System.Drawing.Point(265, 58);
+            this.pcbG3C11.Location = new System.Drawing.Point(15, 265);
             this.pcbG3C11.Name = "pcbG3C11";
-            this.pcbG3C11.Size = new System.Drawing.Size(150, 204);
+            this.pcbG3C11.Size = new System.Drawing.Size(74, 102);
             this.pcbG3C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C11.TabIndex = 45;
             this.pcbG3C11.TabStop = false;
@@ -594,9 +605,9 @@
             // pcbG3C10
             // 
             this.pcbG3C10.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG3C10.Location = new System.Drawing.Point(240, 58);
+            this.pcbG3C10.Location = new System.Drawing.Point(335, 160);
             this.pcbG3C10.Name = "pcbG3C10";
-            this.pcbG3C10.Size = new System.Drawing.Size(150, 204);
+            this.pcbG3C10.Size = new System.Drawing.Size(74, 102);
             this.pcbG3C10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C10.TabIndex = 44;
             this.pcbG3C10.TabStop = false;
@@ -605,9 +616,9 @@
             // pcbG3C9
             // 
             this.pcbG3C9.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG3C9.Location = new System.Drawing.Point(215, 58);
+            this.pcbG3C9.Location = new System.Drawing.Point(255, 160);
             this.pcbG3C9.Name = "pcbG3C9";
-            this.pcbG3C9.Size = new System.Drawing.Size(150, 204);
+            this.pcbG3C9.Size = new System.Drawing.Size(74, 102);
             this.pcbG3C9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C9.TabIndex = 43;
             this.pcbG3C9.TabStop = false;
@@ -616,9 +627,9 @@
             // pcbG3C8
             // 
             this.pcbG3C8.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG3C8.Location = new System.Drawing.Point(190, 58);
+            this.pcbG3C8.Location = new System.Drawing.Point(175, 160);
             this.pcbG3C8.Name = "pcbG3C8";
-            this.pcbG3C8.Size = new System.Drawing.Size(150, 204);
+            this.pcbG3C8.Size = new System.Drawing.Size(74, 102);
             this.pcbG3C8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C8.TabIndex = 42;
             this.pcbG3C8.TabStop = false;
@@ -627,9 +638,9 @@
             // pcbG3C7
             // 
             this.pcbG3C7.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG3C7.Location = new System.Drawing.Point(165, 58);
+            this.pcbG3C7.Location = new System.Drawing.Point(95, 160);
             this.pcbG3C7.Name = "pcbG3C7";
-            this.pcbG3C7.Size = new System.Drawing.Size(150, 204);
+            this.pcbG3C7.Size = new System.Drawing.Size(74, 102);
             this.pcbG3C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C7.TabIndex = 41;
             this.pcbG3C7.TabStop = false;
@@ -638,9 +649,9 @@
             // pcbG3C6
             // 
             this.pcbG3C6.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG3C6.Location = new System.Drawing.Point(140, 58);
+            this.pcbG3C6.Location = new System.Drawing.Point(15, 160);
             this.pcbG3C6.Name = "pcbG3C6";
-            this.pcbG3C6.Size = new System.Drawing.Size(150, 204);
+            this.pcbG3C6.Size = new System.Drawing.Size(74, 102);
             this.pcbG3C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C6.TabIndex = 40;
             this.pcbG3C6.TabStop = false;
@@ -649,9 +660,9 @@
             // pcbG3C5
             // 
             this.pcbG3C5.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG3C5.Location = new System.Drawing.Point(115, 58);
+            this.pcbG3C5.Location = new System.Drawing.Point(335, 58);
             this.pcbG3C5.Name = "pcbG3C5";
-            this.pcbG3C5.Size = new System.Drawing.Size(150, 204);
+            this.pcbG3C5.Size = new System.Drawing.Size(74, 102);
             this.pcbG3C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C5.TabIndex = 39;
             this.pcbG3C5.TabStop = false;
@@ -660,9 +671,9 @@
             // pcbG3C4
             // 
             this.pcbG3C4.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG3C4.Location = new System.Drawing.Point(90, 58);
+            this.pcbG3C4.Location = new System.Drawing.Point(255, 58);
             this.pcbG3C4.Name = "pcbG3C4";
-            this.pcbG3C4.Size = new System.Drawing.Size(150, 204);
+            this.pcbG3C4.Size = new System.Drawing.Size(74, 102);
             this.pcbG3C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C4.TabIndex = 38;
             this.pcbG3C4.TabStop = false;
@@ -671,9 +682,9 @@
             // pcbG3C3
             // 
             this.pcbG3C3.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG3C3.Location = new System.Drawing.Point(65, 58);
+            this.pcbG3C3.Location = new System.Drawing.Point(175, 58);
             this.pcbG3C3.Name = "pcbG3C3";
-            this.pcbG3C3.Size = new System.Drawing.Size(150, 204);
+            this.pcbG3C3.Size = new System.Drawing.Size(74, 102);
             this.pcbG3C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C3.TabIndex = 37;
             this.pcbG3C3.TabStop = false;
@@ -682,9 +693,9 @@
             // pcbG3C2
             // 
             this.pcbG3C2.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG3C2.Location = new System.Drawing.Point(40, 58);
+            this.pcbG3C2.Location = new System.Drawing.Point(95, 58);
             this.pcbG3C2.Name = "pcbG3C2";
-            this.pcbG3C2.Size = new System.Drawing.Size(150, 204);
+            this.pcbG3C2.Size = new System.Drawing.Size(74, 102);
             this.pcbG3C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C2.TabIndex = 36;
             this.pcbG3C2.TabStop = false;
@@ -696,7 +707,7 @@
             this.pcbG3C1.Image = ((System.Drawing.Image)(resources.GetObject("pcbG3C1.Image")));
             this.pcbG3C1.Location = new System.Drawing.Point(15, 58);
             this.pcbG3C1.Name = "pcbG3C1";
-            this.pcbG3C1.Size = new System.Drawing.Size(149, 204);
+            this.pcbG3C1.Size = new System.Drawing.Size(74, 102);
             this.pcbG3C1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG3C1.TabIndex = 35;
             this.pcbG3C1.TabStop = false;
@@ -735,6 +746,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.Controls.Add(this.pcbG4C11);
             this.panel4.Controls.Add(this.pcbG4C10);
             this.panel4.Controls.Add(this.pcbG4C9);
@@ -750,19 +762,19 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.LblCarte4);
             this.panel4.Controls.Add(this.LblPlayer4);
-            this.panel4.Location = new System.Drawing.Point(73, 559);
+            this.panel4.Location = new System.Drawing.Point(74, 400);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(430, 275);
+            this.panel4.Size = new System.Drawing.Size(430, 380);
             this.panel4.TabIndex = 9;
             // 
             // pcbG4C11
             // 
             this.pcbG4C11.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG4C11.Location = new System.Drawing.Point(264, 58);
+            this.pcbG4C11.Location = new System.Drawing.Point(14, 265);
             this.pcbG4C11.Name = "pcbG4C11";
-            this.pcbG4C11.Size = new System.Drawing.Size(150, 204);
-            this.pcbG4C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbG4C11.Size = new System.Drawing.Size(74, 102);
+            this.pcbG4C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbG4C11.TabIndex = 58;
             this.pcbG4C11.TabStop = false;
             this.pcbG4C11.Visible = false;
@@ -770,9 +782,9 @@
             // pcbG4C10
             // 
             this.pcbG4C10.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG4C10.Location = new System.Drawing.Point(239, 58);
+            this.pcbG4C10.Location = new System.Drawing.Point(329, 160);
             this.pcbG4C10.Name = "pcbG4C10";
-            this.pcbG4C10.Size = new System.Drawing.Size(150, 204);
+            this.pcbG4C10.Size = new System.Drawing.Size(74, 102);
             this.pcbG4C10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C10.TabIndex = 57;
             this.pcbG4C10.TabStop = false;
@@ -781,9 +793,9 @@
             // pcbG4C9
             // 
             this.pcbG4C9.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG4C9.Location = new System.Drawing.Point(214, 58);
+            this.pcbG4C9.Location = new System.Drawing.Point(249, 160);
             this.pcbG4C9.Name = "pcbG4C9";
-            this.pcbG4C9.Size = new System.Drawing.Size(150, 204);
+            this.pcbG4C9.Size = new System.Drawing.Size(74, 102);
             this.pcbG4C9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C9.TabIndex = 56;
             this.pcbG4C9.TabStop = false;
@@ -792,9 +804,9 @@
             // pcbG4C8
             // 
             this.pcbG4C8.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG4C8.Location = new System.Drawing.Point(189, 58);
+            this.pcbG4C8.Location = new System.Drawing.Point(169, 160);
             this.pcbG4C8.Name = "pcbG4C8";
-            this.pcbG4C8.Size = new System.Drawing.Size(150, 204);
+            this.pcbG4C8.Size = new System.Drawing.Size(74, 102);
             this.pcbG4C8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C8.TabIndex = 55;
             this.pcbG4C8.TabStop = false;
@@ -803,9 +815,9 @@
             // pcbG4C7
             // 
             this.pcbG4C7.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG4C7.Location = new System.Drawing.Point(164, 58);
+            this.pcbG4C7.Location = new System.Drawing.Point(89, 160);
             this.pcbG4C7.Name = "pcbG4C7";
-            this.pcbG4C7.Size = new System.Drawing.Size(150, 204);
+            this.pcbG4C7.Size = new System.Drawing.Size(74, 102);
             this.pcbG4C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C7.TabIndex = 54;
             this.pcbG4C7.TabStop = false;
@@ -814,9 +826,9 @@
             // pcbG4C6
             // 
             this.pcbG4C6.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG4C6.Location = new System.Drawing.Point(139, 58);
+            this.pcbG4C6.Location = new System.Drawing.Point(14, 160);
             this.pcbG4C6.Name = "pcbG4C6";
-            this.pcbG4C6.Size = new System.Drawing.Size(150, 204);
+            this.pcbG4C6.Size = new System.Drawing.Size(74, 102);
             this.pcbG4C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C6.TabIndex = 53;
             this.pcbG4C6.TabStop = false;
@@ -825,9 +837,9 @@
             // pcbG4C5
             // 
             this.pcbG4C5.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG4C5.Location = new System.Drawing.Point(114, 58);
+            this.pcbG4C5.Location = new System.Drawing.Point(329, 58);
             this.pcbG4C5.Name = "pcbG4C5";
-            this.pcbG4C5.Size = new System.Drawing.Size(150, 204);
+            this.pcbG4C5.Size = new System.Drawing.Size(74, 102);
             this.pcbG4C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C5.TabIndex = 52;
             this.pcbG4C5.TabStop = false;
@@ -836,9 +848,9 @@
             // pcbG4C4
             // 
             this.pcbG4C4.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG4C4.Location = new System.Drawing.Point(89, 58);
+            this.pcbG4C4.Location = new System.Drawing.Point(249, 58);
             this.pcbG4C4.Name = "pcbG4C4";
-            this.pcbG4C4.Size = new System.Drawing.Size(150, 204);
+            this.pcbG4C4.Size = new System.Drawing.Size(74, 102);
             this.pcbG4C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C4.TabIndex = 51;
             this.pcbG4C4.TabStop = false;
@@ -847,9 +859,9 @@
             // pcbG4C3
             // 
             this.pcbG4C3.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG4C3.Location = new System.Drawing.Point(64, 58);
+            this.pcbG4C3.Location = new System.Drawing.Point(169, 58);
             this.pcbG4C3.Name = "pcbG4C3";
-            this.pcbG4C3.Size = new System.Drawing.Size(150, 204);
+            this.pcbG4C3.Size = new System.Drawing.Size(74, 102);
             this.pcbG4C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C3.TabIndex = 50;
             this.pcbG4C3.TabStop = false;
@@ -858,9 +870,9 @@
             // pcbG4C2
             // 
             this.pcbG4C2.BackColor = System.Drawing.Color.Transparent;
-            this.pcbG4C2.Location = new System.Drawing.Point(39, 58);
+            this.pcbG4C2.Location = new System.Drawing.Point(89, 58);
             this.pcbG4C2.Name = "pcbG4C2";
-            this.pcbG4C2.Size = new System.Drawing.Size(150, 204);
+            this.pcbG4C2.Size = new System.Drawing.Size(74, 102);
             this.pcbG4C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C2.TabIndex = 49;
             this.pcbG4C2.TabStop = false;
@@ -872,7 +884,7 @@
             this.pcbG4C1.Image = ((System.Drawing.Image)(resources.GetObject("pcbG4C1.Image")));
             this.pcbG4C1.Location = new System.Drawing.Point(14, 58);
             this.pcbG4C1.Name = "pcbG4C1";
-            this.pcbG4C1.Size = new System.Drawing.Size(149, 204);
+            this.pcbG4C1.Size = new System.Drawing.Size(74, 102);
             this.pcbG4C1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG4C1.TabIndex = 48;
             this.pcbG4C1.TabStop = false;
@@ -920,6 +932,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.Controls.Add(this.pcbBkC11);
             this.panel5.Controls.Add(this.LblDealer);
             this.panel5.Controls.Add(this.pcbBkC10);
             this.panel5.Controls.Add(this.pcbBkC9);
@@ -933,10 +946,10 @@
             this.panel5.Controls.Add(this.pcbBkC2);
             this.panel5.Controls.Add(this.pcbBkC1);
             this.panel5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel5.Location = new System.Drawing.Point(576, 72);
+            this.panel5.Location = new System.Drawing.Point(577, 72);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(865, 240);
+            this.panel5.Size = new System.Drawing.Size(865, 242);
             this.panel5.TabIndex = 10;
             // 
             // LblDealer
@@ -952,9 +965,9 @@
             // pcbBkC10
             // 
             this.pcbBkC10.BackColor = System.Drawing.Color.Transparent;
-            this.pcbBkC10.Location = new System.Drawing.Point(694, 17);
+            this.pcbBkC10.Location = new System.Drawing.Point(694, 122);
             this.pcbBkC10.Name = "pcbBkC10";
-            this.pcbBkC10.Size = new System.Drawing.Size(150, 204);
+            this.pcbBkC10.Size = new System.Drawing.Size(74, 102);
             this.pcbBkC10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC10.TabIndex = 56;
             this.pcbBkC10.TabStop = false;
@@ -965,7 +978,7 @@
             this.pcbBkC9.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC9.Location = new System.Drawing.Point(619, 17);
             this.pcbBkC9.Name = "pcbBkC9";
-            this.pcbBkC9.Size = new System.Drawing.Size(150, 204);
+            this.pcbBkC9.Size = new System.Drawing.Size(74, 102);
             this.pcbBkC9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC9.TabIndex = 55;
             this.pcbBkC9.TabStop = false;
@@ -974,9 +987,9 @@
             // pcbBkC8
             // 
             this.pcbBkC8.BackColor = System.Drawing.Color.Transparent;
-            this.pcbBkC8.Location = new System.Drawing.Point(544, 17);
+            this.pcbBkC8.Location = new System.Drawing.Point(544, 122);
             this.pcbBkC8.Name = "pcbBkC8";
-            this.pcbBkC8.Size = new System.Drawing.Size(150, 204);
+            this.pcbBkC8.Size = new System.Drawing.Size(74, 102);
             this.pcbBkC8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC8.TabIndex = 54;
             this.pcbBkC8.TabStop = false;
@@ -987,7 +1000,7 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Location = new System.Drawing.Point(618, 17);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(150, 204);
+            this.pictureBox4.Size = new System.Drawing.Size(74, 102);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 53;
             this.pictureBox4.TabStop = false;
@@ -997,7 +1010,7 @@
             this.pcbBkC7.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC7.Location = new System.Drawing.Point(469, 17);
             this.pcbBkC7.Name = "pcbBkC7";
-            this.pcbBkC7.Size = new System.Drawing.Size(150, 204);
+            this.pcbBkC7.Size = new System.Drawing.Size(74, 102);
             this.pcbBkC7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC7.TabIndex = 52;
             this.pcbBkC7.TabStop = false;
@@ -1006,9 +1019,9 @@
             // pcbBkC6
             // 
             this.pcbBkC6.BackColor = System.Drawing.Color.Transparent;
-            this.pcbBkC6.Location = new System.Drawing.Point(394, 17);
+            this.pcbBkC6.Location = new System.Drawing.Point(394, 122);
             this.pcbBkC6.Name = "pcbBkC6";
-            this.pcbBkC6.Size = new System.Drawing.Size(150, 204);
+            this.pcbBkC6.Size = new System.Drawing.Size(74, 102);
             this.pcbBkC6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC6.TabIndex = 51;
             this.pcbBkC6.TabStop = false;
@@ -1019,7 +1032,7 @@
             this.pcbBkC5.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC5.Location = new System.Drawing.Point(319, 17);
             this.pcbBkC5.Name = "pcbBkC5";
-            this.pcbBkC5.Size = new System.Drawing.Size(150, 204);
+            this.pcbBkC5.Size = new System.Drawing.Size(74, 102);
             this.pcbBkC5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC5.TabIndex = 50;
             this.pcbBkC5.TabStop = false;
@@ -1028,9 +1041,9 @@
             // pcbBkC4
             // 
             this.pcbBkC4.BackColor = System.Drawing.Color.Transparent;
-            this.pcbBkC4.Location = new System.Drawing.Point(244, 17);
+            this.pcbBkC4.Location = new System.Drawing.Point(244, 122);
             this.pcbBkC4.Name = "pcbBkC4";
-            this.pcbBkC4.Size = new System.Drawing.Size(150, 204);
+            this.pcbBkC4.Size = new System.Drawing.Size(74, 102);
             this.pcbBkC4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC4.TabIndex = 49;
             this.pcbBkC4.TabStop = false;
@@ -1041,7 +1054,7 @@
             this.pcbBkC3.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC3.Location = new System.Drawing.Point(169, 17);
             this.pcbBkC3.Name = "pcbBkC3";
-            this.pcbBkC3.Size = new System.Drawing.Size(150, 204);
+            this.pcbBkC3.Size = new System.Drawing.Size(74, 102);
             this.pcbBkC3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC3.TabIndex = 48;
             this.pcbBkC3.TabStop = false;
@@ -1050,9 +1063,9 @@
             // pcbBkC2
             // 
             this.pcbBkC2.BackColor = System.Drawing.Color.Transparent;
-            this.pcbBkC2.Location = new System.Drawing.Point(94, 17);
+            this.pcbBkC2.Location = new System.Drawing.Point(94, 122);
             this.pcbBkC2.Name = "pcbBkC2";
-            this.pcbBkC2.Size = new System.Drawing.Size(150, 204);
+            this.pcbBkC2.Size = new System.Drawing.Size(74, 102);
             this.pcbBkC2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC2.TabIndex = 47;
             this.pcbBkC2.TabStop = false;
@@ -1064,7 +1077,7 @@
             this.pcbBkC1.Image = ((System.Drawing.Image)(resources.GetObject("pcbBkC1.Image")));
             this.pcbBkC1.Location = new System.Drawing.Point(19, 17);
             this.pcbBkC1.Name = "pcbBkC1";
-            this.pcbBkC1.Size = new System.Drawing.Size(149, 204);
+            this.pcbBkC1.Size = new System.Drawing.Size(74, 102);
             this.pcbBkC1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbBkC1.TabIndex = 46;
             this.pcbBkC1.TabStop = false;
@@ -1075,7 +1088,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 19.69811F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1486, 855);
+            this.label2.Location = new System.Drawing.Point(1476, 816);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 34);
@@ -1088,7 +1101,7 @@
             this.LblMano.BackColor = System.Drawing.Color.Transparent;
             this.LblMano.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 19.69811F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblMano.ForeColor = System.Drawing.Color.White;
-            this.LblMano.Location = new System.Drawing.Point(1664, 855);
+            this.LblMano.Location = new System.Drawing.Point(1654, 816);
             this.LblMano.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblMano.Name = "LblMano";
             this.LblMano.Size = new System.Drawing.Size(88, 34);
@@ -1098,7 +1111,7 @@
             // LblRis
             // 
             this.LblRis.AutoSize = true;
-            this.LblRis.Location = new System.Drawing.Point(955, 424);
+            this.LblRis.Location = new System.Drawing.Point(949, 347);
             this.LblRis.Name = "LblRis";
             this.LblRis.Size = new System.Drawing.Size(41, 15);
             this.LblRis.TabIndex = 15;
@@ -1123,6 +1136,70 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pcbBkC11
+            // 
+            this.pcbBkC11.BackColor = System.Drawing.Color.Transparent;
+            this.pcbBkC11.Location = new System.Drawing.Point(771, 17);
+            this.pcbBkC11.Name = "pcbBkC11";
+            this.pcbBkC11.Size = new System.Drawing.Size(74, 102);
+            this.pcbBkC11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbBkC11.TabIndex = 58;
+            this.pcbBkC11.TabStop = false;
+            this.pcbBkC11.Visible = false;
+            // 
+            // TBPuntata
+            // 
+            this.TBPuntata.BackColor = System.Drawing.Color.Lime;
+            this.TBPuntata.Location = new System.Drawing.Point(590, 816);
+            this.TBPuntata.Name = "TBPuntata";
+            this.TBPuntata.Size = new System.Drawing.Size(230, 50);
+            this.TBPuntata.TabIndex = 17;
+            // 
+            // NumPuntata
+            // 
+            this.NumPuntata.Location = new System.Drawing.Point(849, 829);
+            this.NumPuntata.Name = "NumPuntata";
+            this.NumPuntata.Size = new System.Drawing.Size(120, 20);
+            this.NumPuntata.TabIndex = 18;
+            // 
+            // BtnPuntata
+            // 
+            this.BtnPuntata.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPuntata.Enabled = false;
+            this.BtnPuntata.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnPuntata.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnPuntata.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BtnPuntata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPuntata.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.77358F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPuntata.ForeColor = System.Drawing.Color.White;
+            this.BtnPuntata.Location = new System.Drawing.Point(1153, 980);
+            this.BtnPuntata.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnPuntata.Name = "BtnPuntata";
+            this.BtnPuntata.Size = new System.Drawing.Size(166, 66);
+            this.BtnPuntata.TabIndex = 19;
+            this.BtnPuntata.Text = "Carta";
+            this.BtnPuntata.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnPuntata.UseVisualStyleBackColor = false;
+            // 
+            // BtnDouble
+            // 
+            this.BtnDouble.BackColor = System.Drawing.Color.Transparent;
+            this.BtnDouble.Enabled = false;
+            this.BtnDouble.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnDouble.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnDouble.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BtnDouble.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.77358F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDouble.ForeColor = System.Drawing.Color.White;
+            this.BtnDouble.Location = new System.Drawing.Point(917, 980);
+            this.BtnDouble.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnDouble.Name = "BtnDouble";
+            this.BtnDouble.Size = new System.Drawing.Size(166, 66);
+            this.BtnDouble.TabIndex = 20;
+            this.BtnDouble.Text = "Carta";
+            this.BtnDouble.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnDouble.UseVisualStyleBackColor = false;
+            // 
             // FrmLobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1130,6 +1207,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.BtnDouble);
+            this.Controls.Add(this.BtnPuntata);
+            this.Controls.Add(this.NumPuntata);
+            this.Controls.Add(this.TBPuntata);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.LblRis);
             this.Controls.Add(this.LblMano);
@@ -1213,6 +1294,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBkC1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbBkC11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TBPuntata)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumPuntata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1299,5 +1383,10 @@
         private System.Windows.Forms.Label LblRis;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label LblDealer;
+        private System.Windows.Forms.PictureBox pcbBkC11;
+        private System.Windows.Forms.TrackBar TBPuntata;
+        private System.Windows.Forms.NumericUpDown NumPuntata;
+        private System.Windows.Forms.Button BtnPuntata;
+        private System.Windows.Forms.Button BtnDouble;
     }
 }
