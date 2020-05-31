@@ -12,6 +12,7 @@ using System.Net.Sockets;
 using SOCKET_UDP;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Threading;
 
 namespace BlackJack_Client
 {
@@ -22,7 +23,9 @@ namespace BlackJack_Client
         int pos_tavolo;
         List<Place> posti;
         Place dealer;
+        Place myPlace;
         Net interfacciaRete;
+        Thread prova;
         public FrmLobby() { InitializeComponent(); }
 
         public FrmLobby(Net net, Player player, int posizione_tavolo, int log_id)
@@ -36,6 +39,16 @@ namespace BlackJack_Client
             this.Text = $"Lobby - {player.Username}";
             IstanziaPosti();
             interfacciaRete.Server.datiRicevutiEvent += Server_datiRicevutiEventLobby;
+            prova = new Thread(aggiornaFiches);
+        }
+
+        private void aggiornaFiches()
+        {
+            while (true)
+            {
+                Thread.Sleep(1000);
+                Console.WriteLine(myPlace.Fiches);
+            }
         }
 
         private void IstanziaPosti()
@@ -43,7 +56,44 @@ namespace BlackJack_Client
             posti = new List<Place>(4);
             for (int i = 1; i <= 4; i++)
                 posti.Add(new Place(i));
+            myPlace = posti[pos_tavolo-1];
         }
+
+        #region Eventi form
+        private void FrmLobby_Load(object sender, EventArgs e)
+        {
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
+            myPlace.Fiches = 1000;
+            LblRis.Text = "";
+            LblMano.Text = "";
+            prova.Start();
+        }
+
+        private void BtnCarta_Click(object sender, EventArgs e)
+        {
+            List<object> lst = new List<object>();
+            lst.Add(pos_tavolo);
+            lst.Add(log_id);
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-hit", lst));
+            BeginInvoke((MethodInvoker)delegate
+            {
+                BtnDouble.Enabled = false;
+            });
+        }
+
+        private void BtnEsci_Click(object sender, EventArgs e)
+        {
+            List<object> lst = new List<object>();
+            lst.Add(log_id);
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-stand", lst));
+            BeginInvoke((MethodInvoker)delegate
+            {
+                BtnCarta.Enabled = false;
+                BtnEsci.Enabled = false;
+                BtnDouble.Enabled = false;
+            });
+        }
+        #endregion
 
         private void Server_datiRicevutiEventLobby(ClsMessaggio message)
         {
@@ -66,41 +116,12 @@ namespace BlackJack_Client
                         });
                     }
                         
-                    foreach(PictureBox pcb in Controls["panel"+pos].Controls.OfType<PictureBox>())
-                    {
-                        pcb.Image = (pcb.Name == "pcbG" + pos + "C1") ? Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + @"\AppData\img\BlankCard.png") : null;
-                    }
                     for (int i = 0; i < posti.Count; i++)
                     {
                         if(posti[i].Posizione == p.Posizione)
                         {
                             posti[i] = p;
-                            BeginInvoke((MethodInvoker)delegate
-                            {
-                                Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
-                            });
-                            int k = 0;
-                            foreach (Card carta in posti[i].Carte)
-                            {
-                                k++;
-                                PictureBox pcbCorrente = (Controls["panel" + pos].Controls["pcbG" + pos + "C" + k] as PictureBox);
-                                BeginInvoke((MethodInvoker)delegate
-                                {
-                                    //Controls["panel" + pos].Controls["LblCarte" + pos].Text += carta.Seme.ToString() + carta.Numero + "\n";
-                                    if (k!=0)
-                                    {
-                                        pcbCorrente.Image = GetImage("LEFT"+carta.Seme.ToString() + "" + carta.Numero.ToString() + ".png", true);
-                                    }
-                                    else
-                                    {
-                                        pcbCorrente.Image = GetImage(carta.Seme.ToString() + "" + carta.Numero.ToString() + ".png", true);
-                                    }
-                                    
-                                    pcbCorrente.Visible = true;
-                                    pcbCorrente.BringToFront();
-                                    Application.DoEvents();
-                                });
-                            }
+                            UpdatePlayerGraphics(pos, posti[i]);
                             break;
                         }
                     }
@@ -112,66 +133,42 @@ namespace BlackJack_Client
                     BeginInvoke((MethodInvoker)delegate
                     {
                         Controls["panel5"].Controls["LblDealer"].Text = "";
-                        //Controls["panel5"].Controls["LblDealer"].BackgroundImage = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + @"\AppData\img\blu.png");
                     });
-                    foreach (PictureBox pcb in Controls["panel5"].Controls.OfType<PictureBox>())
+                    if((bool)msg.Data[1])
                     {
-                        pcb.Image = (pcb.Name == "pcbBkC1") ? GetImage("BlankCard.png", false) : null;
-
-                    }
-                    if ((bool)msg.Data[1])   //TODO: nascondi prima carta 
-                    {
-                        PictureBox pcbCartaCoperta = (Controls["panel5"].Controls["pcbBKC1"] as PictureBox);
-                        PictureBox pcbCartaScoperta = (Controls["panel5"].Controls["pcbBKC2"] as PictureBox);
-                        BeginInvoke((MethodInvoker)delegate
-                            {
-                                pcbCartaCoperta.Image = GetImage("back.png", true);
-                                pcbCartaScoperta.Image = GetImage("LEFT"+dealer.Carte[1].Seme.ToString() + "" + dealer.Carte[1].Numero.ToString() + ".png", true);
-                                pcbCartaCoperta.Visible = true;
-                                pcbCartaScoperta.Visible = true;
-                                pcbCartaCoperta.BringToFront();
-                                pcbCartaScoperta.BringToFront();
-                                Application.DoEvents();
-                            });
-                    }
-                    else
-                    {
-                        int k = 0;
                         foreach (Card carta in dealer.Carte)
                         {
-                            k++;
-                            PictureBox pcbCorrente = (Controls["panel5"].Controls["pcbBKC" + k] as PictureBox);
                             BeginInvoke((MethodInvoker)delegate
                             {
                                 Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
-                                if (k!=0)
-                                {
-                                    pcbCorrente.Image = GetImage("LEFT"+carta.Seme.ToString() + "" + carta.Numero.ToString() + ".png", true);
-                                }
-                                else
-                                {
-                                    pcbCorrente.Image = GetImage(carta.Seme.ToString() + "" + carta.Numero.ToString() + ".png", true);
-                                }
-                                pcbCorrente.Visible = true;
-                                pcbCorrente.BringToFront();
-                                Application.DoEvents();
                             });
                         }
                     }
-
+                    else
+                    {
+                        foreach (Card carta in dealer.Carte)
+                        {
+                            BeginInvoke((MethodInvoker)delegate
+                            {
+                                Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
+                            });
+                        }
+                    }
                     break;
                 case "your-turn":
                     BeginInvoke((MethodInvoker)delegate
                     {
                         BtnCarta.Enabled = true;
                         BtnEsci.Enabled = true;
+                        if(myPlace.Fiches - myPlace.Puntata >0)
+                            BtnDouble.Enabled = true;
                     });
                     break;
-                case "hand-twentyone-first":
+                case "blackjack":
 
                     BeginInvoke((MethodInvoker)delegate
                     {
-                        LblMano.Text = Convert.ToBoolean(msg.Data[0]) ? "BlackJack" : "21";
+                        LblMano.Text = /*Convert.ToBoolean(msg.Data[0]) ? */"BlackJack";// : "21";
                     });
                     
                     break;
@@ -184,33 +181,31 @@ namespace BlackJack_Client
                     });
                     break;
                 case "unveil-card":
-                    
-                        PictureBox pcbCorrenteElettrica = (Controls["panel5"].Controls["pcbBKC1"] as PictureBox);
-                        BeginInvoke((MethodInvoker)delegate
-                        {
-                            pcbCorrenteElettrica.Image = GetImage(dealer.Carte[0].Seme.ToString() + "" + dealer.Carte[0].Numero.ToString() + ".png", true);
-                            pcbCorrenteElettrica.Visible = true;
-                            //pcbCorrenteElettrica.BringToFront();
-                            Application.DoEvents();
-                        });
+                    //TODO: mostrare carta coperta dealer
                     break;
                 case "player-wins":
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblRis.Text = "Hai vinto";
                     });
+                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
+                    myPlace.Puntata = 0;
                     break;
                 case "dealer-wins":
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblRis.Text = "Hai perso";
                     });
+                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
+                    myPlace.Puntata = 0;
                     break;
                 case "draw":
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblRis.Text = "Pareggio";
                     });
+                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
+                    myPlace.Puntata = 0;
                     break;
                 case "new-turn":
                     BeginInvoke((MethodInvoker)delegate
@@ -222,6 +217,11 @@ namespace BlackJack_Client
                         LblCarte2.Text = "";
                         LblCarte3.Text = "";
                         LblCarte4.Text = "";
+                        TBPuntata.Enabled = true;
+                        NumPuntata.Enabled = true;
+                        BtnPuntata.Enabled = true;
+                        TBPuntata.Maximum = myPlace.Fiches;
+                        NumPuntata.Maximum = myPlace.Fiches;
                     });
                     break;
                 case "update-graphics":
@@ -248,21 +248,28 @@ namespace BlackJack_Client
                             {
                                 posti[j] = p;
 
-                                BeginInvoke((MethodInvoker)delegate
-                                {
-                                    Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
-                                }); 
-                                foreach (Card carta in posti[j].Carte)
-                                {
-                                    BeginInvoke((MethodInvoker)delegate
-                                    {
-                                        Controls["panel" + pos].Controls["LblCarte" + pos].Text += $"{carta.Seme}{carta.Numero}\n";
-                                    });
-                                }
-                                break;
+                                UpdatePlayerGraphics(pos, posti[j]);
                             }
                         }
                     }
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblMano.Text = "";
+                        LblRis.Text = "";
+                    });
+                    break;
+                case "update-graphics-dealer":
+                    appoggio = JsonConvert.DeserializeObject(msg.Data[0].ToString());
+                    carte = JsonConvert.DeserializeObject<List<Card>>(appoggio.Carte.ToString());
+                    dealer.Carte = carte;
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        LblDealer.Text = "";
+                        foreach (Card carta in dealer.Carte)
+                        {
+                            LblDealer.Text += $"{carta.Seme}{carta.Numero}\n";
+                        }
+                    });
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblMano.Text = "";
@@ -279,6 +286,7 @@ namespace BlackJack_Client
                             Controls["panel" + posizione].Controls["LblPlayer" + posizione].Text = username;
                         });
                     }
+                    
                     break;
                 case "player-leave":
                     pos = Convert.ToInt32(msg.Data[0]);
@@ -289,15 +297,35 @@ namespace BlackJack_Client
                         Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
                     });
                     break;
+                case "no-fiches":
+                    interfacciaRete.Server.datiRicevutiEvent -= Server_datiRicevutiEventLobby;
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        MessageBox.Show("La partita è terminata", "Hai terminato le fiches");
+                        Application.Exit();
+                    });
+                    break;
+                    
             }
         }
 
-        private Image GetImage(string nomeFile, bool carta)
+        private void UpdatePlayerGraphics(int pos, Place place)
         {
-            return (carta)? Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + @"carte\" + nomeFile) : Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + @"AppData\img\"+nomeFile);
+            BeginInvoke((MethodInvoker)delegate
+            {
+                Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
+            });
+            foreach (Card carta in place.Carte)
+            {
+                BeginInvoke((MethodInvoker)delegate
+                {
+                    Controls["panel" + pos].Controls["LblCarte" + pos].Text += $"{carta.Seme}{carta.Numero}\n";
+                });
+            }
         }
 
-        public ClsMessaggio GeneraMessaggio(string action, List<object> data)
+
+        public ClsMessaggio GeneraMessaggio(string action, List<object> data = null)
         {
             ClsMessaggio toSend = new ClsMessaggio();
             ObjMex objMex = new ObjMex(action, data);
@@ -305,45 +333,41 @@ namespace BlackJack_Client
             return toSend;
         }
 
-        private void FrmLobby_Load(object sender, EventArgs e)
+        private void TBPuntata_Scroll(object sender, EventArgs e)
         {
-            interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
-            //BtnCarta.Enabled = true;
+            NumPuntata.Value = TBPuntata.Value;
         }
 
-        private void BtnCarta_Click(object sender, EventArgs e)
+        private void NumPuntata_ValueChanged(object sender, EventArgs e)
+        {
+            TBPuntata.Value = Convert.ToInt32(NumPuntata.Value);
+        }
+
+        private void BtnPuntata_Click(object sender, EventArgs e)
         {
             List<object> lst = new List<object>();
             lst.Add(pos_tavolo);
+            lst.Add(TBPuntata.Value);
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-bet",lst));
+            myPlace.Fiches -= TBPuntata.Value;
+            myPlace.Puntata = TBPuntata.Value;
+            TBPuntata.Enabled = false;
+            NumPuntata.Enabled = false;
+            BtnPuntata.Enabled = false;
+        }
+
+        private void BtnDouble_Click(object sender, EventArgs e)
+        {
+            BtnDouble.Enabled = false;
+            List<object> lst = new List<object>();
+            lst.Add(pos_tavolo);
             lst.Add(log_id);
-            interfacciaRete.Client.Invia(GeneraMessaggio("player-hit", lst));
-        }
-
-        private void BtnEsci_Click(object sender, EventArgs e)
-        {
-            List<Object> lst = new List<object>();
-            lst.Add(log_id);
-            interfacciaRete.Client.Invia(GeneraMessaggio("player-stand", lst));
-            BeginInvoke((MethodInvoker)delegate
-            {
-                BtnCarta.Enabled = false;
-                BtnEsci.Enabled = false;
-            });
-        }
-
-        private void ingrassa(object sender, EventArgs e)
-        {
-            (sender as Button).FlatAppearance.BorderSize = 3;
-        }
-
-        private void dimagrisci(object sender, EventArgs e)
-        {
-            (sender as Button).FlatAppearance.BorderSize = 1;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+            interfacciaRete.Client.Invia(GeneraMessaggio("double-bet", 
+                
+                lst));
+            myPlace.Fiches -= myPlace.Puntata;
+            TBPuntata.Value = (myPlace.Puntata *= 2);
+            NumPuntata.Value = TBPuntata.Value;
         }
     }
 }

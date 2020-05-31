@@ -15,7 +15,7 @@ namespace BlackJack_Client
     {
         private clsClientUDP _client;
         private clsServerUDP _server;
-        private int port;
+        private static int port;
         public int log_id;
         public Timer timerConn;
 
@@ -39,7 +39,7 @@ namespace BlackJack_Client
                     MessageBox.Show("Lobby al momento piena, riprova più tardi");
                     break;
                 case "ping":
-#if DEBUG
+#if DEBUG 
                     Console.WriteLine("ping arrivato");
 #endif
                     List<object> lst = new List<object>();
@@ -104,6 +104,7 @@ namespace BlackJack_Client
                 port++;
             return port;
         }
+
 
         private static bool isPortOpen(int port) => System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().GetActiveUdpListeners().Any(p => p.Port == port);
     }
