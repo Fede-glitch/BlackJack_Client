@@ -37,6 +37,7 @@ namespace BlackJack_Client
         internal Place(int Posizione)
         {
             this._posizione = Posizione;
+            this._fiches = 1000;
         }
 
 

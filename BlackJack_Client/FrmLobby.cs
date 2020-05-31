@@ -23,7 +23,9 @@ namespace BlackJack_Client
         int pos_tavolo;
         List<Place> posti;
         Place dealer;
+        Place myPlace;
         Net interfacciaRete;
+        Thread prova;
         public FrmLobby() { InitializeComponent(); }
 
         public FrmLobby(Net net, Player player, int posizione_tavolo, int log_id)
@@ -37,6 +39,16 @@ namespace BlackJack_Client
             this.Text = $"Lobby - {player.Username}";
             IstanziaPosti();
             interfacciaRete.Server.datiRicevutiEvent += Server_datiRicevutiEventLobby;
+            prova = new Thread(aggiornaFiches);
+        }
+
+        private void aggiornaFiches()
+        {
+            while (true)
+            {
+                Thread.Sleep(1000);
+                Console.WriteLine(myPlace.Fiches);
+            }
         }
 
         private void IstanziaPosti()
@@ -44,15 +56,17 @@ namespace BlackJack_Client
             posti = new List<Place>(4);
             for (int i = 1; i <= 4; i++)
                 posti.Add(new Place(i));
+            myPlace = posti[pos_tavolo-1];
         }
 
         #region Eventi form
         private void FrmLobby_Load(object sender, EventArgs e)
         {
             interfacciaRete.Client.Invia(GeneraMessaggio("player-ready", null));
-            posti[pos_tavolo].Fiches = 1000;
+            myPlace.Fiches = 1000;
             LblRis.Text = "";
             LblMano.Text = "";
+            prova.Start();
         }
 
         private void BtnCarta_Click(object sender, EventArgs e)
@@ -61,6 +75,10 @@ namespace BlackJack_Client
             lst.Add(pos_tavolo);
             lst.Add(log_id);
             interfacciaRete.Client.Invia(GeneraMessaggio("player-hit", lst));
+            BeginInvoke((MethodInvoker)delegate
+            {
+                BtnDouble.Enabled = false;
+            });
         }
 
         private void BtnEsci_Click(object sender, EventArgs e)
@@ -72,6 +90,7 @@ namespace BlackJack_Client
             {
                 BtnCarta.Enabled = false;
                 BtnEsci.Enabled = false;
+                BtnDouble.Enabled = false;
             });
         }
         #endregion
@@ -141,7 +160,7 @@ namespace BlackJack_Client
                     {
                         BtnCarta.Enabled = true;
                         BtnEsci.Enabled = true;
-                        if(posti[pos_tavolo].Fiches - posti[pos_tavolo].Puntata >0)
+                        if(myPlace.Fiches - myPlace.Puntata >0)
                             BtnDouble.Enabled = true;
                     });
                     break;
@@ -169,24 +188,24 @@ namespace BlackJack_Client
                     {
                         LblRis.Text = "Hai vinto";
                     });
-                    posti[pos_tavolo].Fiches = Convert.ToInt32(msg.Data[0]);
-                    posti[pos_tavolo].Puntata = 0;
+                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
+                    myPlace.Puntata = 0;
                     break;
                 case "dealer-wins":
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblRis.Text = "Hai perso";
                     });
-                    posti[pos_tavolo].Fiches = Convert.ToInt32(msg.Data[0]);
-                    posti[pos_tavolo].Puntata = 0;
+                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
+                    myPlace.Puntata = 0;
                     break;
                 case "draw":
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblRis.Text = "Pareggio";
                     });
-                    posti[pos_tavolo].Fiches = Convert.ToInt32(msg.Data[0]);
-                    posti[pos_tavolo].Puntata = 0;
+                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
+                    myPlace.Puntata = 0;
                     break;
                 case "new-turn":
                     BeginInvoke((MethodInvoker)delegate
@@ -201,8 +220,8 @@ namespace BlackJack_Client
                         TBPuntata.Enabled = true;
                         NumPuntata.Enabled = true;
                         BtnPuntata.Enabled = true;
-                        TBPuntata.Maximum = posti[pos_tavolo].Fiches;
-                        NumPuntata.Maximum = posti[pos_tavolo].Fiches;
+                        TBPuntata.Maximum = myPlace.Fiches;
+                        NumPuntata.Maximum = myPlace.Fiches;
                     });
                     break;
                 case "update-graphics":
@@ -330,8 +349,8 @@ namespace BlackJack_Client
             lst.Add(pos_tavolo);
             lst.Add(TBPuntata.Value);
             interfacciaRete.Client.Invia(GeneraMessaggio("player-bet",lst));
-            posti[pos_tavolo].Fiches -= TBPuntata.Value;
-            posti[pos_tavolo].Puntata = TBPuntata.Value;
+            myPlace.Fiches -= TBPuntata.Value;
+            myPlace.Puntata = TBPuntata.Value;
             TBPuntata.Enabled = false;
             NumPuntata.Enabled = false;
             BtnPuntata.Enabled = false;
@@ -343,8 +362,11 @@ namespace BlackJack_Client
             List<object> lst = new List<object>();
             lst.Add(pos_tavolo);
             lst.Add(log_id);
-            interfacciaRete.Client.Invia(GeneraMessaggio("double-bet", lst));
-            TBPuntata.Value = (posti[pos_tavolo].Puntata *= 2);
+            interfacciaRete.Client.Invia(GeneraMessaggio("double-bet", 
+                
+                lst));
+            myPlace.Fiches -= myPlace.Puntata;
+            TBPuntata.Value = (myPlace.Puntata *= 2);
             NumPuntata.Value = TBPuntata.Value;
         }
     }
