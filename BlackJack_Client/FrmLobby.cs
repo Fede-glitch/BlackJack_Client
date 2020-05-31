@@ -69,7 +69,6 @@ namespace BlackJack_Client
                     foreach(PictureBox pcb in Controls["panel"+pos].Controls.OfType<PictureBox>())
                     {
                         pcb.Image = (pcb.Name == "pcbG" + pos + "C1") ? Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + @"\AppData\img\BlankCard.png") : null;
-                            
                     }
                     for (int i = 0; i < posti.Count; i++)
                     {
@@ -88,7 +87,15 @@ namespace BlackJack_Client
                                 BeginInvoke((MethodInvoker)delegate
                                 {
                                     //Controls["panel" + pos].Controls["LblCarte" + pos].Text += carta.Seme.ToString() + carta.Numero + "\n";
-                                    pcbCorrente.Image = GetImage(carta.Seme.ToString() + "" + carta.Numero.ToString() + ".png", true);
+                                    if (k!=0)
+                                    {
+                                        pcbCorrente.Image = GetImage("LEFT"+carta.Seme.ToString() + "" + carta.Numero.ToString() + ".png", true);
+                                    }
+                                    else
+                                    {
+                                        pcbCorrente.Image = GetImage(carta.Seme.ToString() + "" + carta.Numero.ToString() + ".png", true);
+                                    }
+                                    
                                     pcbCorrente.Visible = true;
                                     pcbCorrente.BringToFront();
                                     Application.DoEvents();
@@ -119,7 +126,7 @@ namespace BlackJack_Client
                         BeginInvoke((MethodInvoker)delegate
                             {
                                 pcbCartaCoperta.Image = GetImage("back.png", true);
-                                pcbCartaScoperta.Image = GetImage(dealer.Carte[1].Seme.ToString() + "" + dealer.Carte[1].Numero.ToString() + ".png", true);
+                                pcbCartaScoperta.Image = GetImage("LEFT"+dealer.Carte[1].Seme.ToString() + "" + dealer.Carte[1].Numero.ToString() + ".png", true);
                                 pcbCartaCoperta.Visible = true;
                                 pcbCartaScoperta.Visible = true;
                                 pcbCartaCoperta.BringToFront();
@@ -137,7 +144,14 @@ namespace BlackJack_Client
                             BeginInvoke((MethodInvoker)delegate
                             {
                                 Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
-                                pcbCorrente.Image = GetImage(carta.Seme.ToString() + "" + carta.Numero.ToString() + ".png", true);
+                                if (k!=0)
+                                {
+                                    pcbCorrente.Image = GetImage("LEFT"+carta.Seme.ToString() + "" + carta.Numero.ToString() + ".png", true);
+                                }
+                                else
+                                {
+                                    pcbCorrente.Image = GetImage(carta.Seme.ToString() + "" + carta.Numero.ToString() + ".png", true);
+                                }
                                 pcbCorrente.Visible = true;
                                 pcbCorrente.BringToFront();
                                 Application.DoEvents();
