@@ -159,11 +159,16 @@ namespace BlackJack_Client
                     }
                     else
                     {
+                        int k = 0;
                         foreach (Card carta in dealer.Carte)
                         {
+                            k++;
+                            PictureBox current = panel5.Controls["pcbBkC" + k] as PictureBox;
                             BeginInvoke((MethodInvoker)delegate
                             {
                                 Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
+                                current.Image = Image.FromFile(GetImage(carta.Seme.ToString() + carta.Numero + ".png", true));
+                                Console.WriteLine(GetImage(carta.Seme.ToString() + carta.Numero + ".png", true));
                             });
                         }
                     }
@@ -181,7 +186,7 @@ namespace BlackJack_Client
 
                     BeginInvoke((MethodInvoker)delegate
                     {
-                        LblMano.Text = /*Convert.ToBoolean(msg.Data[0]) ? */"BlackJack";// : "21";
+                        LblMano.Text = "BlackJack";
                     });
                     
                     break;
@@ -334,17 +339,17 @@ namespace BlackJack_Client
             {
                 k++;
                 current = Controls["panel" + pos].Controls["pcbG" + pos + "C" + k] as PictureBox;
-                Console.WriteLine("pcbG" + pos + "C" + k);
                 BeginInvoke((MethodInvoker)delegate
                 {
                     Controls["panel" + pos].Controls["LblCarte" + pos].Text += $"{carta.Seme}{carta.Numero}\n";
                     current.Image = Image.FromFile(GetImage($"{carta.Seme}{carta.Numero}.png", carta: true));
-                    Application.DoEvents();
+                    current.Visible = true;
                 });
+                Application.DoEvents();
             }
         }
 
-        private string GetImage(string nf, bool carta) => Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + (carta ? $"carte\\{nf}" : $"AppData\\img\\{nf}");
+        private string GetImage(string nf, bool carta) =>carta? Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + $"carte\\{nf}" : Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + $"AppData\\img\\{nf}";
 
         public ClsMessaggio GeneraMessaggio(string action, List<object> data = null)
         {

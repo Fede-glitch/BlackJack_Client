@@ -1198,9 +1198,11 @@ namespace BlackJack_Client
             this.TBPuntata.BackColor = System.Drawing.Color.Lime;
             this.TBPuntata.Location = new System.Drawing.Point(787, 1004);
             this.TBPuntata.Margin = new System.Windows.Forms.Padding(4);
+            this.TBPuntata.Minimum = 1;
             this.TBPuntata.Name = "TBPuntata";
             this.TBPuntata.Size = new System.Drawing.Size(307, 56);
             this.TBPuntata.TabIndex = 17;
+            this.TBPuntata.Value = 1;
             this.TBPuntata.Scroll += new System.EventHandler(this.TBPuntata_Scroll);
             // 
             // NumPuntata
@@ -1209,9 +1211,19 @@ namespace BlackJack_Client
             this.NumPuntata.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NumPuntata.Location = new System.Drawing.Point(1132, 1020);
             this.NumPuntata.Margin = new System.Windows.Forms.Padding(4);
+            this.NumPuntata.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NumPuntata.Name = "NumPuntata";
             this.NumPuntata.Size = new System.Drawing.Size(293, 18);
             this.NumPuntata.TabIndex = 18;
+            this.NumPuntata.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NumPuntata.ValueChanged += new System.EventHandler(this.NumPuntata_ValueChanged);
             // 
             // BtnPuntata
