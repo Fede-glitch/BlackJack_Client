@@ -251,7 +251,7 @@ namespace BlackJack_Client
             // 
             this.pcbG1C11.BackColor = System.Drawing.Color.Transparent;
             this.pcbG1C11.Location = new System.Drawing.Point(20, 326);
-            this.pcbG1C11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG1C11.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG1C11.Name = "pcbG1C11";
             this.pcbG1C11.Size = new System.Drawing.Size(99, 126);
             this.pcbG1C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -263,7 +263,7 @@ namespace BlackJack_Client
             // 
             this.pcbG1C10.BackColor = System.Drawing.Color.Transparent;
             this.pcbG1C10.Location = new System.Drawing.Point(447, 197);
-            this.pcbG1C10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG1C10.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG1C10.Name = "pcbG1C10";
             this.pcbG1C10.Size = new System.Drawing.Size(99, 126);
             this.pcbG1C10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -275,7 +275,7 @@ namespace BlackJack_Client
             // 
             this.pcbG1C9.BackColor = System.Drawing.Color.Transparent;
             this.pcbG1C9.Location = new System.Drawing.Point(340, 197);
-            this.pcbG1C9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG1C9.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG1C9.Name = "pcbG1C9";
             this.pcbG1C9.Size = new System.Drawing.Size(99, 126);
             this.pcbG1C9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -287,7 +287,7 @@ namespace BlackJack_Client
             // 
             this.pcbG1C8.BackColor = System.Drawing.Color.Transparent;
             this.pcbG1C8.Location = new System.Drawing.Point(233, 197);
-            this.pcbG1C8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG1C8.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG1C8.Name = "pcbG1C8";
             this.pcbG1C8.Size = new System.Drawing.Size(99, 126);
             this.pcbG1C8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -299,7 +299,7 @@ namespace BlackJack_Client
             // 
             this.pcbG1C7.BackColor = System.Drawing.Color.Transparent;
             this.pcbG1C7.Location = new System.Drawing.Point(127, 197);
-            this.pcbG1C7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG1C7.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG1C7.Name = "pcbG1C7";
             this.pcbG1C7.Size = new System.Drawing.Size(99, 126);
             this.pcbG1C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -311,7 +311,7 @@ namespace BlackJack_Client
             // 
             this.pcbG1C6.BackColor = System.Drawing.Color.Transparent;
             this.pcbG1C6.Location = new System.Drawing.Point(20, 197);
-            this.pcbG1C6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG1C6.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG1C6.Name = "pcbG1C6";
             this.pcbG1C6.Size = new System.Drawing.Size(99, 126);
             this.pcbG1C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -323,7 +323,7 @@ namespace BlackJack_Client
             // 
             this.pcbG1C5.BackColor = System.Drawing.Color.Transparent;
             this.pcbG1C5.Location = new System.Drawing.Point(447, 71);
-            this.pcbG1C5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG1C5.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG1C5.Name = "pcbG1C5";
             this.pcbG1C5.Size = new System.Drawing.Size(99, 126);
             this.pcbG1C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -335,7 +335,7 @@ namespace BlackJack_Client
             // 
             this.pcbG1C4.BackColor = System.Drawing.Color.Transparent;
             this.pcbG1C4.Location = new System.Drawing.Point(340, 71);
-            this.pcbG1C4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG1C4.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG1C4.Name = "pcbG1C4";
             this.pcbG1C4.Size = new System.Drawing.Size(99, 126);
             this.pcbG1C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -347,7 +347,7 @@ namespace BlackJack_Client
             // 
             this.pcbG1C3.BackColor = System.Drawing.Color.Transparent;
             this.pcbG1C3.Location = new System.Drawing.Point(233, 71);
-            this.pcbG1C3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG1C3.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG1C3.Name = "pcbG1C3";
             this.pcbG1C3.Size = new System.Drawing.Size(99, 126);
             this.pcbG1C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -360,10 +360,10 @@ namespace BlackJack_Client
             this.pcbG1C2.BackColor = System.Drawing.Color.Transparent;
             this.pcbG1C2.InitialImage = null;
             this.pcbG1C2.Location = new System.Drawing.Point(127, 71);
-            this.pcbG1C2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG1C2.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG1C2.Name = "pcbG1C2";
             this.pcbG1C2.Size = new System.Drawing.Size(99, 126);
-            this.pcbG1C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbG1C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbG1C2.TabIndex = 13;
             this.pcbG1C2.TabStop = false;
             this.pcbG1C2.Visible = false;
@@ -373,7 +373,7 @@ namespace BlackJack_Client
             this.pcbG1C1.BackColor = System.Drawing.Color.Transparent;
             this.pcbG1C1.Image = ((System.Drawing.Image)(resources.GetObject("pcbG1C1.Image")));
             this.pcbG1C1.Location = new System.Drawing.Point(20, 71);
-            this.pcbG1C1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG1C1.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG1C1.Name = "pcbG1C1";
             this.pcbG1C1.Size = new System.Drawing.Size(99, 126);
             this.pcbG1C1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -449,7 +449,7 @@ namespace BlackJack_Client
             // 
             this.pcbG2C11.BackColor = System.Drawing.Color.Transparent;
             this.pcbG2C11.Location = new System.Drawing.Point(20, 326);
-            this.pcbG2C11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG2C11.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG2C11.Name = "pcbG2C11";
             this.pcbG2C11.Size = new System.Drawing.Size(99, 126);
             this.pcbG2C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -461,7 +461,7 @@ namespace BlackJack_Client
             // 
             this.pcbG2C10.BackColor = System.Drawing.Color.Transparent;
             this.pcbG2C10.Location = new System.Drawing.Point(445, 197);
-            this.pcbG2C10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG2C10.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG2C10.Name = "pcbG2C10";
             this.pcbG2C10.Size = new System.Drawing.Size(99, 126);
             this.pcbG2C10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -473,7 +473,7 @@ namespace BlackJack_Client
             // 
             this.pcbG2C9.BackColor = System.Drawing.Color.Transparent;
             this.pcbG2C9.Location = new System.Drawing.Point(339, 197);
-            this.pcbG2C9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG2C9.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG2C9.Name = "pcbG2C9";
             this.pcbG2C9.Size = new System.Drawing.Size(99, 126);
             this.pcbG2C9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -485,7 +485,7 @@ namespace BlackJack_Client
             // 
             this.pcbG2C8.BackColor = System.Drawing.Color.Transparent;
             this.pcbG2C8.Location = new System.Drawing.Point(232, 197);
-            this.pcbG2C8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG2C8.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG2C8.Name = "pcbG2C8";
             this.pcbG2C8.Size = new System.Drawing.Size(99, 126);
             this.pcbG2C8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -497,7 +497,7 @@ namespace BlackJack_Client
             // 
             this.pcbG2C7.BackColor = System.Drawing.Color.Transparent;
             this.pcbG2C7.Location = new System.Drawing.Point(127, 197);
-            this.pcbG2C7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG2C7.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG2C7.Name = "pcbG2C7";
             this.pcbG2C7.Size = new System.Drawing.Size(99, 126);
             this.pcbG2C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -509,7 +509,7 @@ namespace BlackJack_Client
             // 
             this.pcbG2C6.BackColor = System.Drawing.Color.Transparent;
             this.pcbG2C6.Location = new System.Drawing.Point(20, 197);
-            this.pcbG2C6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG2C6.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG2C6.Name = "pcbG2C6";
             this.pcbG2C6.Size = new System.Drawing.Size(99, 126);
             this.pcbG2C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -521,7 +521,7 @@ namespace BlackJack_Client
             // 
             this.pcbG2C5.BackColor = System.Drawing.Color.Transparent;
             this.pcbG2C5.Location = new System.Drawing.Point(445, 71);
-            this.pcbG2C5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG2C5.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG2C5.Name = "pcbG2C5";
             this.pcbG2C5.Size = new System.Drawing.Size(99, 126);
             this.pcbG2C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -533,7 +533,7 @@ namespace BlackJack_Client
             // 
             this.pcbG2C4.BackColor = System.Drawing.Color.Transparent;
             this.pcbG2C4.Location = new System.Drawing.Point(339, 71);
-            this.pcbG2C4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG2C4.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG2C4.Name = "pcbG2C4";
             this.pcbG2C4.Size = new System.Drawing.Size(99, 126);
             this.pcbG2C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -545,7 +545,7 @@ namespace BlackJack_Client
             // 
             this.pcbG2C3.BackColor = System.Drawing.Color.Transparent;
             this.pcbG2C3.Location = new System.Drawing.Point(232, 71);
-            this.pcbG2C3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG2C3.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG2C3.Name = "pcbG2C3";
             this.pcbG2C3.Size = new System.Drawing.Size(99, 126);
             this.pcbG2C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -557,7 +557,7 @@ namespace BlackJack_Client
             // 
             this.pcbG2C2.BackColor = System.Drawing.Color.Transparent;
             this.pcbG2C2.Location = new System.Drawing.Point(127, 71);
-            this.pcbG2C2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG2C2.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG2C2.Name = "pcbG2C2";
             this.pcbG2C2.Size = new System.Drawing.Size(99, 126);
             this.pcbG2C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -570,7 +570,7 @@ namespace BlackJack_Client
             this.pcbG2C1.BackColor = System.Drawing.Color.Transparent;
             this.pcbG2C1.Image = ((System.Drawing.Image)(resources.GetObject("pcbG2C1.Image")));
             this.pcbG2C1.Location = new System.Drawing.Point(20, 71);
-            this.pcbG2C1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG2C1.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG2C1.Name = "pcbG2C1";
             this.pcbG2C1.Size = new System.Drawing.Size(99, 126);
             this.pcbG2C1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -614,7 +614,7 @@ namespace BlackJack_Client
             // 
             this.pcbG3C11.BackColor = System.Drawing.Color.Transparent;
             this.pcbG3C11.Location = new System.Drawing.Point(20, 326);
-            this.pcbG3C11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG3C11.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG3C11.Name = "pcbG3C11";
             this.pcbG3C11.Size = new System.Drawing.Size(99, 126);
             this.pcbG3C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -626,7 +626,7 @@ namespace BlackJack_Client
             // 
             this.pcbG3C10.BackColor = System.Drawing.Color.Transparent;
             this.pcbG3C10.Location = new System.Drawing.Point(447, 197);
-            this.pcbG3C10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG3C10.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG3C10.Name = "pcbG3C10";
             this.pcbG3C10.Size = new System.Drawing.Size(99, 126);
             this.pcbG3C10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -638,7 +638,7 @@ namespace BlackJack_Client
             // 
             this.pcbG3C9.BackColor = System.Drawing.Color.Transparent;
             this.pcbG3C9.Location = new System.Drawing.Point(340, 197);
-            this.pcbG3C9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG3C9.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG3C9.Name = "pcbG3C9";
             this.pcbG3C9.Size = new System.Drawing.Size(99, 126);
             this.pcbG3C9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -650,7 +650,7 @@ namespace BlackJack_Client
             // 
             this.pcbG3C8.BackColor = System.Drawing.Color.Transparent;
             this.pcbG3C8.Location = new System.Drawing.Point(233, 197);
-            this.pcbG3C8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG3C8.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG3C8.Name = "pcbG3C8";
             this.pcbG3C8.Size = new System.Drawing.Size(99, 126);
             this.pcbG3C8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -662,7 +662,7 @@ namespace BlackJack_Client
             // 
             this.pcbG3C7.BackColor = System.Drawing.Color.Transparent;
             this.pcbG3C7.Location = new System.Drawing.Point(127, 197);
-            this.pcbG3C7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG3C7.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG3C7.Name = "pcbG3C7";
             this.pcbG3C7.Size = new System.Drawing.Size(99, 126);
             this.pcbG3C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -674,7 +674,7 @@ namespace BlackJack_Client
             // 
             this.pcbG3C6.BackColor = System.Drawing.Color.Transparent;
             this.pcbG3C6.Location = new System.Drawing.Point(20, 197);
-            this.pcbG3C6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG3C6.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG3C6.Name = "pcbG3C6";
             this.pcbG3C6.Size = new System.Drawing.Size(99, 126);
             this.pcbG3C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -686,7 +686,7 @@ namespace BlackJack_Client
             // 
             this.pcbG3C5.BackColor = System.Drawing.Color.Transparent;
             this.pcbG3C5.Location = new System.Drawing.Point(447, 71);
-            this.pcbG3C5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG3C5.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG3C5.Name = "pcbG3C5";
             this.pcbG3C5.Size = new System.Drawing.Size(99, 126);
             this.pcbG3C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -698,7 +698,7 @@ namespace BlackJack_Client
             // 
             this.pcbG3C4.BackColor = System.Drawing.Color.Transparent;
             this.pcbG3C4.Location = new System.Drawing.Point(340, 71);
-            this.pcbG3C4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG3C4.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG3C4.Name = "pcbG3C4";
             this.pcbG3C4.Size = new System.Drawing.Size(99, 126);
             this.pcbG3C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -710,7 +710,7 @@ namespace BlackJack_Client
             // 
             this.pcbG3C3.BackColor = System.Drawing.Color.Transparent;
             this.pcbG3C3.Location = new System.Drawing.Point(233, 71);
-            this.pcbG3C3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG3C3.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG3C3.Name = "pcbG3C3";
             this.pcbG3C3.Size = new System.Drawing.Size(99, 126);
             this.pcbG3C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -722,7 +722,7 @@ namespace BlackJack_Client
             // 
             this.pcbG3C2.BackColor = System.Drawing.Color.Transparent;
             this.pcbG3C2.Location = new System.Drawing.Point(127, 71);
-            this.pcbG3C2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG3C2.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG3C2.Name = "pcbG3C2";
             this.pcbG3C2.Size = new System.Drawing.Size(99, 126);
             this.pcbG3C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -735,7 +735,7 @@ namespace BlackJack_Client
             this.pcbG3C1.BackColor = System.Drawing.Color.Transparent;
             this.pcbG3C1.Image = ((System.Drawing.Image)(resources.GetObject("pcbG3C1.Image")));
             this.pcbG3C1.Location = new System.Drawing.Point(20, 71);
-            this.pcbG3C1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG3C1.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG3C1.Name = "pcbG3C1";
             this.pcbG3C1.Size = new System.Drawing.Size(99, 126);
             this.pcbG3C1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -799,7 +799,7 @@ namespace BlackJack_Client
             // 
             this.pcbG4C11.BackColor = System.Drawing.Color.Transparent;
             this.pcbG4C11.Location = new System.Drawing.Point(19, 326);
-            this.pcbG4C11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG4C11.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG4C11.Name = "pcbG4C11";
             this.pcbG4C11.Size = new System.Drawing.Size(99, 126);
             this.pcbG4C11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -811,7 +811,7 @@ namespace BlackJack_Client
             // 
             this.pcbG4C10.BackColor = System.Drawing.Color.Transparent;
             this.pcbG4C10.Location = new System.Drawing.Point(439, 197);
-            this.pcbG4C10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG4C10.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG4C10.Name = "pcbG4C10";
             this.pcbG4C10.Size = new System.Drawing.Size(99, 126);
             this.pcbG4C10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -823,7 +823,7 @@ namespace BlackJack_Client
             // 
             this.pcbG4C9.BackColor = System.Drawing.Color.Transparent;
             this.pcbG4C9.Location = new System.Drawing.Point(332, 197);
-            this.pcbG4C9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG4C9.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG4C9.Name = "pcbG4C9";
             this.pcbG4C9.Size = new System.Drawing.Size(99, 126);
             this.pcbG4C9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -835,7 +835,7 @@ namespace BlackJack_Client
             // 
             this.pcbG4C8.BackColor = System.Drawing.Color.Transparent;
             this.pcbG4C8.Location = new System.Drawing.Point(225, 197);
-            this.pcbG4C8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG4C8.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG4C8.Name = "pcbG4C8";
             this.pcbG4C8.Size = new System.Drawing.Size(99, 126);
             this.pcbG4C8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -847,7 +847,7 @@ namespace BlackJack_Client
             // 
             this.pcbG4C7.BackColor = System.Drawing.Color.Transparent;
             this.pcbG4C7.Location = new System.Drawing.Point(119, 197);
-            this.pcbG4C7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG4C7.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG4C7.Name = "pcbG4C7";
             this.pcbG4C7.Size = new System.Drawing.Size(99, 126);
             this.pcbG4C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -859,7 +859,7 @@ namespace BlackJack_Client
             // 
             this.pcbG4C6.BackColor = System.Drawing.Color.Transparent;
             this.pcbG4C6.Location = new System.Drawing.Point(19, 197);
-            this.pcbG4C6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG4C6.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG4C6.Name = "pcbG4C6";
             this.pcbG4C6.Size = new System.Drawing.Size(99, 126);
             this.pcbG4C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -871,7 +871,7 @@ namespace BlackJack_Client
             // 
             this.pcbG4C5.BackColor = System.Drawing.Color.Transparent;
             this.pcbG4C5.Location = new System.Drawing.Point(439, 71);
-            this.pcbG4C5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG4C5.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG4C5.Name = "pcbG4C5";
             this.pcbG4C5.Size = new System.Drawing.Size(99, 126);
             this.pcbG4C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -883,7 +883,7 @@ namespace BlackJack_Client
             // 
             this.pcbG4C4.BackColor = System.Drawing.Color.Transparent;
             this.pcbG4C4.Location = new System.Drawing.Point(332, 71);
-            this.pcbG4C4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG4C4.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG4C4.Name = "pcbG4C4";
             this.pcbG4C4.Size = new System.Drawing.Size(99, 126);
             this.pcbG4C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -895,7 +895,7 @@ namespace BlackJack_Client
             // 
             this.pcbG4C3.BackColor = System.Drawing.Color.Transparent;
             this.pcbG4C3.Location = new System.Drawing.Point(225, 71);
-            this.pcbG4C3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG4C3.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG4C3.Name = "pcbG4C3";
             this.pcbG4C3.Size = new System.Drawing.Size(99, 126);
             this.pcbG4C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -907,7 +907,7 @@ namespace BlackJack_Client
             // 
             this.pcbG4C2.BackColor = System.Drawing.Color.Transparent;
             this.pcbG4C2.Location = new System.Drawing.Point(119, 71);
-            this.pcbG4C2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG4C2.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG4C2.Name = "pcbG4C2";
             this.pcbG4C2.Size = new System.Drawing.Size(99, 126);
             this.pcbG4C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -920,7 +920,7 @@ namespace BlackJack_Client
             this.pcbG4C1.BackColor = System.Drawing.Color.Transparent;
             this.pcbG4C1.Image = ((System.Drawing.Image)(resources.GetObject("pcbG4C1.Image")));
             this.pcbG4C1.Location = new System.Drawing.Point(19, 71);
-            this.pcbG4C1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbG4C1.Margin = new System.Windows.Forms.Padding(4);
             this.pcbG4C1.Name = "pcbG4C1";
             this.pcbG4C1.Size = new System.Drawing.Size(99, 126);
             this.pcbG4C1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -990,7 +990,7 @@ namespace BlackJack_Client
             // 
             this.pcbBkC11.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC11.Location = new System.Drawing.Point(1028, 21);
-            this.pcbBkC11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbBkC11.Margin = new System.Windows.Forms.Padding(4);
             this.pcbBkC11.Name = "pcbBkC11";
             this.pcbBkC11.Size = new System.Drawing.Size(99, 126);
             this.pcbBkC11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1013,7 +1013,7 @@ namespace BlackJack_Client
             // 
             this.pcbBkC10.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC10.Location = new System.Drawing.Point(925, 150);
-            this.pcbBkC10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbBkC10.Margin = new System.Windows.Forms.Padding(4);
             this.pcbBkC10.Name = "pcbBkC10";
             this.pcbBkC10.Size = new System.Drawing.Size(99, 126);
             this.pcbBkC10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1025,7 +1025,7 @@ namespace BlackJack_Client
             // 
             this.pcbBkC9.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC9.Location = new System.Drawing.Point(825, 21);
-            this.pcbBkC9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbBkC9.Margin = new System.Windows.Forms.Padding(4);
             this.pcbBkC9.Name = "pcbBkC9";
             this.pcbBkC9.Size = new System.Drawing.Size(99, 126);
             this.pcbBkC9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1037,7 +1037,7 @@ namespace BlackJack_Client
             // 
             this.pcbBkC8.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC8.Location = new System.Drawing.Point(725, 150);
-            this.pcbBkC8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbBkC8.Margin = new System.Windows.Forms.Padding(4);
             this.pcbBkC8.Name = "pcbBkC8";
             this.pcbBkC8.Size = new System.Drawing.Size(99, 126);
             this.pcbBkC8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1049,7 +1049,7 @@ namespace BlackJack_Client
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Location = new System.Drawing.Point(824, 21);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(99, 126);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1060,7 +1060,7 @@ namespace BlackJack_Client
             // 
             this.pcbBkC7.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC7.Location = new System.Drawing.Point(625, 21);
-            this.pcbBkC7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbBkC7.Margin = new System.Windows.Forms.Padding(4);
             this.pcbBkC7.Name = "pcbBkC7";
             this.pcbBkC7.Size = new System.Drawing.Size(99, 126);
             this.pcbBkC7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1072,7 +1072,7 @@ namespace BlackJack_Client
             // 
             this.pcbBkC6.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC6.Location = new System.Drawing.Point(525, 150);
-            this.pcbBkC6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbBkC6.Margin = new System.Windows.Forms.Padding(4);
             this.pcbBkC6.Name = "pcbBkC6";
             this.pcbBkC6.Size = new System.Drawing.Size(99, 126);
             this.pcbBkC6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1084,7 +1084,7 @@ namespace BlackJack_Client
             // 
             this.pcbBkC5.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC5.Location = new System.Drawing.Point(425, 21);
-            this.pcbBkC5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbBkC5.Margin = new System.Windows.Forms.Padding(4);
             this.pcbBkC5.Name = "pcbBkC5";
             this.pcbBkC5.Size = new System.Drawing.Size(99, 126);
             this.pcbBkC5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1096,7 +1096,7 @@ namespace BlackJack_Client
             // 
             this.pcbBkC4.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC4.Location = new System.Drawing.Point(325, 150);
-            this.pcbBkC4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbBkC4.Margin = new System.Windows.Forms.Padding(4);
             this.pcbBkC4.Name = "pcbBkC4";
             this.pcbBkC4.Size = new System.Drawing.Size(99, 126);
             this.pcbBkC4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1108,7 +1108,7 @@ namespace BlackJack_Client
             // 
             this.pcbBkC3.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC3.Location = new System.Drawing.Point(225, 21);
-            this.pcbBkC3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbBkC3.Margin = new System.Windows.Forms.Padding(4);
             this.pcbBkC3.Name = "pcbBkC3";
             this.pcbBkC3.Size = new System.Drawing.Size(99, 126);
             this.pcbBkC3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1120,7 +1120,7 @@ namespace BlackJack_Client
             // 
             this.pcbBkC2.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC2.Location = new System.Drawing.Point(125, 150);
-            this.pcbBkC2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbBkC2.Margin = new System.Windows.Forms.Padding(4);
             this.pcbBkC2.Name = "pcbBkC2";
             this.pcbBkC2.Size = new System.Drawing.Size(99, 126);
             this.pcbBkC2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1133,7 +1133,7 @@ namespace BlackJack_Client
             this.pcbBkC1.BackColor = System.Drawing.Color.Transparent;
             this.pcbBkC1.Image = ((System.Drawing.Image)(resources.GetObject("pcbBkC1.Image")));
             this.pcbBkC1.Location = new System.Drawing.Point(25, 21);
-            this.pcbBkC1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbBkC1.Margin = new System.Windows.Forms.Padding(4);
             this.pcbBkC1.Name = "pcbBkC1";
             this.pcbBkC1.Size = new System.Drawing.Size(99, 126);
             this.pcbBkC1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1197,7 +1197,7 @@ namespace BlackJack_Client
             // 
             this.TBPuntata.BackColor = System.Drawing.Color.Lime;
             this.TBPuntata.Location = new System.Drawing.Point(787, 1004);
-            this.TBPuntata.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TBPuntata.Margin = new System.Windows.Forms.Padding(4);
             this.TBPuntata.Name = "TBPuntata";
             this.TBPuntata.Size = new System.Drawing.Size(307, 56);
             this.TBPuntata.TabIndex = 17;
@@ -1208,7 +1208,7 @@ namespace BlackJack_Client
             this.NumPuntata.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.NumPuntata.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NumPuntata.Location = new System.Drawing.Point(1132, 1020);
-            this.NumPuntata.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NumPuntata.Margin = new System.Windows.Forms.Padding(4);
             this.NumPuntata.Name = "NumPuntata";
             this.NumPuntata.Size = new System.Drawing.Size(293, 18);
             this.NumPuntata.TabIndex = 18;

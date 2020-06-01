@@ -326,7 +326,7 @@ namespace BlackJack_Client
         {
             BeginInvoke((MethodInvoker)delegate
             {
-                //Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
+                Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
             });
             int k = 0;
             PictureBox current;
@@ -334,16 +334,17 @@ namespace BlackJack_Client
             {
                 k++;
                 current = Controls["panel" + pos].Controls["pcbG" + pos + "C" + k] as PictureBox;
+                Console.WriteLine("pcbG" + pos + "C" + k);
                 BeginInvoke((MethodInvoker)delegate
                 {
-                    //Controls["panel" + pos].Controls["LblCarte" + pos].Text += $"{carta.Seme}{carta.Numero}\n";
-                    current.Image = GetImage($"{carta.Seme}{carta.Numero}.png", carta: true);
+                    Controls["panel" + pos].Controls["LblCarte" + pos].Text += $"{carta.Seme}{carta.Numero}\n";
+                    current.Image = Image.FromFile(GetImage($"{carta.Seme}{carta.Numero}.png", carta: true));
+                    Application.DoEvents();
                 });
             }
-            BeginInvoke((MethodInvoker)delegate { Application.DoEvents(); }) ;
         }
 
-        private Image GetImage(string nf, bool carta) => Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + (carta ? $"carte\\{nf}" : $"AppData\\img\\{nf}"));
+        private string GetImage(string nf, bool carta) => Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + (carta ? $"carte\\{nf}" : $"AppData\\img\\{nf}");
 
         public ClsMessaggio GeneraMessaggio(string action, List<object> data = null)
         {
