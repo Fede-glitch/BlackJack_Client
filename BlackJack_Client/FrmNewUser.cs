@@ -53,13 +53,16 @@ namespace BlackJack_Client
                         client.Send(messaggio);
                         interfacciaRete.Server.datiRicevutiEvent -= Server_DatiRicevutiEventNewUser;
                         MessageBox.Show("Registrazione completata");
-                        this.Close();
+                        BeginInvoke((MethodInvoker)delegate
+                        {
+                            this.Close();
+                        });
                     }
                     else
                     {
                         BeginInvoke((MethodInvoker)delegate
                         {
-                            MessageBox.Show("Email o username già esistenti");
+                            MessageBox.Show((msg.Data[1].ToString() == "email"? "Email":"Username") + " già esistente");
                         });
                     }
                     break;
@@ -92,9 +95,11 @@ namespace BlackJack_Client
                 return "La Password deve contenere un carattere numerico, " +
                     "un carattere maiuscolo, " +
                     "uno minuscolo ed essere lunga almeno 8 caratteri";
+            lst.Add(interfacciaRete.log_id);
             lst.Add(TxtEmail.Text);
             lst.Add(TxtUsername.Text);
-            interfacciaRete.Client.Invia(Net.GeneraMessaggio("email-username-existing"));
+            lst.Add(TxtPassword.Text);
+            interfacciaRete.Client.Invia(Net.GeneraMessaggio("register", lst));
             return "";
         }
     }
