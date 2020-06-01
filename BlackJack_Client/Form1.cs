@@ -18,7 +18,6 @@ namespace BlackJack_Client
     public partial class Form1 : Form
     {
         Net interfacciaRete;
-
         public Form1()
         {
             InitializeComponent();
@@ -137,5 +136,16 @@ namespace BlackJack_Client
                 TxtEmail.Text = "";
         }
 
+        private void BtnRegister_Click(object sender, EventArgs e)
+        {
+            if (interfacciaRete.log_id != 0)
+            {
+                FrmNewUser frmNew = new FrmNewUser(interfacciaRete);
+                frmNew.Show();
+            }
+            else
+                MessageBox.Show("Connessione al server non ancora stabilita");
+            
+        }
     }
 }
