@@ -26,3 +26,4 @@ C:\Users\-Lorenzo\Desktop\Client\BlackJack_Client\BlackJack_Client\obj\Debug\Bla
 C:\Users\-Lorenzo\Desktop\Client\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.csproj.CopyComplete
 C:\Users\-Lorenzo\Desktop\Client\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.exe
 C:\Users\-Lorenzo\Desktop\Client\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.pdb
+D:\BlackJack\BlackJack_Client\BlackJack_Client\obj\Debug\BlackJack_Client.FrmNewUser.resources
