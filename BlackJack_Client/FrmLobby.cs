@@ -52,7 +52,8 @@ namespace BlackJack_Client
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if(MessageBox.Show("Fratm Sicuro di voler Uscire?","Sicuro?",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning) == DialogResult.OK)
+                this.Close();
             //TODO: Implementare roba che torna al login cuando esko
         }
         private void aggiornaFiches()
@@ -79,6 +80,8 @@ namespace BlackJack_Client
             myPlace.Fiches = 1000;
             LblRis.Text = "";
             LblMano.Text = "";
+            lblMyFiches.Text = "Le tue Fiches: 1000";
+            lblMyPuntata.Text = "Devi ancora puntare.";
             prova.Start();
         }
 
@@ -125,19 +128,20 @@ namespace BlackJack_Client
                         (int, bool) mano = p.GetMano();
                         BeginInvoke((MethodInvoker)delegate
                         {
-                            LblMano.Text = mano.Item2 ? "Blackjack":mano.Item1>21? "Hai Sballato":mano.Item1.ToString();
+                            LblMano.Text = mano.Item2 ? "BJ":mano.Item1>21? "Hai Sballato":mano.Item1.ToString();
                         });
                     }
-                        
                     for (int i = 0; i < posti.Count; i++)
                     {
                         if(posti[i].Posizione == p.Posizione)
                         {
                             posti[i] = p;
                             UpdatePlayerGraphics(pos, posti[i]);
+                            Application.DoEvents();
                             break;
                         }
                     }
+                    
                     break;
                 case "new-cards-dealer":
                     appoggio = JsonConvert.DeserializeObject(msg.Data[0].ToString());
@@ -147,15 +151,34 @@ namespace BlackJack_Client
                     {
                         Controls["panel5"].Controls["LblDealer"].Text = "";
                     });
-                    if((bool)msg.Data[1])
+                    foreach (PictureBox pcb in Controls["panel5"].Controls.OfType<PictureBox>())
                     {
+                        pcb.Image = (pcb.Name == "pcbBkC1") ? Image.FromFile(GetImage("BlankCard.png", false)) : null;
+
+                    }
+                    if ((bool)msg.Data[1])
+                    {
+                        /*
                         foreach (Card carta in dealer.Carte)
                         {
                             BeginInvoke((MethodInvoker)delegate
                             {
                                 Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
                             });
-                        }
+                        }*/
+                        PictureBox pcbCartaCoperta = (Controls["panel5"].Controls["pcbBKC1"] as PictureBox);
+                        PictureBox pcbCartaScoperta = (Controls["panel5"].Controls["pcbBKC2"] as PictureBox);
+                        BeginInvoke((MethodInvoker)delegate
+                        {
+                            pcbCartaCoperta.Image = Image.FromFile(GetImage("back.png", true));
+                            pcbCartaScoperta.Image = Image.FromFile(GetImage(dealer.Carte[1].Seme.ToString() + "" + dealer.Carte[1].Numero.ToString() + ".png", true));
+                            pcbCartaCoperta.Visible = true;
+                            pcbCartaScoperta.Visible = true;
+                            pcbCartaCoperta.BringToFront();
+                            pcbCartaScoperta.BringToFront();
+                            Thread.Sleep(20);
+                            Application.DoEvents();
+                        });
                     }
                     else
                     {
@@ -169,7 +192,10 @@ namespace BlackJack_Client
                                 Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
                                 current.Image = Image.FromFile(GetImage(carta.Seme.ToString() + carta.Numero + ".png", true));
                                 Console.WriteLine(GetImage(carta.Seme.ToString() + carta.Numero + ".png", true));
+                                current.Visible = true;
+                                current.BringToFront();
                             });
+                            Application.DoEvents();
                         }
                     }
                     break;
@@ -186,7 +212,7 @@ namespace BlackJack_Client
 
                     BeginInvoke((MethodInvoker)delegate
                     {
-                        LblMano.Text = "BlackJack";
+                        LblMano.Text = "BJ";
                     });
                     
                     break;
@@ -199,31 +225,46 @@ namespace BlackJack_Client
                     });
                     break;
                 case "unveil-card":
-                    //TODO: mostrare carta coperta dealer
+                    PictureBox pcbCorrenteElettrica = (Controls["panel5"].Controls["pcbBKC1"] as PictureBox);
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        pcbCorrenteElettrica.Image = Image.FromFile(GetImage(dealer.Carte[0].Seme.ToString() + "" + dealer.Carte[0].Numero.ToString() + ".png", true));
+                        pcbCorrenteElettrica.Visible = true;
+                        Application.DoEvents();
+                    });
                     break;
-                case "player-wins":
+                case "player-wins":                    
+                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
+                    myPlace.Puntata = 0;
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblRis.Text = "Hai vinto";
+                        //TODO: Parametrizzare da qui a gatto :3
+                        lblMyFiches.Text = "Le tue Fiches: " + myPlace.Fiches.ToString();
+                        lblMyPuntata.Text = "Devi ancora puntare.";
+                        //gatto :3
                     });
-                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
-                    myPlace.Puntata = 0;
                     break;
                 case "dealer-wins":
+                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
+                    myPlace.Puntata = 0;
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblRis.Text = "Hai perso";
+                        lblMyFiches.Text = "Le tue Fiches: " + myPlace.Fiches.ToString();
+                        lblMyPuntata.Text = "Devi ancora puntare.";
                     });
-                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
-                    myPlace.Puntata = 0;
+
                     break;
                 case "draw":
+                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
+                    myPlace.Puntata = 0;
                     BeginInvoke((MethodInvoker)delegate
                     {
                         LblRis.Text = "Pareggio";
+                        lblMyFiches.Text = "Le tue Fiches: " + myPlace.Fiches.ToString();
+                        lblMyPuntata.Text = "Devi ancora puntare.";
                     });
-                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
-                    myPlace.Puntata = 0;
                     break;
                 case "new-turn":
                     BeginInvoke((MethodInvoker)delegate
@@ -235,12 +276,24 @@ namespace BlackJack_Client
                         LblCarte2.Text = "";
                         LblCarte3.Text = "";
                         LblCarte4.Text = "";
-                        TBPuntata.Enabled = true;
-                        NumPuntata.Enabled = true;
+                        
                         BtnPuntata.Enabled = true;
-                        TBPuntata.Maximum = myPlace.Fiches;
-                        NumPuntata.Maximum = myPlace.Fiches;
+                        
                     });
+                    /*Non funzionante, o forse si?*/
+                    for (int q = 1; q <= 5; q++)
+                    {
+                        foreach (PictureBox pcb in Controls["panel" + q].Controls.OfType<PictureBox>())
+                        {
+                            BeginInvoke((MethodInvoker)delegate
+                            {
+                                pcb.Image = (int.Parse(pcb.Name.Substring(6)) == 1) ? Image.FromFile(GetImage("Blank.png", false)) : null;
+                                //pcb.BringToFront();
+                            });
+                            //Thread.Sleep(20);
+                            //Application.DoEvents();
+                        }
+                    }
                     break;
                 case "update-graphics":
                     appoggio = JsonConvert.DeserializeObject(msg.Data[0].ToString());
@@ -301,7 +354,34 @@ namespace BlackJack_Client
                         int posizione = Convert.ToInt32(msg.Data[i + 1]);
                         BeginInvoke((MethodInvoker)delegate
                         {
+                            Point poonto = new Point();
+                            poonto.X = 1471;
+                            poonto.Y = 816;
                             Controls["panel" + posizione].Controls["LblPlayer" + posizione].Text = username;
+                            switch(pos_tavolo)
+                            {
+                                case 1:
+                                    //yikes
+                                    break;
+                                case 2:
+                                    poonto.X = 1471 - 361;
+                                    LblMano.Location = poonto;
+                                    poonto.X = 1704 - 361;
+                                    label2.Location = poonto;
+                                    break;
+                                case 3:
+                                    poonto.X = 1471 - (361 * 2);
+                                    LblMano.Location = poonto;
+                                    poonto.X = 1704 - (361 * 2);
+                                    label2.Location = poonto;
+                                    break;
+                                case 4:
+                                    poonto.X = 1471 - (361 * 3);
+                                    LblMano.Location = poonto;
+                                    poonto.X = 1704 - (361 * 3);
+                                    label2.Location = poonto;
+                                    break;
+                            }
                         });
                     }
                     
@@ -332,7 +412,11 @@ namespace BlackJack_Client
             BeginInvoke((MethodInvoker)delegate
             {
                 Controls["panel" + pos].Controls["LblCarte" + pos].Text = "";
+                foreach (PictureBox pcb in Controls["panel" + pos].Controls.OfType<PictureBox>())
+                    pcb.Image = null;
+
             });
+            Thread.Sleep(10);
             int k = 0;
             PictureBox current;
             foreach (Card carta in place.Carte)
@@ -344,7 +428,9 @@ namespace BlackJack_Client
                     Controls["panel" + pos].Controls["LblCarte" + pos].Text += $"{carta.Seme}{carta.Numero}\n";
                     current.Image = Image.FromFile(GetImage($"{carta.Seme}{carta.Numero}.png", carta: true));
                     current.Visible = true;
+                    
                 });
+                Thread.Sleep(10);
                 Application.DoEvents();
             }
         }
@@ -359,26 +445,13 @@ namespace BlackJack_Client
             return toSend;
         }
 
-        private void TBPuntata_Scroll(object sender, EventArgs e)
-        {
-            NumPuntata.Value = TBPuntata.Value;
-        }
-
-        private void NumPuntata_ValueChanged(object sender, EventArgs e)
-        {
-            TBPuntata.Value = Convert.ToInt32(NumPuntata.Value);
-        }
 
         private void BtnPuntata_Click(object sender, EventArgs e)
         {
             List<object> lst = new List<object>();
             lst.Add(pos_tavolo);
-            lst.Add(TBPuntata.Value);
+            lst.Add(myPlace.Puntata);
             interfacciaRete.Client.Invia(GeneraMessaggio("player-bet",lst));
-            myPlace.Fiches -= TBPuntata.Value;
-            myPlace.Puntata = TBPuntata.Value;
-            TBPuntata.Enabled = false;
-            NumPuntata.Enabled = false;
             BtnPuntata.Enabled = false;
         }
 
@@ -392,8 +465,38 @@ namespace BlackJack_Client
                 
                 lst));
             myPlace.Fiches -= myPlace.Puntata;
-            TBPuntata.Value = (myPlace.Puntata *= 2);
-            NumPuntata.Value = TBPuntata.Value;
+            lblMyFiches.Text = "Le tue Fiches: " + myPlace.Fiches;
+            lblMyPuntata.Text = "La tua puntata: " + myPlace.Puntata;
+        }
+
+        private void btnQuitTop_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnRiduci_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void punta(object sender, EventArgs e)
+        {
+            int daPuntare = int.Parse((sender as PictureBox).Name.Substring(3));
+            if (myPlace.Fiches >= daPuntare)
+            {
+                myPlace.Puntata += daPuntare;
+                myPlace.Fiches -= daPuntare;
+                lblMyFiches.Text = "Le tue Fiches: " + myPlace.Fiches;
+                lblMyPuntata.Text = "La tua puntata: " + myPlace.Puntata;
+            }
+        }
+
+        private void puntaTutto(object sender, EventArgs e)
+        {
+            myPlace.Puntata += myPlace.Fiches;
+            myPlace.Fiches = 0;
+            lblMyFiches.Text = "All in!";
+            lblMyPuntata.Text = "La tua puntata: " + myPlace.Puntata;
         }
     }
 }

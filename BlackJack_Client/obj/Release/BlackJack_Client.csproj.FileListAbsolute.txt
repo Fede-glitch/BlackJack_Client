@@ -1,0 +1,15 @@
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\bin\Release\BlackJack_Client.exe.config
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\bin\Release\BlackJack_Client.exe
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\bin\Release\BlackJack_Client.pdb
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\bin\Release\Newtonsoft.Json.dll
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\bin\Release\Newtonsoft.Json.xml
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\obj\Release\BlackJack_Client.csprojAssemblyReference.cache
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\obj\Release\BlackJack_Client.Form1.resources
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\obj\Release\BlackJack_Client.FrmLobby.resources
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\obj\Release\BlackJack_Client.FrmNewUser.resources
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\obj\Release\BlackJack_Client.Properties.Resources.resources
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\obj\Release\BlackJack_Client.csproj.GenerateResource.cache
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\obj\Release\BlackJack_Client.csproj.CoreCompileInputs.cache
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\obj\Release\BlackJack_Client.csproj.CopyComplete
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\obj\Release\BlackJack_Client.exe
+C:\Users\-Lorenzo\Desktop\BlackJack_Client\BlackJack_Client\obj\Release\BlackJack_Client.pdb

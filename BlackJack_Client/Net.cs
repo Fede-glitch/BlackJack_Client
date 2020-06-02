@@ -29,15 +29,6 @@ namespace BlackJack_Client
             msg = JsonConvert.DeserializeObject<ObjMex>(ricevuti[2]);
             switch (msg.Action)
             {
-                case "login-failed":
-                    if (Convert.ToBoolean(msg.Data[0]))
-                        MessageBox.Show("Credenziali errate");
-                    else
-                        MessageBox.Show("Questo utente si trova già in partita");
-                    break;
-                case "lobby-full":
-                    MessageBox.Show("Lobby al momento piena, riprova più tardi");
-                    break;
                 case "ping":
 #if DEBUG 
                     Console.WriteLine("ping arrivato");

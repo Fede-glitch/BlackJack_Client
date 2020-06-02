@@ -59,6 +59,25 @@ namespace BlackJack_Client
                         LblStatoConnessione.Text = "Connesso";
                     });
                     break;
+                case "login-failed":
+                    if (Convert.ToBoolean(msg.Data[0]))
+                    {
+                        //MessageBox.Show("Credenziali errate");
+                        txtErrore.Text = "Credenziali errate.";
+                        txtErrore.Visible = true;
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Questo utente si trova già in partita");
+                        txtErrore.Text = "Questo utente si trova già in partita";
+                        txtErrore.Visible = true;
+                    }
+                    break;
+                case "lobby-full":
+                    //MessageBox.Show("Lobby al momento piena, riprova più tardi");
+                    txtErrore.Text = "Lobby al momento piena, riprova più tardi";
+                    txtErrore.Visible = true;
+                    break;
             }
         }
 
@@ -89,10 +108,20 @@ namespace BlackJack_Client
                     interfacciaRete.Client.Invia(Net.GeneraMessaggio("login-ask",lst));
                 }
                 else
-                    MessageBox.Show("Connessione al server non ancora stabilita");
+                {
+                    //MessageBox.Show("Connessione al server non ancora stabilita");
+                    txtErrore.Text = "Connessione al server non ancora stabilita";
+                    txtErrore.Visible = true;
+                }
+                    
             }
             else
-                MessageBox.Show(errMsg);
+            {
+                //MessageBox.Show(errMsg);
+                txtErrore.Text = errMsg;
+                txtErrore.Visible = true;
+            }
+                
         }
 
         private string ValidateFields()
@@ -144,8 +173,23 @@ namespace BlackJack_Client
                 frmNew.Show();
             }
             else
-                MessageBox.Show("Connessione al server non ancora stabilita");
+            {
+                //MessageBox.Show("Connessione al server non ancora stabilita");
+                txtErrore.Text = "Connessione al server non ancora stabilita";
+                txtErrore.Visible = true;
+            }
+                
             
+        }
+
+        private void tuNonPuoiScrivere(object sender, EventArgs e)
+        {
+            this.ActiveControl = lblPlaceHolder;
+        }
+
+        private void btnQuitta_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
