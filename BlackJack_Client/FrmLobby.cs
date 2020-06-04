@@ -136,24 +136,10 @@ namespace BlackJack_Client
                     appoggio = JsonConvert.DeserializeObject(msg.Data[0].ToString());
                     carte = JsonConvert.DeserializeObject<List<Card>>(appoggio.Carte.ToString());                               //Ricavo le carte come prima
                     dealer.Carte = carte;
-                    /* OUTDATED
-                    BeginInvoke((MethodInvoker)delegate
-                    {
-                        Controls["panel5"].Controls["LblDealer"].Text = "";
-                    });
-                    */
                     foreach (PictureBox pcb in Controls["panel5"].Controls.OfType<PictureBox>())                                //Scorro i pcb nello spazio di gioco del banco
                         pcb.Image = (pcb.Name == "pcbBkC1") ? Image.FromFile(GetImage("BlankCard.png", false)) : null;          //e resetto ogni carta al valore null eccetto la prima
                     if ((bool)msg.Data[1])                                                                                      //Se il booleano mi conferma il dover coprire la prima carta
                     {
-                        /* OUTDATED
-                        foreach (Card carta in dealer.Carte)
-                        {
-                            BeginInvoke((MethodInvoker)delegate
-                            {
-                                Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";
-                            });
-                        }*/
                         PictureBox pcbCartaCoperta = (Controls["panel5"].Controls["pcbBKC1"] as PictureBox);                    //Ricavo i primi due pcb
                         PictureBox pcbCartaScoperta = (Controls["panel5"].Controls["pcbBKC2"] as PictureBox);
                         BeginInvoke((MethodInvoker)delegate
@@ -162,8 +148,6 @@ namespace BlackJack_Client
                             pcbCartaScoperta.Image = Image.FromFile(GetImage(dealer.Carte[1].Seme.ToString() + "" + dealer.Carte[1].Numero.ToString() + ".png", true)); //e di quella scoperta
                             pcbCartaCoperta.Visible = true;                                                                     //Le rendo visibili 
                             pcbCartaScoperta.Visible = true;
-                            //pcbCartaCoperta.BringToFront();
-                            //pcbCartaScoperta.BringToFront();
                             Thread.Sleep(20);
                             Application.DoEvents();
                         });
@@ -177,9 +161,7 @@ namespace BlackJack_Client
                             PictureBox current = panel5.Controls["pcbBkC" + k] as PictureBox;                                   //Prendo un pcb alla volta
                             BeginInvoke((MethodInvoker)delegate
                             {
-                                //Controls["panel5"].Controls["LblDealer"].Text += carta.Seme.ToString() + carta.Numero + "\n";   
                                 current.Image = Image.FromFile(GetImage(carta.Seme.ToString() + carta.Numero + ".png", true));  //e ne aggiorno l'immagine
-                                //Console.WriteLine(GetImage(carta.Seme.ToString() + carta.Numero + ".png", true));
                                 current.Visible = true;                                                                         //rendendolo poi visibile
                                 current.BringToFront();
                             });
@@ -233,11 +215,6 @@ namespace BlackJack_Client
                     {
                         LblMano.Text = "";                                                                                      //azzero le label di feedback
                         LblRis.Text = "";
-                        //LblDealer.Text = "";
-                        //LblCarte1.Text = "";
-                        //LblCarte2.Text = "";
-                        //LblCarte3.Text = "";
-                        //LblCarte4.Text = "";
                         
                         BtnPuntata.Enabled = true;                                                                              //permetto la puntata
                         
@@ -250,10 +227,7 @@ namespace BlackJack_Client
                             BeginInvoke((MethodInvoker)delegate
                             {
                                 pcb.Image = (int.Parse(pcb.Name.Substring(6)) == 1) ? Image.FromFile(GetImage("Blank.png", false)) : null; //Aggiorno l'immagine alla prima carta e wipo le altre
-                                //pcb.BringToFront();
                             });
-                            //Thread.Sleep(20);
-                            //Application.DoEvents();
                         }
                     }
                     break;
@@ -261,15 +235,6 @@ namespace BlackJack_Client
                     appoggio = JsonConvert.DeserializeObject(msg.Data[0].ToString());
                     carte = JsonConvert.DeserializeObject<List<Card>>(appoggio.Carte.ToString());                               //Ricavo le carte
                     dealer.Carte = carte;
-                    /*BeginInvoke((MethodInvoker)delegate
-                    {
-                        OUTDATATO
-                        LblDealer.Text = "";
-                        foreach (Card carta in dealer.Carte)
-                        {
-                            LblDealer.Text += $"{carta.Seme}{carta.Numero}\n";
-                        }
-                    });*/
                     for (int i = 1; i < msg.Data.Count; i++)                                                                    //ciclo per ogni player
                     {
                         appoggio = JsonConvert.DeserializeObject(msg.Data[i].ToString());                                       
@@ -295,16 +260,6 @@ namespace BlackJack_Client
                     appoggio = JsonConvert.DeserializeObject(msg.Data[0].ToString());
                     carte = JsonConvert.DeserializeObject<List<Card>>(appoggio.Carte.ToString());                               //ricavo le carte
                     dealer.Carte = carte;
-                    /* OUTDATED
-                    BeginInvoke((MethodInvoker)delegate
-                    {
-                        LblDealer.Text = "";
-                        foreach (Card carta in dealer.Carte)
-                        {
-                            LblDealer.Text += $"{carta.Seme}{carta.Numero}\n";
-                        }
-                    });
-                    */
                     BeginInvoke((MethodInvoker)delegate                                                                         //Updato le varie label
                     {
                         LblMano.Text = "";
