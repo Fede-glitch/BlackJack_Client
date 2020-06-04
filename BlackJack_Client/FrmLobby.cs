@@ -26,7 +26,6 @@ namespace BlackJack_Client
         Place dealer;
         Place myPlace;
         Net interfacciaRete;
-        Thread prova;
         #endregion
         public FrmLobby() { InitializeComponent(); }
 
@@ -41,7 +40,6 @@ namespace BlackJack_Client
             this.Text = $"Lobby - {player.Username}";
             IstanziaPosti();
             interfacciaRete.Server.datiRicevutiEvent += Server_datiRicevutiEventLobby;
-            prova = new Thread(aggiornaFiches);
         }
 
         private void dimagrisci(object sender, EventArgs e)
@@ -58,17 +56,6 @@ namespace BlackJack_Client
                 Application.Exit();
             
         }
-        #region Metodi utilizzati in fase di debug
-        private void aggiornaFiches()
-        {
-            while (true)
-            {
-                Thread.Sleep(1000);
-                Console.WriteLine(myPlace.Fiches);
-            }
-        }
-        #endregion
-
         private void IstanziaPosti()
         {
             posti = new List<Place>(4);
@@ -86,7 +73,6 @@ namespace BlackJack_Client
             LblMano.Text = "";
             lblMyFiches.Text = "Le tue Fiches: 1000";
             lblMyPuntata.Text = "Devi ancora puntare.";
-            prova.Start();
         }
 
         private void BtnCarta_Click(object sender, EventArgs e)
@@ -215,7 +201,6 @@ namespace BlackJack_Client
                     {
                         LblMano.Text = "BJ";                                                                                    //aggiorno la label
                     });
-                    
                     break;
                 case "hand-twentyone":                                                                                          //caso in cui chiedendo la carta si totalizza 21 
                 case "hand-bust":                                                                                               //caso in cui chiedendo la carta si sballa
@@ -238,27 +223,9 @@ namespace BlackJack_Client
                     UpdatePlayerData(1, msg.Data[0]);                                                                           //updato i dati
                     break;
                 case "dealer-wins":                                                                                             //caso in cui il giocatore perde
-                    /* OUTDATED
-                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
-                    myPlace.Puntata = 0;
-                    BeginInvoke((MethodInvoker)delegate
-                    {
-                        LblRis.Text = "Hai perso";
-                        lblMyFiches.Text = "Le tue Fiches: " + myPlace.Fiches.ToString();
-                        lblMyPuntata.Text = "Devi ancora puntare.";
-                    });*/
                     UpdatePlayerData(-1, msg.Data[0]);                                                                          //updato i dati
                     break;
                 case "draw":                                                                                                    //caso in cui si pareggia
-                    /*OUTDATED          
-                    myPlace.Fiches = Convert.ToInt32(msg.Data[0]);
-                    myPlace.Puntata = 0;
-                    BeginInvoke((MethodInvoker)delegate
-                    {
-                        LblRis.Text = "Pareggio";
-                        lblMyFiches.Text = "Le tue Fiches: " + myPlace.Fiches.ToString();
-                        lblMyPuntata.Text = "Devi ancora puntare.";
-                    });*/
                     UpdatePlayerData(0, msg.Data[0]);                                                                           //updato i dati
                     break;
                 case "new-turn":                                                                                                //caso in cui si avvia una nuova mano
@@ -266,15 +233,16 @@ namespace BlackJack_Client
                     {
                         LblMano.Text = "";                                                                                      //azzero le label di feedback
                         LblRis.Text = "";
-                        LblDealer.Text = "";
-                        LblCarte1.Text = "";
-                        LblCarte2.Text = "";
-                        LblCarte3.Text = "";
-                        LblCarte4.Text = "";
+                        //LblDealer.Text = "";
+                        //LblCarte1.Text = "";
+                        //LblCarte2.Text = "";
+                        //LblCarte3.Text = "";
+                        //LblCarte4.Text = "";
                         
                         BtnPuntata.Enabled = true;                                                                              //permetto la puntata
                         
                     });
+                    //Ciclo per wipare e pulire ogni campo di gioco
                     for (int q = 1; q <= 5; q++)                                                                                //ciclo per tutti gi spazi di gioco
                     {
                         foreach (PictureBox pcb in Controls["panel" + q].Controls.OfType<PictureBox>())                         //prendo ogni picturebox nel panel corrente
@@ -350,34 +318,7 @@ namespace BlackJack_Client
                         int posizione = Convert.ToInt32(msg.Data[i + 1]);                                                       //e la posizione
                         BeginInvoke((MethodInvoker)delegate
                         {
-                            Point poonto = new Point();                                                                         //genero il punto per muovere la scritat relativa alla mano
-                            poonto.X = 1471;
-                            poonto.Y = 816;
                             Controls["panel" + posizione].Controls["LblPlayer" + posizione].Text = username;                    //Updato la label
-                            switch(pos_tavolo)                                                                                  //muovo la scritta del feedback del punteggio attualemente in mano a seconda del player 
-                            {
-                                case 1:
-                                    //Non cambio
-                                    break;
-                                case 2:
-                                    poonto.X = 1471 - 361;
-                                    LblMano.Location = poonto;
-                                    poonto.X = 1704 - 361;
-                                    label2.Location = poonto;
-                                    break;
-                                case 3:
-                                    poonto.X = 1471 - (361 * 2);
-                                    LblMano.Location = poonto;
-                                    poonto.X = 1704 - (361 * 2);
-                                    label2.Location = poonto;
-                                    break;
-                                case 4:
-                                    poonto.X = 1471 - (361 * 3);
-                                    LblMano.Location = poonto;
-                                    poonto.X = 1704 - (361 * 3);
-                                    label2.Location = poonto;
-                                    break;
-                            }
                         });
                     }
                     break;
@@ -405,7 +346,7 @@ namespace BlackJack_Client
 
         private void UpdatePlayerData(int win, Object fiches)
         {
-                    myPlace.Fiches = (int)fiches;                                                                               //aggiorno le fiche 
+                    myPlace.Fiches = Convert.ToInt32(fiches);                                                                               //aggiorno le fiche 
                     myPlace.Puntata = 0;                                                                                        //resetto la puntata
                     BeginInvoke((MethodInvoker)delegate
                     {

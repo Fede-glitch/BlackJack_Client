@@ -209,7 +209,7 @@ namespace BlackJack_Client
             this.label1.Location = new System.Drawing.Point(885, 61);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 44);
+            this.label1.Size = new System.Drawing.Size(171, 47);
             this.label1.TabIndex = 0;
             this.label1.Text = "BANCO";
             // 
@@ -221,7 +221,7 @@ namespace BlackJack_Client
             this.LblPlayer1.Location = new System.Drawing.Point(10, 12);
             this.LblPlayer1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPlayer1.Name = "LblPlayer1";
-            this.LblPlayer1.Size = new System.Drawing.Size(166, 33);
+            this.LblPlayer1.Size = new System.Drawing.Size(186, 38);
             this.LblPlayer1.TabIndex = 1;
             this.LblPlayer1.Text = "Giocatore 1";
             // 
@@ -233,7 +233,7 @@ namespace BlackJack_Client
             this.LblPlayer2.Location = new System.Drawing.Point(17, 12);
             this.LblPlayer2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPlayer2.Name = "LblPlayer2";
-            this.LblPlayer2.Size = new System.Drawing.Size(166, 33);
+            this.LblPlayer2.Size = new System.Drawing.Size(186, 38);
             this.LblPlayer2.TabIndex = 2;
             this.LblPlayer2.Text = "Giocatore 2";
             // 
@@ -257,7 +257,7 @@ namespace BlackJack_Client
             this.panel1.Controls.Add(this.pcbG1C1);
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(1431, 422);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(430, 380);
             this.panel1.TabIndex = 6;
@@ -268,7 +268,7 @@ namespace BlackJack_Client
             this.LblCarte1.Location = new System.Drawing.Point(21, 40);
             this.LblCarte1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblCarte1.Name = "LblCarte1";
-            this.LblCarte1.Size = new System.Drawing.Size(0, 13);
+            this.LblCarte1.Size = new System.Drawing.Size(0, 15);
             this.LblCarte1.TabIndex = 2;
             // 
             // pcbG1C11
@@ -403,7 +403,7 @@ namespace BlackJack_Client
             this.BtnEsci.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.77358F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEsci.ForeColor = System.Drawing.Color.White;
             this.BtnEsci.Location = new System.Drawing.Point(893, 888);
-            this.BtnEsci.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnEsci.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEsci.Name = "BtnEsci";
             this.BtnEsci.Size = new System.Drawing.Size(205, 66);
             this.BtnEsci.TabIndex = 12;
@@ -427,7 +427,7 @@ namespace BlackJack_Client
             this.BtnCarta.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.77358F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCarta.ForeColor = System.Drawing.Color.White;
             this.BtnCarta.Location = new System.Drawing.Point(1153, 888);
-            this.BtnCarta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnCarta.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCarta.Name = "BtnCarta";
             this.BtnCarta.Size = new System.Drawing.Size(196, 66);
             this.BtnCarta.TabIndex = 11;
@@ -459,7 +459,7 @@ namespace BlackJack_Client
             this.panel2.Controls.Add(this.LblCarte2);
             this.panel2.Controls.Add(this.LblPlayer2);
             this.panel2.Location = new System.Drawing.Point(980, 422);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(430, 380);
             this.panel2.TabIndex = 7;
@@ -591,7 +591,7 @@ namespace BlackJack_Client
             this.LblCarte2.Location = new System.Drawing.Point(17, 49);
             this.LblCarte2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblCarte2.Name = "LblCarte2";
-            this.LblCarte2.Size = new System.Drawing.Size(0, 13);
+            this.LblCarte2.Size = new System.Drawing.Size(0, 15);
             this.LblCarte2.TabIndex = 3;
             // 
             // panel3
@@ -614,7 +614,7 @@ namespace BlackJack_Client
             this.panel3.Controls.Add(this.LblCarte3);
             this.panel3.Controls.Add(this.LblPlayer3);
             this.panel3.Location = new System.Drawing.Point(526, 422);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(430, 380);
             this.panel3.TabIndex = 8;
@@ -746,7 +746,7 @@ namespace BlackJack_Client
             this.label3.Location = new System.Drawing.Point(22, 40);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(0, 15);
             this.label3.TabIndex = 34;
             // 
             // LblCarte3
@@ -755,7 +755,7 @@ namespace BlackJack_Client
             this.LblCarte3.Location = new System.Drawing.Point(17, 49);
             this.LblCarte3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblCarte3.Name = "LblCarte3";
-            this.LblCarte3.Size = new System.Drawing.Size(0, 13);
+            this.LblCarte3.Size = new System.Drawing.Size(0, 15);
             this.LblCarte3.TabIndex = 4;
             // 
             // LblPlayer3
@@ -766,7 +766,7 @@ namespace BlackJack_Client
             this.LblPlayer3.Location = new System.Drawing.Point(17, 12);
             this.LblPlayer3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPlayer3.Name = "LblPlayer3";
-            this.LblPlayer3.Size = new System.Drawing.Size(166, 33);
+            this.LblPlayer3.Size = new System.Drawing.Size(186, 38);
             this.LblPlayer3.TabIndex = 2;
             this.LblPlayer3.Text = "Giocatore 3";
             // 
@@ -791,7 +791,7 @@ namespace BlackJack_Client
             this.panel4.Controls.Add(this.LblCarte4);
             this.panel4.Controls.Add(this.LblPlayer4);
             this.panel4.Location = new System.Drawing.Point(74, 422);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(430, 380);
             this.panel4.TabIndex = 9;
@@ -923,7 +923,7 @@ namespace BlackJack_Client
             this.label4.Location = new System.Drawing.Point(21, 40);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.Size = new System.Drawing.Size(0, 15);
             this.label4.TabIndex = 47;
             // 
             // label5
@@ -932,7 +932,7 @@ namespace BlackJack_Client
             this.label5.Location = new System.Drawing.Point(16, 49);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.Size = new System.Drawing.Size(0, 15);
             this.label5.TabIndex = 46;
             // 
             // LblCarte4
@@ -941,7 +941,7 @@ namespace BlackJack_Client
             this.LblCarte4.Location = new System.Drawing.Point(17, 49);
             this.LblCarte4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblCarte4.Name = "LblCarte4";
-            this.LblCarte4.Size = new System.Drawing.Size(0, 13);
+            this.LblCarte4.Size = new System.Drawing.Size(0, 15);
             this.LblCarte4.TabIndex = 5;
             // 
             // LblPlayer4
@@ -952,7 +952,7 @@ namespace BlackJack_Client
             this.LblPlayer4.Location = new System.Drawing.Point(17, 12);
             this.LblPlayer4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPlayer4.Name = "LblPlayer4";
-            this.LblPlayer4.Size = new System.Drawing.Size(166, 33);
+            this.LblPlayer4.Size = new System.Drawing.Size(186, 38);
             this.LblPlayer4.TabIndex = 2;
             this.LblPlayer4.Text = "Giocatore 4";
             // 
@@ -974,7 +974,7 @@ namespace BlackJack_Client
             this.panel5.Controls.Add(this.pcbBkC1);
             this.panel5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel5.Location = new System.Drawing.Point(574, 133);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(865, 242);
             this.panel5.TabIndex = 10;
@@ -996,7 +996,7 @@ namespace BlackJack_Client
             this.LblDealer.ForeColor = System.Drawing.Color.White;
             this.LblDealer.Location = new System.Drawing.Point(57, 37);
             this.LblDealer.Name = "LblDealer";
-            this.LblDealer.Size = new System.Drawing.Size(0, 13);
+            this.LblDealer.Size = new System.Drawing.Size(0, 15);
             this.LblDealer.TabIndex = 57;
             // 
             // pcbBkC10
@@ -1118,7 +1118,7 @@ namespace BlackJack_Client
             this.LblMano.Location = new System.Drawing.Point(1704, 816);
             this.LblMano.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblMano.Name = "LblMano";
-            this.LblMano.Size = new System.Drawing.Size(27, 39);
+            this.LblMano.Size = new System.Drawing.Size(31, 44);
             this.LblMano.TabIndex = 14;
             this.LblMano.Text = "/";
             // 
@@ -1132,7 +1132,7 @@ namespace BlackJack_Client
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.77358F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(668, 888);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 66);
             this.button1.TabIndex = 16;
@@ -1153,7 +1153,7 @@ namespace BlackJack_Client
             this.BtnPuntata.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.77358F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPuntata.ForeColor = System.Drawing.Color.White;
             this.BtnPuntata.Location = new System.Drawing.Point(980, 967);
-            this.BtnPuntata.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnPuntata.Margin = new System.Windows.Forms.Padding(2);
             this.BtnPuntata.Name = "BtnPuntata";
             this.BtnPuntata.Size = new System.Drawing.Size(152, 66);
             this.BtnPuntata.TabIndex = 19;
@@ -1174,7 +1174,7 @@ namespace BlackJack_Client
             this.BtnDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.77358F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnDouble.ForeColor = System.Drawing.Color.White;
             this.BtnDouble.Location = new System.Drawing.Point(1190, 967);
-            this.BtnDouble.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnDouble.Margin = new System.Windows.Forms.Padding(2);
             this.BtnDouble.Name = "BtnDouble";
             this.BtnDouble.Size = new System.Drawing.Size(196, 66);
             this.BtnDouble.TabIndex = 20;
@@ -1287,7 +1287,7 @@ namespace BlackJack_Client
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(363, 209);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 37);
+            this.label6.Size = new System.Drawing.Size(103, 39);
             this.label6.TabIndex = 26;
             this.label6.Text = "= 10$";
             // 
@@ -1299,7 +1299,7 @@ namespace BlackJack_Client
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(339, 288);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 37);
+            this.label7.Size = new System.Drawing.Size(122, 39);
             this.label7.TabIndex = 28;
             this.label7.Text = "= 100$";
             // 
@@ -1334,7 +1334,7 @@ namespace BlackJack_Client
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(1587, 209);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(133, 37);
+            this.label8.Size = new System.Drawing.Size(141, 39);
             this.label8.TabIndex = 31;
             this.label8.Text = "= 1000$";
             // 
@@ -1357,7 +1357,7 @@ namespace BlackJack_Client
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(1616, 288);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(116, 37);
+            this.label9.Size = new System.Drawing.Size(122, 39);
             this.label9.TabIndex = 33;
             this.label9.Text = "= All In";
             // 
@@ -1381,7 +1381,7 @@ namespace BlackJack_Client
             this.lblMyFiches.Location = new System.Drawing.Point(1059, 1035);
             this.lblMyFiches.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMyFiches.Name = "lblMyFiches";
-            this.lblMyFiches.Size = new System.Drawing.Size(234, 39);
+            this.lblMyFiches.Size = new System.Drawing.Size(258, 44);
             this.lblMyFiches.TabIndex = 34;
             this.lblMyFiches.Text = "Le tue Fiches:";
             // 
@@ -1394,7 +1394,7 @@ namespace BlackJack_Client
             this.lblMyPuntata.Location = new System.Drawing.Point(629, 1035);
             this.lblMyPuntata.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMyPuntata.Name = "lblMyPuntata";
-            this.lblMyPuntata.Size = new System.Drawing.Size(246, 39);
+            this.lblMyPuntata.Size = new System.Drawing.Size(273, 44);
             this.lblMyPuntata.TabIndex = 35;
             this.lblMyPuntata.Text = "La tua puntata:";
             // 
@@ -1406,7 +1406,7 @@ namespace BlackJack_Client
             this.LblRis.ForeColor = System.Drawing.Color.White;
             this.LblRis.Location = new System.Drawing.Point(886, 377);
             this.LblRis.Name = "LblRis";
-            this.LblRis.Size = new System.Drawing.Size(0, 38);
+            this.LblRis.Size = new System.Drawing.Size(0, 40);
             this.LblRis.TabIndex = 15;
             // 
             // label2
@@ -1418,7 +1418,7 @@ namespace BlackJack_Client
             this.label2.Location = new System.Drawing.Point(1471, 816);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(223, 39);
+            this.label2.Size = new System.Drawing.Size(247, 44);
             this.label2.TabIndex = 13;
             this.label2.Text = "Valore mano:";
             // 
@@ -1459,7 +1459,7 @@ namespace BlackJack_Client
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnCarta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLobby";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLobby";
