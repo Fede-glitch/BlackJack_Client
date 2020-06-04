@@ -53,9 +53,21 @@ namespace BlackJack_Client
         private void button1_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("Sicuro di voler Uscire?","Sicuro?",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                PlayerLeave();
                 Application.Exit();
+            }
+                
             
         }
+
+        private void PlayerLeave()
+        {
+            List<object> lst = new List<object>();
+            lst.Add(log_id);
+            interfacciaRete.Client.Invia(GeneraMessaggio("player-leaving", lst));
+        }
+
         private void IstanziaPosti()
         {
             posti = new List<Place>(4);
@@ -417,6 +429,7 @@ namespace BlackJack_Client
 
         private void btnQuitTop_Click(object sender, EventArgs e)                                                   //Esco
         {
+            PlayerLeave();
             Application.Exit();             
         }
 
